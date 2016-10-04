@@ -1,0 +1,27 @@
+{
+  "name": "mapas",
+  "authors": [
+    "Jaime Santana <jaimesantanal@hotmail.com>"
+  ],
+  "description": "Pruebas para mapas simples",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "mapas",
+    "js"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "leaflet": "^1.0.1",
+    "bootstrap": "^3.3.7"
+  }
+}
