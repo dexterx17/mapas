@@ -55,7 +55,7 @@
 
 				var LeafIcon = L.Icon.extend({
 					options: {
-						shadowUrl: 'leaf-shadow.png',
+						shadowUrl: '../imgs/leaf-shadow.png',
 						iconSize:     [19, 42],
 						shadowSize:   [25, 32],
 						iconAnchor:   [11, 47],
@@ -64,7 +64,7 @@
 					}
 				});
 
-				var greenIcon = new LeafIcon({iconUrl: 'leaf-green.png'});
+				var greenIcon = new LeafIcon({iconUrl: '../imgs/leaf-green.png'});
 
 				var map = L.map('mapa',{
 			  		center:[-1.26037,-78.615184],
@@ -196,7 +196,7 @@
 					for (var i = 0; i < caps.length; i++) {
 
 						labels.push(
-							'<i style="'+"background-image:url('leaf-green.png');"+' background-clip: content-box;"></i> '+caps[i]);
+							'<i style="'+"background-image:url('../imgs/leaf-green.png');"+' background-clip: content-box;"></i> '+caps[i]);
 					}
 
 					div.innerHTML = labels.join('<br>');

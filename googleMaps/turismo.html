@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pruebas turismo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/> 
+	<link href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/> 
+
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	
+	<style>
+		#mapa{
+			width: 100%;
+			height: 500px;
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Propuesta mapa lugares canton
+			</div>
+			<div class="panel-body">
+				<div class="col-lg-6">
+					<div id="mapa">
+						
+					</div>
+				</div>
+				<div class="col-lg-6">
+				
+				</div>
+			</div>
+			<div class="panel-foot">
+				<a href="https://developers.google.com/maps/documentation/javascript/marker-clustering" target="_blank">https://developers.google.com/maps/documentation/javascript/marker-clustering</a>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		var map;
+		function initMap() {
+		  map = new google.maps.Map(document.getElementById('mapa'), {
+		    center: {lat: -1.644 , lng: -78.397},
+		    zoom: 8
+		  });
+
+		  var infoWindow = new google.maps.InfoWindow({map: map});
+
+		  // Try HTML5 geolocation.
+		  if (navigator.geolocation) {
+		    navigator.geolocation.getCurrentPosition(function(position) {
+		      var pos = {
+		        lat: position.coords.latitude,
+		        lng: position.coords.longitude
+		      };
+
+		      infoWindow.setPosition(pos);
+		      infoWindow.setContent('<h5>Ubicación encontrada!</h5>');
+		      map.setCenter(pos);
+		    }, function() {
+		      handleLocationError(true, infoWindow, map.getCenter());
+		    });
+		  } else {
+		    // Browser doesn't support Geolocation
+		    handleLocationError(false, infoWindow, map.getCenter());
+		  }
+
+		}
+
+		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+		  infoWindow.setPosition(pos);
+		  infoWindow.setContent(browserHasGeolocation ?
+		                        'Error: The Geolocation service failed.' :
+		                        'Error: Your browser doesn\'t support geolocation.');
+		}
+
+    </script>
+
+	<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ920_mAj7Lcw2Mc6JOqrxbJEKHQS0BRE&callback=initMap">
+    </script>
+
+    <script type="text/javascript" src="../bower_components/js-marker-clusterer/src/markerclusterer.js"></script>
+</body>
+</html>
