@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/> 
+		<link href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/> 
+		<link href="../bower_components/leaflet/dist/leaflet.css" rel="stylesheet"/> 
+
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="../bower_components/leaflet/dist/leaflet.js"></script>
+
+		<title>Mapa Planes Manejo</title>
+		<style>
+			#mapa{
+				width: 100%;
+				height: 500px;
+			}
+			.popup-info-estacion caption, .popup-info-estacion caption h3{
+				padding-top: 0px;
+				padding-bottom: 0px;
+			}
+			.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+			.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
+			.title-leyenda{
+				margin-top: 3px;
+				margin-bottom: 0px;
+				font-weight: 600;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Propuesta mapa Planes de Manejo
+				</div>
+				<div class="panel-body">
+					<div class="col-lg-6">
+						<div id="mapa">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+
+			var pagefunction = function(){
+				var osm=L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+						maxZoom: 18,
+						attribution:  '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+						type:"xyz"
+					});
+
+
+				var pmps;
+
+				var map = L.map('mapa',{
+			  		center:[-1.26037,-78.615184],
+			  		zoom:10,
+			  		layers:[osm]
+				});
+
+				var cantones =  L.tileLayer.wms('http://mapas.tungurahua.gob.ec/base?_signature=35%3AtQ4w1U9PYXX2oUR-XmrygmZzxcU&', {
+					format: 'image/png; mode=8bit',
+					transparent: true,
+					opacity: 0.6,
+					layers: 'tungurahuacantones',
+					version: '1.1.1',
+					bbox :'-78.857685631137,-1.4218850961551,-78.202410690726,-1.1609180413979',
+					crs: L.CRS.EPSG4326
+				}).addTo(map);
+
+				var parroquias =  L.tileLayer.wms('http://mapas.tungurahua.gob.ec/base?_signature=35%3AtQ4w1U9PYXX2oUR-XmrygmZzxcU&', {
+					format: 'image/png; mode=8bit',
+					transparent: true,
+					layers: 'parroquias',
+					version: '1.1.1',
+					bbox :'-78.857685631137,-1.4218850961551,-78.202410690726,-1.1609180413979',
+					crs: L.CRS.EPSG4326
+				}).addTo(map);
+
+				var base = {
+					'OSM': osm
+				};
+
+				var capas = {
+					'Cantones':cantones,
+					'Parroquias':parroquias,
+				};
+
+				// get color depending has pmp
+				function getColor(d) {
+					return 	d > 15000  ? '#BD0026' :
+							d > 10000  ? '#E31A1C' :
+							d > 8000  ? '#FC4E2A' :
+							d > 5000   ? '#FD8D3C' :
+							d > 3000   ? '#FEB24C' :
+							d > 1000   ? '#FED976' :
+										'#FFEDA0';
+				}
+				function estilo(feature){
+					return {
+						weight:2,
+						opacity:1,
+						color:'white',
+						dashArray:'3',
+						fillOpacity:0.7,
+						fillColor:getColor(feature.properties.Hec_Final)
+					};
+				}
+
+				var info = L.control({'position':'topright'});
+
+				info.onAdd = function(map){
+					this._div = L.DomUtil.create('div','info');
+					this.update();
+					return this._div;
+				}
+				
+								
+				info.update = function (props){
+					this._div.innerHTML = '<table>'+(props ?
+						'<tr><td>'+props.PMP+'</td></tr>'+
+						'<tr><td>'+props.Hec_Final.toFixed(2)+'</td></tr>'
+						:'<tr><td>Pase el mouse sobre un plan de manejo</td></tr>')+
+						'</table>';
+				}
+
+				info.addTo(map);
+
+				var control = L.control.layers(base,capas).addTo(map);
+				$.getJSON("../mapas/planes.geojson",function(data){
+					pmps= L.geoJson(data,{
+						style:estilo,
+						onEachFeature:onEachFeature
+					}).addTo(map);
+					control.addOverlay(pmps,'Planes de manejo');
+				});
+				
+				function highlightFeature(e){
+					var layer = e.target;
+
+					layer.setStyle({
+						weight:5,
+						color:"#666",
+						dashArray:'',
+						fillOpacity:0.7
+					});
+
+					if(!L.Browser.ie && !L.Browser.opera){
+						layer.bringToFront();
+					}
+					info.update(layer.feature.properties);
+				}
+
+				function resetHighlight(e){
+					pmps.resetStyle(e.target);
+					info.update();
+				}
+
+				var popup = L.popup();
+
+				function zoomToFeature(e){
+					var layer = e.target;
+					map.fitBounds(layer.getBounds());
+					var props = layer.feature.properties;
+					popup
+				        .setLatLng(e.latlng)
+				        .setContent('<table class="popup-info-estacion table table-hovered table-responsive"><caption><h3>'+props.PMP+'</h3></caption><tbody>' +
+				        			'<tr><th>Hectareas</th><td>'+props.Hec_Final.toFixed(2)+'</td></tr>'+
+									'<tbody><tfoot>'+
+									'<tr><td><a class="btn btn-default" href="#">Ver ficha</a></td>'+
+									'</tfoot></table>'
+								)
+				        .openOn(map);
+				}
+
+				function onEachFeature(feature,layer){
+					layer.on({
+						mouseover:highlightFeature,
+						mouseout:resetHighlight,
+						click:zoomToFeature
+					});
+				}
+
+				var legend = L.control({position: 'bottomright'});
+
+				legend.onAdd = function (map) {	
+					var div = L.DomUtil.create('div', 'info legend'),
+						grades = [1000, 3000, 5000, 8000, 10000, 15000],
+						labels = [],
+						from, to;
+					labels.push('<h5 class="title-leyenda">Has. conservadas</h5>');
+					for (var i = 0; i < grades.length; i++) {
+						from = grades[i];
+						to = grades[i + 1];
+
+						labels.push(
+							'<i style="background:' + getColor(from + 1) + '"></i> ' +
+							from + (to ? '&ndash;' + to : '+'));
+					}
+					div.innerHTML = labels.join('<br>');
+					return div;
+				};
+
+				legend.addTo(map);
+
+			};
+			$(document).ready(pagefunction);
+		</script>
+	</body>
+</html>
