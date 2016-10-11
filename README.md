@@ -3,10 +3,9 @@ Pruebas de distintas herramientas para trabajar con mapas
 
 #PreRequisitos
 
- [bower ]
+ [(bower)](https://bower.io/)
 
 #Ejecucion
 
  bower install
 
- 
