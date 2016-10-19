@@ -1,0 +1,88 @@
+MAP
+  FONTSET "[fontsetpath]"
+  EXTENT -78.9392847061958 -1.52433143919283 -78.114644269801 -0.991806940763876
+  IMAGETYPE "png"
+  NAME "QGIS-MAP"
+  SIZE 600 600
+  STATUS ON
+  UNITS DD
+
+  OUTPUTFORMAT
+    NAME "png"
+    MIMETYPE "image/png"
+    DRIVER "AGG/PNG"
+    EXTENSION "png"
+    IMAGEMODE RGB
+    TRANSPARENT TRUE
+  END # OUTPUTFORMAT
+
+  PROJECTION
+    "proj=longlat"
+    "datum=WGS84"
+    "no_defs"
+  END # PROJECTION
+  LEGEND
+    KEYSIZE 20 10
+    KEYSPACING 5 5
+    LABEL
+      SIZE MEDIUM
+      OFFSET 0 0
+      SHADOWSIZE 1 1
+      TYPE BITMAP
+    END # LABEL
+    STATUS OFF
+  END # LEGEND
+
+  QUERYMAP
+    SIZE -1 -1
+    STATUS OFF
+    STYLE HILITE
+  END # QUERYMAP
+
+  SCALEBAR
+    INTERVALS 4
+    LABEL
+      SIZE MEDIUM
+      OFFSET 0 0
+      SHADOWSIZE 1 1
+      TYPE BITMAP
+    END # LABEL
+    SIZE 200 3
+    STATUS OFF
+    UNITS MILES
+  END # SCALEBAR
+
+  WEB
+    FOOTER ""
+    HEADER ""
+    TEMPPATH ""
+    METADATA
+      "ows_onlineresource"	"http://localhost/cgi-bin/mapserv?map=/home/dexter/Desktop/isotermas.map"
+      "ows_enable_request"	"*"
+      "ows_srs"	"EPSG:4326"
+      "ows_title"	"QGIS-MAP"
+    END # METADATA
+    TEMPLATE "[templatepath]"
+  END # WEB
+
+  LAYER
+    DATA "/home/dexter/isotermas1.tif"
+    EXTENT 729321.600299999 -168594.584000001 821091.600299999 -109764.584000001
+    METADATA
+      "ows_title"	"isotermas1"
+    END # METADATA
+    NAME "isotermas1"
+    PROJECTION
+      "proj=utm"
+      "zone=17"
+      "datum=WGS84"
+      "units=m"
+      "no_defs"
+    END # PROJECTION
+    STATUS ON
+    TILEITEM "location"
+    TYPE RASTER
+    UNITS METERS
+  END # LAYER
+
+END # MAP

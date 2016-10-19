@@ -1,0 +1,2056 @@
+LAYER
+	NAME "paises"
+	DUMP TRUE
+    PROJECTION
+	     "init=epsg:4326"
+	END
+	EXTENT -180.000015 -90.000000 180.000000 83.627419
+	METADATA
+	  "wms_title" "paises"
+      "wms_srs" "EPSG:4326"
+      "wms_name" "paises"
+      "wms_server_version" "1.1.1"
+    "wms_getfeature_formatlist" "text/html,application/json"
+    END
+    HEADER 'templates/header.html'
+    FOOTER 'templates/footer.html'
+	TEMPLATE "templates/gadm2_query.html"
+    CONNECTIONTYPE postgis
+  	CONNECTION "dbname='ecuador' host='127.0.0.1' port=5432 user='dexter' password='0112358' sslmode=disable"
+	DATA 'geom FROM gadm'
+    STATUS ON
+    TYPE LINE
+    TOLERANCE 100
+     CLASS
+      NAME "1"
+      EXPRESSION ([id_0] =1)
+      STYLE
+        OUTLINECOLOR 200 0 43
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "2"
+      EXPRESSION ([id_0] =2)
+      STYLE
+        OUTLINECOLOR 200 0 43
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "3"
+      EXPRESSION ([id_0] =3)
+      STYLE
+        OUTLINECOLOR 200 0 43
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "4"
+      EXPRESSION ([id_0] =4)
+      STYLE
+        OUTLINECOLOR 0 205 17
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "5"
+      EXPRESSION ([id_0] =5)
+      STYLE
+        OUTLINECOLOR 0 205 17
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "6"
+      EXPRESSION ([id_0] =6)
+      STYLE
+        OUTLINECOLOR 0 205 17
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "7"
+      EXPRESSION ([id_0] =7)
+      STYLE
+        OUTLINECOLOR 69 0 189
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "8"
+      EXPRESSION ([id_0] =8)
+      STYLE
+        OUTLINECOLOR 69 0 189
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "9"
+      EXPRESSION ([id_0] =9)
+      STYLE
+        OUTLINECOLOR 198 132 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "10"
+      EXPRESSION ([id_0] =10)
+      STYLE
+        OUTLINECOLOR 198 132 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "11"
+      EXPRESSION ([id_0] =11)
+      STYLE
+        OUTLINECOLOR 198 132 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "12"
+      EXPRESSION ([id_0] =12)
+      STYLE
+        OUTLINECOLOR 0 217 206
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "13"
+      EXPRESSION ([id_0] =13)
+      STYLE
+        OUTLINECOLOR 0 217 206
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "14"
+      EXPRESSION ([id_0] =14)
+      STYLE
+        OUTLINECOLOR 217 0 167
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "15"
+      EXPRESSION ([id_0] =15)
+      STYLE
+        OUTLINECOLOR 217 0 167
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "16"
+      EXPRESSION ([id_0] =16)
+      STYLE
+        OUTLINECOLOR 217 0 167
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "17"
+      EXPRESSION ([id_0] =17)
+      STYLE
+        OUTLINECOLOR 111 238 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "18"
+      EXPRESSION ([id_0] =18)
+      STYLE
+        OUTLINECOLOR 111 238 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "19"
+      EXPRESSION ([id_0] =19)
+      STYLE
+        OUTLINECOLOR 0 33 198
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "20"
+      EXPRESSION ([id_0] =20)
+      STYLE
+        OUTLINECOLOR 0 33 198
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "21"
+      EXPRESSION ([id_0] =21)
+      STYLE
+        OUTLINECOLOR 0 33 198
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "22"
+      EXPRESSION ([id_0] =22)
+      STYLE
+        OUTLINECOLOR 227 30 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "23"
+      EXPRESSION ([id_0] =23)
+      STYLE
+        OUTLINECOLOR 227 30 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "24"
+      EXPRESSION ([id_0] =24)
+      STYLE
+        OUTLINECOLOR 0 172 71
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "25"
+      EXPRESSION ([id_0] =25)
+      STYLE
+        OUTLINECOLOR 0 172 71
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "26"
+      EXPRESSION ([id_0] =26)
+      STYLE
+        OUTLINECOLOR 0 172 71
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "27"
+      EXPRESSION ([id_0] =27)
+      STYLE
+        OUTLINECOLOR 161 0 230
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "28"
+      EXPRESSION ([id_0] =28)
+      STYLE
+        OUTLINECOLOR 161 0 230
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "29"
+      EXPRESSION ([id_0] =29)
+      STYLE
+        OUTLINECOLOR 194 194 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "30"
+      EXPRESSION ([id_0] =30)
+      STYLE
+        OUTLINECOLOR 194 194 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "31"
+      EXPRESSION ([id_0] =31)
+      STYLE
+        OUTLINECOLOR 194 194 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "32"
+      EXPRESSION ([id_0] =32)
+      STYLE
+        OUTLINECOLOR 0 142 198
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "33"
+      EXPRESSION ([id_0] =33)
+      STYLE
+        OUTLINECOLOR 0 142 198
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "34"
+      EXPRESSION ([id_0] =34)
+      STYLE
+        OUTLINECOLOR 187 0 81
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "35"
+      EXPRESSION ([id_0] =35)
+      STYLE
+        OUTLINECOLOR 187 0 81
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "36"
+      EXPRESSION ([id_0] =36)
+      STYLE
+        OUTLINECOLOR 187 0 81
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "37"
+      EXPRESSION ([id_0] =37)
+      STYLE
+        OUTLINECOLOR 22 171 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "38"
+      EXPRESSION ([id_0] =38)
+      STYLE
+        OUTLINECOLOR 22 171 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "39"
+      EXPRESSION ([id_0] =39)
+      STYLE
+        OUTLINECOLOR 34 0 208
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "40"
+      EXPRESSION ([id_0] =40)
+      STYLE
+        OUTLINECOLOR 34 0 208
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "41"
+      EXPRESSION ([id_0] =41)
+      STYLE
+        OUTLINECOLOR 34 0 208
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "42"
+      EXPRESSION ([id_0] =42)
+      STYLE
+        OUTLINECOLOR 172 80 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "43"
+      EXPRESSION ([id_0] =43)
+      STYLE
+        OUTLINECOLOR 172 80 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "44"
+      EXPRESSION ([id_0] =44)
+      STYLE
+        OUTLINECOLOR 172 80 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "45"
+      EXPRESSION ([id_0] =45)
+      STYLE
+        OUTLINECOLOR 0 192 144
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "46"
+      EXPRESSION ([id_0] =46)
+      STYLE
+        OUTLINECOLOR 0 192 144
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "47"
+      EXPRESSION ([id_0] =47)
+      STYLE
+        OUTLINECOLOR 176 0 170
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "48"
+      EXPRESSION ([id_0] =48)
+      STYLE
+        OUTLINECOLOR 176 0 170
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "49"
+      EXPRESSION ([id_0] =49)
+      STYLE
+        OUTLINECOLOR 176 0 170
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "50"
+      EXPRESSION ([id_0] =50)
+      STYLE
+        OUTLINECOLOR 135 202 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "51"
+      EXPRESSION ([id_0] =51)
+      STYLE
+        OUTLINECOLOR 135 202 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "52"
+      EXPRESSION ([id_0] =52)
+      STYLE
+        OUTLINECOLOR 0 91 238
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "53"
+      EXPRESSION ([id_0] =53)
+      STYLE
+        OUTLINECOLOR 0 91 238
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "54"
+      EXPRESSION ([id_0] =54)
+      STYLE
+        OUTLINECOLOR 0 91 238
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "55"
+      EXPRESSION ([id_0] =55)
+      STYLE
+        OUTLINECOLOR 199 0 19
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "56"
+      EXPRESSION ([id_0] =56)
+      STYLE
+        OUTLINECOLOR 199 0 19
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "57"
+      EXPRESSION ([id_0] =57)
+      STYLE
+        OUTLINECOLOR 0 174 34
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "58"
+      EXPRESSION ([id_0] =58)
+      STYLE
+        OUTLINECOLOR 0 174 34
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "59"
+      EXPRESSION ([id_0] =59)
+      STYLE
+        OUTLINECOLOR 0 174 34
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "60"
+      EXPRESSION ([id_0] =60)
+      STYLE
+        OUTLINECOLOR 87 0 175
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "61"
+      EXPRESSION ([id_0] =61)
+      STYLE
+        OUTLINECOLOR 87 0 175
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "62"
+      EXPRESSION ([id_0] =62)
+      STYLE
+        OUTLINECOLOR 189 151 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "63"
+      EXPRESSION ([id_0] =63)
+      STYLE
+        OUTLINECOLOR 189 151 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "64"
+      EXPRESSION ([id_0] =64)
+      STYLE
+        OUTLINECOLOR 189 151 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "65"
+      EXPRESSION ([id_0] =65)
+      STYLE
+        OUTLINECOLOR 0 181 197
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "66"
+      EXPRESSION ([id_0] =66)
+      STYLE
+        OUTLINECOLOR 0 181 197
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "67"
+      EXPRESSION ([id_0] =67)
+      STYLE
+        OUTLINECOLOR 231 9 150
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "68"
+      EXPRESSION ([id_0] =68)
+      STYLE
+        OUTLINECOLOR 231 9 150
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "69"
+      EXPRESSION ([id_0] =69)
+      STYLE
+        OUTLINECOLOR 231 9 150
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "70"
+      EXPRESSION ([id_0] =70)
+      STYLE
+        OUTLINECOLOR 72 216 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "71"
+      EXPRESSION ([id_0] =71)
+      STYLE
+        OUTLINECOLOR 72 216 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "72"
+      EXPRESSION ([id_0] =72)
+      STYLE
+        OUTLINECOLOR 0 8 162
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "73"
+      EXPRESSION ([id_0] =73)
+      STYLE
+        OUTLINECOLOR 0 8 162
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "74"
+      EXPRESSION ([id_0] =74)
+      STYLE
+        OUTLINECOLOR 0 8 162
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "75"
+      EXPRESSION ([id_0] =75)
+      STYLE
+        OUTLINECOLOR 226 56 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "76"
+      EXPRESSION ([id_0] =76)
+      STYLE
+        OUTLINECOLOR 226 56 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "77"
+      EXPRESSION ([id_0] =77)
+      STYLE
+        OUTLINECOLOR 0 164 90
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "78"
+      EXPRESSION ([id_0] =78)
+      STYLE
+        OUTLINECOLOR 0 164 90
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "79"
+      EXPRESSION ([id_0] =79)
+      STYLE
+        OUTLINECOLOR 0 164 90
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "80"
+      EXPRESSION ([id_0] =80)
+      STYLE
+        OUTLINECOLOR 186 1 222
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "81"
+      EXPRESSION ([id_0] =81)
+      STYLE
+        OUTLINECOLOR 186 1 222
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "82"
+      EXPRESSION ([id_0] =82)
+      STYLE
+        OUTLINECOLOR 163 188 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "83"
+      EXPRESSION ([id_0] =83)
+      STYLE
+        OUTLINECOLOR 163 188 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "84"
+      EXPRESSION ([id_0] =84)
+      STYLE
+        OUTLINECOLOR 163 188 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "85"
+      EXPRESSION ([id_0] =85)
+      STYLE
+        OUTLINECOLOR 0 139 239
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "86"
+      EXPRESSION ([id_0] =86)
+      STYLE
+        OUTLINECOLOR 0 139 239
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "87"
+      EXPRESSION ([id_0] =87)
+      STYLE
+        OUTLINECOLOR 0 139 239
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "88"
+      EXPRESSION ([id_0] =88)
+      STYLE
+        OUTLINECOLOR 185 0 55
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "89"
+      EXPRESSION ([id_0] =89)
+      STYLE
+        OUTLINECOLOR 185 0 55
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "90"
+      EXPRESSION ([id_0] =90)
+      STYLE
+        OUTLINECOLOR 0 163 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "91"
+      EXPRESSION ([id_0] =91)
+      STYLE
+        OUTLINECOLOR 0 163 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "92"
+      EXPRESSION ([id_0] =92)
+      STYLE
+        OUTLINECOLOR 0 163 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "93"
+      EXPRESSION ([id_0] =93)
+      STYLE
+        OUTLINECOLOR 50 0 177
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "94"
+      EXPRESSION ([id_0] =94)
+      STYLE
+        OUTLINECOLOR 50 0 177
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "95"
+      EXPRESSION ([id_0] =95)
+      STYLE
+        OUTLINECOLOR 216 126 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "96"
+      EXPRESSION ([id_0] =96)
+      STYLE
+        OUTLINECOLOR 216 126 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "97"
+      EXPRESSION ([id_0] =97)
+      STYLE
+        OUTLINECOLOR 216 126 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "98"
+      EXPRESSION ([id_0] =98)
+      STYLE
+        OUTLINECOLOR 0 188 166
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "99"
+      EXPRESSION ([id_0] =99)
+      STYLE
+        OUTLINECOLOR 0 188 166
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "100"
+      EXPRESSION ([id_0] =100)
+      STYLE
+        OUTLINECOLOR 157 0 131
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "101"
+      EXPRESSION ([id_0] =101)
+      STYLE
+        OUTLINECOLOR 157 0 131
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "102"
+      EXPRESSION ([id_0] =102)
+      STYLE
+        OUTLINECOLOR 157 0 131
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "103"
+      EXPRESSION ([id_0] =103)
+      STYLE
+        OUTLINECOLOR 89 167 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "104"
+      EXPRESSION ([id_0] =104)
+      STYLE
+        OUTLINECOLOR 89 167 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "105"
+      EXPRESSION ([id_0] =105)
+      STYLE
+        OUTLINECOLOR 0 50 202
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "106"
+      EXPRESSION ([id_0] =106)
+      STYLE
+        OUTLINECOLOR 0 50 202
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "107"
+      EXPRESSION ([id_0] =107)
+      STYLE
+        OUTLINECOLOR 0 50 202
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "108"
+      EXPRESSION ([id_0] =108)
+      STYLE
+        OUTLINECOLOR 175 14 6
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "109"
+      EXPRESSION ([id_0] =109)
+      STYLE
+        OUTLINECOLOR 175 14 6
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "110"
+      EXPRESSION ([id_0] =110)
+      STYLE
+        OUTLINECOLOR 0 233 77
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "111"
+      EXPRESSION ([id_0] =111)
+      STYLE
+        OUTLINECOLOR 0 233 77
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "112"
+      EXPRESSION ([id_0] =112)
+      STYLE
+        OUTLINECOLOR 0 233 77
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "113"
+      EXPRESSION ([id_0] =113)
+      STYLE
+        OUTLINECOLOR 100 0 163
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "114"
+      EXPRESSION ([id_0] =114)
+      STYLE
+        OUTLINECOLOR 100 0 163
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "115"
+      EXPRESSION ([id_0] =115)
+      STYLE
+        OUTLINECOLOR 164 150 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "116"
+      EXPRESSION ([id_0] =116)
+      STYLE
+        OUTLINECOLOR 164 150 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "117"
+      EXPRESSION ([id_0] =117)
+      STYLE
+        OUTLINECOLOR 164 150 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "118"
+      EXPRESSION ([id_0] =118)
+      STYLE
+        OUTLINECOLOR 0 184 235
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "119"
+      EXPRESSION ([id_0] =119)
+      STYLE
+        OUTLINECOLOR 0 184 235
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "120"
+      EXPRESSION ([id_0] =120)
+      STYLE
+        OUTLINECOLOR 181 0 90
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "121"
+      EXPRESSION ([id_0] =121)
+      STYLE
+        OUTLINECOLOR 181 0 90
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "122"
+      EXPRESSION ([id_0] =122)
+      STYLE
+        OUTLINECOLOR 181 0 90
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "123"
+      EXPRESSION ([id_0] =123)
+      STYLE
+        OUTLINECOLOR 41 205 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "124"
+      EXPRESSION ([id_0] =124)
+      STYLE
+        OUTLINECOLOR 41 205 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "125"
+      EXPRESSION ([id_0] =125)
+      STYLE
+        OUTLINECOLOR 16 0 193
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "126"
+      EXPRESSION ([id_0] =126)
+      STYLE
+        OUTLINECOLOR 16 0 193
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "127"
+      EXPRESSION ([id_0] =127)
+      STYLE
+        OUTLINECOLOR 16 0 193
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "128"
+      EXPRESSION ([id_0] =128)
+      STYLE
+        OUTLINECOLOR 154 60 1
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "129"
+      EXPRESSION ([id_0] =129)
+      STYLE
+        OUTLINECOLOR 154 60 1
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "130"
+      EXPRESSION ([id_0] =130)
+      STYLE
+        OUTLINECOLOR 154 60 1
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "131"
+      EXPRESSION ([id_0] =131)
+      STYLE
+        OUTLINECOLOR 6 154 105
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "132"
+      EXPRESSION ([id_0] =132)
+      STYLE
+        OUTLINECOLOR 6 154 105
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "133"
+      EXPRESSION ([id_0] =133)
+      STYLE
+        OUTLINECOLOR 225 0 236
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "134"
+      EXPRESSION ([id_0] =134)
+      STYLE
+        OUTLINECOLOR 225 0 236
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "135"
+      EXPRESSION ([id_0] =135)
+      STYLE
+        OUTLINECOLOR 225 0 236
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "136"
+      EXPRESSION ([id_0] =136)
+      STYLE
+        OUTLINECOLOR 150 200 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "137"
+      EXPRESSION ([id_0] =137)
+      STYLE
+        OUTLINECOLOR 150 200 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "138"
+      EXPRESSION ([id_0] =138)
+      STYLE
+        OUTLINECOLOR 3 77 166
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "139"
+      EXPRESSION ([id_0] =139)
+      STYLE
+        OUTLINECOLOR 3 77 166
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "140"
+      EXPRESSION ([id_0] =140)
+      STYLE
+        OUTLINECOLOR 3 77 166
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "141"
+      EXPRESSION ([id_0] =141)
+      STYLE
+        OUTLINECOLOR 232 0 38
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "142"
+      EXPRESSION ([id_0] =142)
+      STYLE
+        OUTLINECOLOR 232 0 38
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "143"
+      EXPRESSION ([id_0] =143)
+      STYLE
+        OUTLINECOLOR 0 205 27
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "144"
+      EXPRESSION ([id_0] =144)
+      STYLE
+        OUTLINECOLOR 0 205 27
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "145"
+      EXPRESSION ([id_0] =145)
+      STYLE
+        OUTLINECOLOR 0 205 27
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "146"
+      EXPRESSION ([id_0] =146)
+      STYLE
+        OUTLINECOLOR 94 0 225
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "147"
+      EXPRESSION ([id_0] =147)
+      STYLE
+        OUTLINECOLOR 94 0 225
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "148"
+      EXPRESSION ([id_0] =148)
+      STYLE
+        OUTLINECOLOR 170 122 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "149"
+      EXPRESSION ([id_0] =149)
+      STYLE
+        OUTLINECOLOR 170 122 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "150"
+      EXPRESSION ([id_0] =150)
+      STYLE
+        OUTLINECOLOR 170 122 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "151"
+      EXPRESSION ([id_0] =151)
+      STYLE
+        OUTLINECOLOR 0 212 212
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "152"
+      EXPRESSION ([id_0] =152)
+      STYLE
+        OUTLINECOLOR 0 212 212
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "153"
+      EXPRESSION ([id_0] =153)
+      STYLE
+        OUTLINECOLOR 234 0 168
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "154"
+      EXPRESSION ([id_0] =154)
+      STYLE
+        OUTLINECOLOR 234 0 168
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "155"
+      EXPRESSION ([id_0] =155)
+      STYLE
+        OUTLINECOLOR 234 0 168
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "156"
+      EXPRESSION ([id_0] =156)
+      STYLE
+        OUTLINECOLOR 74 177 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "157"
+      EXPRESSION ([id_0] =157)
+      STYLE
+        OUTLINECOLOR 74 177 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "158"
+      EXPRESSION ([id_0] =158)
+      STYLE
+        OUTLINECOLOR 0 22 192
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "159"
+      EXPRESSION ([id_0] =159)
+      STYLE
+        OUTLINECOLOR 0 22 192
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "160"
+      EXPRESSION ([id_0] =160)
+      STYLE
+        OUTLINECOLOR 0 22 192
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "161"
+      EXPRESSION ([id_0] =161)
+      STYLE
+        OUTLINECOLOR 210 38 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "162"
+      EXPRESSION ([id_0] =162)
+      STYLE
+        OUTLINECOLOR 210 38 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "163"
+      EXPRESSION ([id_0] =163)
+      STYLE
+        OUTLINECOLOR 0 159 74
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "164"
+      EXPRESSION ([id_0] =164)
+      STYLE
+        OUTLINECOLOR 0 159 74
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "165"
+      EXPRESSION ([id_0] =165)
+      STYLE
+        OUTLINECOLOR 0 159 74
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "166"
+      EXPRESSION ([id_0] =166)
+      STYLE
+        OUTLINECOLOR 163 0 217
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "167"
+      EXPRESSION ([id_0] =167)
+      STYLE
+        OUTLINECOLOR 163 0 217
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "168"
+      EXPRESSION ([id_0] =168)
+      STYLE
+        OUTLINECOLOR 157 165 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "169"
+      EXPRESSION ([id_0] =169)
+      STYLE
+        OUTLINECOLOR 157 165 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "170"
+      EXPRESSION ([id_0] =170)
+      STYLE
+        OUTLINECOLOR 157 165 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "171"
+      EXPRESSION ([id_0] =171)
+      STYLE
+        OUTLINECOLOR 4 109 162
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "172"
+      EXPRESSION ([id_0] =172)
+      STYLE
+        OUTLINECOLOR 4 109 162
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "173"
+      EXPRESSION ([id_0] =173)
+      STYLE
+        OUTLINECOLOR 4 109 162
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "174"
+      EXPRESSION ([id_0] =174)
+      STYLE
+        OUTLINECOLOR 235 0 90
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "175"
+      EXPRESSION ([id_0] =175)
+      STYLE
+        OUTLINECOLOR 235 0 90
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "176"
+      EXPRESSION ([id_0] =176)
+      STYLE
+        OUTLINECOLOR 16 192 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "177"
+      EXPRESSION ([id_0] =177)
+      STYLE
+        OUTLINECOLOR 16 192 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "178"
+      EXPRESSION ([id_0] =178)
+      STYLE
+        OUTLINECOLOR 16 192 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "179"
+      EXPRESSION ([id_0] =179)
+      STYLE
+        OUTLINECOLOR 46 0 212
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "180"
+      EXPRESSION ([id_0] =180)
+      STYLE
+        OUTLINECOLOR 46 0 212
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "181"
+      EXPRESSION ([id_0] =181)
+      STYLE
+        OUTLINECOLOR 164 85 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "182"
+      EXPRESSION ([id_0] =182)
+      STYLE
+        OUTLINECOLOR 164 85 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "183"
+      EXPRESSION ([id_0] =183)
+      STYLE
+        OUTLINECOLOR 164 85 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "184"
+      EXPRESSION ([id_0] =184)
+      STYLE
+        OUTLINECOLOR 0 175 140
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "185"
+      EXPRESSION ([id_0] =185)
+      STYLE
+        OUTLINECOLOR 0 175 140
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "186"
+      EXPRESSION ([id_0] =186)
+      STYLE
+        OUTLINECOLOR 204 0 187
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "187"
+      EXPRESSION ([id_0] =187)
+      STYLE
+        OUTLINECOLOR 204 0 187
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "188"
+      EXPRESSION ([id_0] =188)
+      STYLE
+        OUTLINECOLOR 204 0 187
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "189"
+      EXPRESSION ([id_0] =189)
+      STYLE
+        OUTLINECOLOR 116 188 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "190"
+      EXPRESSION ([id_0] =190)
+      STYLE
+        OUTLINECOLOR 116 188 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "191"
+      EXPRESSION ([id_0] =191)
+      STYLE
+        OUTLINECOLOR 0 65 195
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "192"
+      EXPRESSION ([id_0] =192)
+      STYLE
+        OUTLINECOLOR 0 65 195
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "193"
+      EXPRESSION ([id_0] =193)
+      STYLE
+        OUTLINECOLOR 0 65 195
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "194"
+      EXPRESSION ([id_0] =194)
+      STYLE
+        OUTLINECOLOR 221 0 11
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "195"
+      EXPRESSION ([id_0] =195)
+      STYLE
+        OUTLINECOLOR 221 0 11
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "196"
+      EXPRESSION ([id_0] =196)
+      STYLE
+        OUTLINECOLOR 0 233 58
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "197"
+      EXPRESSION ([id_0] =197)
+      STYLE
+        OUTLINECOLOR 0 233 58
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "198"
+      EXPRESSION ([id_0] =198)
+      STYLE
+        OUTLINECOLOR 0 233 58
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "199"
+      EXPRESSION ([id_0] =199)
+      STYLE
+        OUTLINECOLOR 110 0 200
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "200"
+      EXPRESSION ([id_0] =200)
+      STYLE
+        OUTLINECOLOR 110 0 200
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "201"
+      EXPRESSION ([id_0] =201)
+      STYLE
+        OUTLINECOLOR 216 184 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "202"
+      EXPRESSION ([id_0] =202)
+      STYLE
+        OUTLINECOLOR 216 184 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "203"
+      EXPRESSION ([id_0] =203)
+      STYLE
+        OUTLINECOLOR 216 184 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "204"
+      EXPRESSION ([id_0] =204)
+      STYLE
+        OUTLINECOLOR 0 141 163
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "205"
+      EXPRESSION ([id_0] =205)
+      STYLE
+        OUTLINECOLOR 0 141 163
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "206"
+      EXPRESSION ([id_0] =206)
+      STYLE
+        OUTLINECOLOR 214 0 125
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "207"
+      EXPRESSION ([id_0] =207)
+      STYLE
+        OUTLINECOLOR 214 0 125
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "208"
+      EXPRESSION ([id_0] =208)
+      STYLE
+        OUTLINECOLOR 214 0 125
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "209"
+      EXPRESSION ([id_0] =209)
+      STYLE
+        OUTLINECOLOR 76 233 13
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "210"
+      EXPRESSION ([id_0] =210)
+      STYLE
+        OUTLINECOLOR 76 233 13
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "211"
+      EXPRESSION ([id_0] =211)
+      STYLE
+        OUTLINECOLOR 0 0 160
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "212"
+      EXPRESSION ([id_0] =212)
+      STYLE
+        OUTLINECOLOR 0 0 160
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "213"
+      EXPRESSION ([id_0] =213)
+      STYLE
+        OUTLINECOLOR 0 0 160
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "214"
+      EXPRESSION ([id_0] =214)
+      STYLE
+        OUTLINECOLOR 231 69 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "215"
+      EXPRESSION ([id_0] =215)
+      STYLE
+        OUTLINECOLOR 231 69 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "216"
+      EXPRESSION ([id_0] =216)
+      STYLE
+        OUTLINECOLOR 231 69 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "217"
+      EXPRESSION ([id_0] =217)
+      STYLE
+        OUTLINECOLOR 0 235 137
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "218"
+      EXPRESSION ([id_0] =218)
+      STYLE
+        OUTLINECOLOR 0 235 137
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "219"
+      EXPRESSION ([id_0] =219)
+      STYLE
+        OUTLINECOLOR 139 0 157
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "220"
+      EXPRESSION ([id_0] =220)
+      STYLE
+        OUTLINECOLOR 139 0 157
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "221"
+      EXPRESSION ([id_0] =221)
+      STYLE
+        OUTLINECOLOR 139 0 157
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "222"
+      EXPRESSION ([id_0] =222)
+      STYLE
+        OUTLINECOLOR 147 179 5
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "223"
+      EXPRESSION ([id_0] =223)
+      STYLE
+        OUTLINECOLOR 147 179 5
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "224"
+      EXPRESSION ([id_0] =224)
+      STYLE
+        OUTLINECOLOR 0 116 217
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "225"
+      EXPRESSION ([id_0] =225)
+      STYLE
+        OUTLINECOLOR 0 116 217
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "226"
+      EXPRESSION ([id_0] =226)
+      STYLE
+        OUTLINECOLOR 0 116 217
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "227"
+      EXPRESSION ([id_0] =227)
+      STYLE
+        OUTLINECOLOR 195 0 48
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "228"
+      EXPRESSION ([id_0] =228)
+      STYLE
+        OUTLINECOLOR 195 0 48
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "229"
+      EXPRESSION ([id_0] =229)
+      STYLE
+        OUTLINECOLOR 0 228 11
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "230"
+      EXPRESSION ([id_0] =230)
+      STYLE
+        OUTLINECOLOR 0 228 11
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "231"
+      EXPRESSION ([id_0] =231)
+      STYLE
+        OUTLINECOLOR 0 228 11
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "232"
+      EXPRESSION ([id_0] =232)
+      STYLE
+        OUTLINECOLOR 56 0 168
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "233"
+      EXPRESSION ([id_0] =233)
+      STYLE
+        OUTLINECOLOR 56 0 168
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "234"
+      EXPRESSION ([id_0] =234)
+      STYLE
+        OUTLINECOLOR 168 106 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "235"
+      EXPRESSION ([id_0] =235)
+      STYLE
+        OUTLINECOLOR 168 106 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "236"
+      EXPRESSION ([id_0] =236)
+      STYLE
+        OUTLINECOLOR 168 106 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "237"
+      EXPRESSION ([id_0] =237)
+      STYLE
+        OUTLINECOLOR 0 180 165
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "238"
+      EXPRESSION ([id_0] =238)
+      STYLE
+        OUTLINECOLOR 0 180 165
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "239"
+      EXPRESSION ([id_0] =239)
+      STYLE
+        OUTLINECOLOR 161 0 126
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "240"
+      EXPRESSION ([id_0] =240)
+      STYLE
+        OUTLINECOLOR 161 0 126
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "241"
+      EXPRESSION ([id_0] =241)
+      STYLE
+        OUTLINECOLOR 161 0 126
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "242"
+      EXPRESSION ([id_0] =242)
+      STYLE
+        OUTLINECOLOR 88 182 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "243"
+      EXPRESSION ([id_0] =243)
+      STYLE
+        OUTLINECOLOR 88 182 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "244"
+      EXPRESSION ([id_0] =244)
+      STYLE
+        OUTLINECOLOR 0 34 170
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "245"
+      EXPRESSION ([id_0] =245)
+      STYLE
+        OUTLINECOLOR 0 34 170
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "246"
+      EXPRESSION ([id_0] =246)
+      STYLE
+        OUTLINECOLOR 0 34 170
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "247"
+      EXPRESSION ([id_0] =247)
+      STYLE
+        OUTLINECOLOR 235 23 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "248"
+      EXPRESSION ([id_0] =248)
+      STYLE
+        OUTLINECOLOR 235 23 0
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "249"
+      EXPRESSION ([id_0] =249)
+      STYLE
+        OUTLINECOLOR 0 154 59
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "250"
+      EXPRESSION ([id_0] =250)
+      STYLE
+        OUTLINECOLOR 0 154 59
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "251"
+      EXPRESSION ([id_0] =251)
+      STYLE
+        OUTLINECOLOR 0 154 59
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "252"
+      EXPRESSION ([id_0] =252)
+      STYLE
+        OUTLINECOLOR 126 0 189
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "253"
+      EXPRESSION ([id_0] =253)
+      STYLE
+        OUTLINECOLOR 126 0 189
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+    CLASS
+      NAME "Unknown"
+      EXPRESSION ("[id_0]" ="")
+      STYLE
+        OUTLINECOLOR 128 128 128
+        WIDTH 0.26
+      END # STYLE
+    END # CLASS
+END # LAYER

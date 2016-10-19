@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/> 
+		<link href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/> 
+		<link href="../bower_components/leaflet/dist/leaflet.css" rel="stylesheet"/> 
+		<link href="../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet"/> 
+
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="../bower_components/leaflet/dist/leaflet.js"></script>
+
+		<title>Mapa Isotermas</title>
+		<style>
+			#mapa{
+				width: 100%;
+				height: 500px;
+			}
+			.popup-info-estacion caption, .popup-info-estacion caption h3{
+				padding-top: 0px;
+				padding-bottom: 0px;
+			}
+			.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+			.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
+
+			.panel-leyenda {
+				margin-bottom: 0 !important;
+			}
+			.panel-leyenda ul{
+				list-style: none;
+			}
+			.panel-leyenda .panel-body{
+				padding: 5px;
+			}
+			.panel-leyenda .panel-body .row{
+				margin-left: -30px;
+			}
+			.panel-leyenda .col-lg-6{
+				padding-left: 3px !important;
+    			padding-right: 3px !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="panel-title text-center">
+						Propuesta mapa Isotermas
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="col-lg-12">
+						<div id="mapa">
+							
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="row">
+						<div class="btn-group" role="group" aria-label="...">
+						  <button type="button" id="stop-animacion" class="btn btn-default">
+						  	<i class="fa fa-stop">Detener animacion</i>
+						  </button>
+						  <!--
+						  <div class="btn-group" role="group">
+						    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						      Dropdown
+						      <span class="caret"></span>
+						    </button>
+						    <ul class="dropdown-menu">
+						      <li><a href="#">Dropdown link</a></li>
+						      <li><a href="#">Dropdown link</a></li>
+						    </ul>
+						  </div>-->
+						</div>
+					</div>
+					<div class="row ">
+						<div class="col-sm-1 text-center">
+							<i anio="2016" class="btn btn-sm btn-default fa fa-play play-animacion"> 2016</i>
+						</div>
+						<div class="col-sm-11">
+							<div class="row meses2016" anio="2016">
+								<div class="col-sm-1"><a mes="1" class="mes btn btn-default" href="#">ENE</a></div>
+								<div class="col-sm-1"><a mes="2" class="mes btn btn-default" href="#">FEB</a></div>
+								<div class="col-sm-1"><a mes="3" class="mes btn btn-default" href="#">MAR</a></div>
+								<div class="col-sm-1"><a mes="4" class="mes btn btn-default" href="#">ABR</a></div>
+								<div class="col-sm-1"><a mes="5" class="mes btn btn-default" href="#">MAY</a></div>
+								<div class="col-sm-1"><a mes="6" class="mes btn btn-default" href="#">JUN</a></div>
+								<div class="col-sm-1"><a mes="7" class="mes btn btn-default" href="#">JUL</a></div>
+								<div class="col-sm-1"><a mes="8" class="mes btn btn-default" href="#">AGO</a></div>
+								<div class="col-sm-1"><a mes="9" class="mes btn btn-default" href="#">SEP</a></div>
+								<div class="col-sm-1"><a mes="10" class="mes btn btn-default" href="#">OCT</a></div>
+								<div class="col-sm-1"><a mes="11" class="mes btn btn-default" href="#">NOV</a></div>
+								<div class="col-sm-1"><a mes="12" class="mes btn btn-default" href="#">DIC</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-1 text-center">
+							<i anio="2015" class="btn btn-sm btn-default fa fa-play play-animacion"> 2015</i>
+						</div>
+						<div class="col-sm-11">
+							<div class="row meses2015" anio="2015">
+								<div class="col-sm-1"><a  mes="1" class="mes btn btn-default" href="#">ENE</a></div>
+								<div class="col-sm-1"><a  mes="2" class="mes btn btn-default" href="#">FEB</a></div>
+								<div class="col-sm-1"><a  mes="3" class="mes btn btn-default" href="#">MAR</a></div>
+								<div class="col-sm-1"><a  mes="4" class="mes btn btn-default" href="#">ABR</a></div>
+								<div class="col-sm-1"><a  mes="5" class="mes btn btn-default" href="#">MAY</a></div>
+								<div class="col-sm-1"><a  mes="6" class="mes btn btn-default" href="#">JUN</a></div>
+								<div class="col-sm-1"><a  mes="7" class="mes btn btn-default" href="#">JUL</a></div>
+								<div class="col-sm-1"><a  mes="8" class="mes btn btn-default" href="#">AGO</a></div>
+								<div class="col-sm-1"><a  mes="9" class="mes btn btn-default" href="#">SEP</a></div>
+								<div class="col-sm-1"><a  mes="10" class="mes btn btn-default" href="#">OCT</a></div>
+								<div class="col-sm-1"><a  mes="11" class="mes btn btn-default" href="#">NOV</a></div>
+								<div class="col-sm-1"><a  mes="12" class="mes btn btn-default" href="#">DIC</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+
+		var map;
+		var control;
+		var animacion;
+		var capa_actual;
+			var pagefunction = function(){
+				var osm=L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+						maxZoom: 18,
+						attribution:  '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+						type:"xyz"
+					});
+				var pmps;
+
+				var LeafIcon = L.Icon.extend({
+					options: {
+						shadowUrl: '../imgs/leaf-shadow.png',
+						iconSize:     [19, 42],
+						shadowSize:   [25, 32],
+						iconAnchor:   [11, 47],
+						shadowAnchor: [2, 31],
+						popupAnchor:  [-3, -80]
+					}
+				});
+
+				var greenIcon = new LeafIcon({iconUrl: '../imgs/leaf-green.png'});
+
+				map = L.map('mapa',{
+			  		center:[-1.26037,-78.615184],
+			  		zoom:10,
+			  		layers:[osm]
+				});
+
+				var cantones =  L.tileLayer.wms('http://mapas.tungurahua.gob.ec/base?_signature=35%3AtQ4w1U9PYXX2oUR-XmrygmZzxcU&', {
+					format: 'image/png; mode=8bit',
+					transparent: true,
+					opacity: 0.6,
+					layers: 'tungurahuacantones',
+					version: '1.1.1',
+					bbox :'-78.857685631137,-1.4218850961551,-78.202410690726,-1.1609180413979',
+					crs: L.CRS.EPSG4326
+				}).addTo(map);
+
+				var parroquias =  L.tileLayer.wms('http://mapas.tungurahua.gob.ec/base?_signature=35%3AtQ4w1U9PYXX2oUR-XmrygmZzxcU&', {
+					format: 'image/png; mode=8bit',
+					transparent: true,
+					layers: 'parroquias',
+					version: '1.1.1',
+					bbox :'-78.857685631137,-1.4218850961551,-78.202410690726,-1.1609180413979',
+					crs: L.CRS.EPSG4326
+				}).addTo(map);
+
+
+
+				var base = {
+					'OSM': osm
+				};
+
+				var capas = {
+					'Cantones':cantones,
+					'Parroquias':parroquias
+				};
+
+				var info = L.control({'position':'topright'});
+
+				info.onAdd = function(map){
+					this._div = L.DomUtil.create('div','info');
+					this.update();
+					return this._div;
+				}
+				
+				info.update = function (props){
+					this._div.innerHTML = '<table>'+(props ?
+						'<tr><th>Estación<th><td>'+props.NOMBRE+'</td></tr>'+
+						'<tr><th>Cuenca<th><td>'+props.Cuenca+'</td></tr>'+
+						'<tr><th>Cota</th><td>'+props.Cota+'</td></tr>'
+						:'<tr><td>Pase el mouse sobre una estación</td></tr>')+
+						'</table>';
+				}
+
+				info.addTo(map);
+
+				control = L.control.layers(base,capas).addTo(map);
+
+				$.getJSON("../mapas/Tmeteorologia.geojson",function(data){
+					pmps= L.geoJson(data,{
+					      pointToLayer: function(feature, latlng) {
+					        return L.marker(latlng, {
+					          icon: greenIcon
+					        });
+					      },
+							onEachFeature:onEachFeature
+						}).addTo(map);
+					control.addOverlay(pmps,'Estaciones meteorologicas');
+				});
+
+
+				function highlightFeature(e){
+					var layer = e.target;
+					info.update(layer.feature.properties);
+				}
+
+				function resetHighlight(e){
+					pmps.resetStyle(e.target);
+					info.update();
+				}
+
+				var popup = L.popup();
+
+				function zoomToFeature(e){
+					var layer = e.target;
+					var props = layer.feature.properties;
+					popup
+				        .setLatLng(e.latlng)
+				        .setContent('<table class="popup-info-estacion table table-hovered table-responsive"><caption><h3>Estación meteorológica</h3></caption><tbody>' +
+				        			'<tr><th>Estación</th><td>'+props.NOMBRE+'</td></tr>'+
+									'<tr><th>Cuenca</th><td>'+props.Cuenca+'</td></tr>'+
+									'<tr><th>Coordenadas</th><td>'+e.latlng.lat.toFixed(4)+','+e.latlng.lng.toFixed(4)+'</td></tr>'+
+									'<tr><th>Cota</th><td>'+props.Cota+'</td></tr>'+
+									'<tbody><tfoot>'+
+									'<tr><td><a class="btn btn-default" href="#">Ver ficha</a></td>'+
+									'<td><a class="btn btn-success" href="#">Consultar datos</a></td></tr>'+
+									'</tfoot></table>'
+								)
+				        .openOn(map);
+				}
+
+				function onEachFeature(feature,layer){
+					layer.on({
+						mouseover:highlightFeature,
+						mouseout:resetHighlight,
+						click:zoomToFeature
+					});
+				}
+
+				var legend = L.control({position: 'bottomright'});
+				var colores_temp = [
+					"rgb(255, 215, 0)",
+					"rgb(218, 165, 32)",
+					"rgb(184, 134, 11)",
+					"rgb(205, 92, 92)",
+					"rgb(165, 42, 42)",
+					"rgb(128, 0, 0)",
+					"rgb(147, 112, 219)",
+					"rgb(240, 0, 156)",
+					"rgb(131, 0, 224)",
+					"rgb(0, 0, 255)"
+				];
+				legend.onAdd = function (map) {
+
+					var div = L.DomUtil.create('div', 'info legend'),
+						caps = [0,2,4,6,8,10,12,14,16,18,20],
+						labels = [],
+						from, to, info,
+						col1=['<div class="col-lg-6"><ul>'],
+						col2=['<div class="col-lg-6"><ul>'];
+
+					infor = "<div class='panel panel-leyenda'><div class='panel-heading'><div class='panel-title text-center'>Temperatura promedio (C)</div></div><div class='panel-body'><div class='row'>";
+
+					for (var i = 0; i < (caps.length-1)/2; i++) {
+						col1.push('<li><i style="'+' background-color:'+colores_temp[i]+'; background-clip: content-box;"></i> '+caps[i]+' - '+caps[(i+1)]+'</li>');
+					}
+					for (var i = (caps.length-1)/2; i < caps.length-1; i++) {
+						col2.push('<li><i style="'+' background-color:'+colores_temp[i]+'; background-clip: content-box;"></i> '+caps[i]+' - '+caps[(i+1)]+'</li>');
+					}
+					col1.push('</ul></div>');
+					col2.push('</ul></div>');
+					infor += col1.join('');
+					infor += col2.join('');
+
+					infor += '</div></div></div>';
+					div.innerHTML = infor;
+					return div;
+				};
+
+				legend.addTo(map);
+
+			};
+
+			$(document).ready(pagefunction);
+
+			$(document).on('click','.play-animacion',function(e){
+				var anio = $(this).attr('anio');
+				var $elemento = $(".meses"+anio+" .col-sm-1 a.active");
+
+				animacion = setInterval(function(){
+					var mes = parseInt($(".meses"+anio+" .col-sm-1 a.active").attr('mes'));
+					if(mes<12){
+						console.log('.meses'+anio+' a[mes='+(mes+1)+']');
+						$('.meses'+anio+' a[mes='+(mes+1)+']').click();
+					}else{
+						$('.meses'+anio+' a[mes=1]').click();
+						clearInterval(animacion);
+					}
+				},3000);
+			});
+
+			$(document).on('click','#stop-animacion',function(e){
+				clearInterval(animacion);
+			});
+			$(document).on('click','.mes',function(e){
+		        //previene que se ejecute el click, ese click
+		        e.preventDefault();
+		        var url_elemento = $(this).attr('href');
+		        var anio = $(this).parents('.row').attr('anio');
+		        var texto_mes = $(this).html()+' '+anio;
+
+		        //instanciamos en botones todos los elementos con la clase 'elemento-lista'
+		        var botones = $('.mes');
+		        //quitar la clase active con los elementos
+		        botones.removeClass('active');
+		        botones.removeAttr('disabled');
+		        //agregar la clase activa con el click
+		        $(this).addClass('active');
+		        $(this).attr('disabled','disabled');
+		        
+		        capa_actual =  L.tileLayer.wms('http://localhost/cgi-bin/mapserv?map=/var/www/html/mapas/mapserver/isotermas.map', {
+					format: 'image/png; mode=8bit',
+					transparent: true,
+					layers: 'isotermas_enero',
+					version: '1.1.1',
+					bbox :'-78.9392847061958, -1.52433143919283, -78.114644269801, -0.991806940763876',
+					crs: L.CRS.EPSG4326
+				});
+				var has_layer = false;
+				console.log(control);
+				var contador=0;
+
+		        map.eachLayer(function (layer) {
+		        	if(typeof control._layers[contador] !== "undefined"){
+		        		console.log(control._layers[contador].name);
+				    	if(control._layers[contador].name === texto_mes){
+				    		has_layer=true;
+				    		control.layers.removeLayer(layer);
+				    	}
+		        		contador++;
+		        	}
+
+		        	if(typeof layer._url !== "undefined"){
+				    	if(layer._url === capa_actual._url){
+				    		console.log(layer._url);
+				    		map.removeLayer(layer);
+				    	}
+		        	}
+				});
+				if(!has_layer){
+					capa_actual.addTo(map);
+					control.addOverlay(capa_actual,texto_mes);
+				}
+				
+
+		    });
+		</script>
+	</body>
+</html>

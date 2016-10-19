@@ -1,0 +1,123 @@
+MAP
+	CONFIG "MS_ERRORFILE" "isotermas.log"
+	DEBUG 5
+	NAME "Isotermas"
+	PROJECTION
+    	"proj=longlat"
+    	"datum=WGS84"
+    	"no_defs"
+  	END # PROJECTION
+	#EXTENT -92.008966 -5.015602 -75.189033 1.681835
+	EXTENT -78.9392847061958 -1.52433143919283 -78.114644269801 -0.991806940763876
+  	IMAGETYPE "png"
+
+	SIZE 600 500
+	STATUS ON
+	SHAPEPATH "/var/www/html/mapas/mapas"
+	IMAGECOLOR 255 255 255
+	#FONTSET "/var/www/html/ecuador/mapas/fonts.list"
+
+	OUTPUTFORMAT
+	    NAME "png"
+	    MIMETYPE "image/png"
+	    DRIVER "AGG/PNG"
+	    EXTENSION "png"
+	    IMAGEMODE RGB
+	    TRANSPARENT TRUE
+	END # OUTPUTFORMAT
+
+	WEB
+	  IMAGEPATH "../tmp/"
+	  IMAGEURL "http://localhost/mapas/tmp/"
+		METADATA
+		    wms_title          "Isotermas"
+		    wms_onlineresource  "http://localhost/cgi-bin/mapserv?map=/var/www/html/mapas/mapserver/isotermas.map&"
+		    wms_srs             "EPSG:4326"
+		    wms_enable_request	"*"
+	        wms_feature_info_mime_type "application/geojson,application/json,text/html"
+	        wms_getlegendgraphic_formatlist "image/png, text/html"
+	        wms_include_items "all"
+	    END
+	END
+
+	LAYER
+		NAME "isotermas_enero"
+		EXTENT 729321.600299999 -168594.584000001 821091.600299999 -109764.584000001
+		DATA "isotermas1.tif"
+		METADATA
+	      "ows_title"	"isotermas1"
+	    END # METADATA
+		PROJECTION
+	      "proj=utm"
+	      "zone=17"
+	      "datum=WGS84"
+	      "units=m"
+	      "no_defs"
+	    END # PROJECTION
+		STATUS ON
+		TYPE RASTER
+		TILEITEM "location"
+		UNITS METERS
+		CLASSITEM "[pixel]"
+		CLASS
+			EXPRESSION ([pixel] <= 1999)
+			STYLE
+			  COLOR 255 215 0
+			END
+		END
+		CLASS
+			EXPRESSION ([pixel] >= 2000 AND [pixel] < 2250)
+			STYLE
+			  COLOR 218 165 32
+			END
+		END
+		CLASS
+			EXPRESSION ([pixel] >= 2250 AND [pixel] < 2750)
+			STYLE
+			  COLOR 184 134 11
+			END
+		END
+		CLASS
+			EXPRESSION ([pixel] >= 2500 AND [pixel] < 2749)
+			STYLE
+			  COLOR 205 92 92
+			END
+		END
+		CLASS
+			EXPRESSION ([pixel] >= 2750 AND [pixel] < 3000)
+			STYLE
+			  COLOR 165 42 42
+			END
+		END
+		CLASS
+			EXPRESSION ([pixel] >= 3000 AND [pixel] < 3250)
+			STYLE
+			  COLOR 128 0 0
+			END
+		END
+		CLASS
+			EXPRESSION ([pixel] >= 3250 AND [pixel] < 3500)
+			STYLE
+			  COLOR 147 112 219
+			END
+		END
+		CLASS
+			EXPRESSION ([pixel] >= 3500 AND [pixel] < 3750)
+			STYLE
+			  COLOR 240 0 156
+			END
+		END
+		CLASS
+			EXPRESSION ([pixel] >= 3750 AND [pixel] < 4000)
+			STYLE
+			  COLOR 131 0 224
+			END
+		END
+		CLASS
+			EXPRESSION ([pixel] >= 4000)
+			STYLE
+			  COLOR 0 0 255
+			END
+		END
+	END
+END
