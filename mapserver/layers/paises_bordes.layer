@@ -12,11 +12,11 @@ LAYER
       "wms_server_version" "1.1.1"
     "wms_getfeature_formatlist" "text/html,application/json"
     END
-    HEADER 'templates/header.html'
-    FOOTER 'templates/footer.html'
-	TEMPLATE "templates/gadm2_query.html"
+#    HEADER 'templates/header.html'
+#    FOOTER 'templates/footer.html'
+	TEMPLATE "templates/gadm.html"
     CONNECTIONTYPE postgis
-  	CONNECTION "dbname='ecuador' host='127.0.0.1' port=5432 user='dexter' password='0112358' sslmode=disable"
+  	CONNECTION "dbname='ecuador' host='192.168.1.8' port=5432 user='dexter' password='0112358' sslmode=disable"
 	DATA 'geom FROM gadm'
     STATUS ON
     TYPE LINE

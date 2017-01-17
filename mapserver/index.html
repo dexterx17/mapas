@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pruebas de mapserver</title>
+		 <meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/> 
+		<link href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/> 
+		<link href="../bower_components/leaflet/dist/leaflet.css" rel="stylesheet"/> 
+
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="../bower_components/leaflet/dist/leaflet.js"></script>
+		<style type="text/css" media="screen">
+			iframe{
+				width:100%;
+			}
+			h3 small a{
+				font-size:13px;
+			}
+			#getMap{
+				width:100%;
+			}
+		</style>
+</head>
+<body>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		Querys Mapserver
+		<select name="mapfile" id="mapfile">
+			<option value="gadm.map">GADM</option>
+			<option value="isotermas.map">ISOTERMAS</option>
+		</select>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-lg-6">
+				<h3>GetCapabilities
+					<small><a id="getC" target="_blank"></a></small>
+				</h3>
+				<textarea rows="8" cols="80" id="getCapabilities" readonly="readonly"></textarea>
+			</div>
+			<div class="col-lg-6">
+				<h3>GetMap
+					<small><a id="getM" target="_blank"></a></small>
+				</h3>
+				<img height="150" id="getMap"></iframe>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<h3>GetLegendGraphic
+					<small><a id="getLG" target="_blank"></a></small>
+				</h3>
+				<img width="100" height="100" id="getLegendGraphic"></img>
+			</div>
+			<div class="col-lg-6">
+				<h3>DescribeLayer
+					<small><a id="dL" target="_blank"></a></small>
+				</h3>
+				<!--<iframe id="describeLayer"></iframe>-->
+				<textarea rows="8" cols="80" id="describeLayer" readonly="readonly"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<h3>GetFeatureInfo
+					<small>
+						<a id="getFI" target="_blank"></a>
+					</small>
+				</h3>
+				<iframe id="getFeatureInfo"></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+	function update(){
+		var mapfile = $('#mapfile').val();
+		//alert(mapfile);
+		var url ="http://localhost/cgi-bin/mapserv?map=/var/www/html/mapas/mapserver/"+mapfile;
+		var getCapabilites = url+'&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities';
+
+		$.get(getCapabilites,function(data){
+			$('#getCapabilities').val(data);
+		},'html');
+
+		$('#getC').attr('href',getCapabilites);
+		$('#getC').html(getCapabilites);
+
+		var getMap = url+'&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=paises&STYLES=&SRS=EPSG:4326&BBOX=-92,-6,-75,3&WIDTH=400&HEIGHT=300&FORMAT=image/png';
+		$('#getMap').attr('src',getMap);
+		$('#getM').attr('href',getMap);
+		$('#getM').html(getMap);
+
+		var getLegendGraphic = url+'&SERVICE=WMS&VERSION=1.1.1&layer=paises&REQUEST=getlegendgraphic&FORMAT=image/png';
+		$('#getLegendGraphic').attr('src',getLegendGraphic);
+		$('#getLG').attr('href',getLegendGraphic);
+		$('#getLG').html(getLegendGraphic);	
+
+		var describeLayer = url+'&SERVICE=WMS&VERSION=1.1.1&layers=paises&REQUEST=describeLayer';
+		$.get(describeLayer,function(data){
+			$('#describeLayer').val(data);
+		},'html');
+		$('#dL').attr('href',describeLayer);
+		$('#dL').html(describeLayer);
+
+		var getFeatureInfo = url+'&SERVICE=WMS&VERSION=1.1.1&layers=paises&REQUEST=getFeatureInfo&EXCEPTIONS=application/vnd.ogc.se_xml&FORMAT=image/png&INFO_FORMAT=text/html&FEATURE_COUNT=100&SRS=EPSG:4326&BBOX=-78.988359106211,-1.3640064104176,-78.071640893789,-1.1359935895824&WIDTH=1375&HEIGHT=342&X=820&Y=233&LAYERS=paises&QUERY_LAYERS=paises';
+		$('#getFeatureInfo').attr('src',getFeatureInfo);
+		$('#getFI').attr('href',getFeatureInfo);
+		$('#getFI').html(getFeatureInfo);
+	}
+
+	var pagefunction = function(){
+		update();
+		$('#mapfile').on('change',update);
+
+	};
+	$(document).ready(pagefunction);
+</script>
+</body>
+</html>

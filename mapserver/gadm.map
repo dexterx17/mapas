@@ -1,0 +1,34 @@
+MAP
+    NAME "gadm"
+    PROJECTION
+       "init=epsg:4326"
+    END
+    CONFIG "MS_ERRORFILE" "gadm.log"
+    DEBUG 5
+    EXTENT -180.000015 -90.000000 180.000000 83.627419
+    SIZE 600 400
+    WEB
+        IMAGEPATH "/var/www/html/mapas/mapserver/tmp/"
+        IMAGEURL "http://localhost/mapas/mapserver/tmp/"
+        TEMPLATE "templates/gadm.html"
+        METADATA
+            "wms_title"             "Global"
+            "wms_onlineresource"   "http://localhost/cgi-bin/mapserv?map=/var/www/html/mapas/mapserver/gadm.map&"
+            "wms_srs"               "EPSG:4326"
+            "wms_enable_request"   "*"
+        	"wms_feature_info_mime_type" "application/json, text/html"
+        	"wms_include_items" "all"
+        END
+    END
+
+    QUERYMAP
+        STATUS ON
+        STYLE NORMAL
+    END
+	IMAGEQUALITY 72
+
+
+    INCLUDE 'layers/paises_bordes.layer'
+	#INCLUDE 'layers/global.layer'
+
+END

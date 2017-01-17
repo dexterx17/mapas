@@ -16,7 +16,7 @@ LAYER
     FOOTER 'templates/footer.html'
 	TEMPLATE "templates/gadm2_query.html"
     CONNECTIONTYPE postgis
-  	CONNECTION "dbname='ecuador' host='127.0.0.1' port=5432 user='dexter' password='0112358' sslmode=disable"
+  	CONNECTION "dbname='ecuador' host='192.168.1.8' port=5432 user='dexter' password='0112358' sslmode=disable"
 	DATA 'geom FROM gadm'
     STATUS ON
     TYPE POLYGON

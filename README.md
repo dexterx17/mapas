@@ -9,3 +9,6 @@ Pruebas de distintas herramientas para trabajar con mapas
 
  bower install
 
+#Licencia
+
+Para estos tutos se utilizan los shapefiles de [(GADM)](http://gadm.org/)
