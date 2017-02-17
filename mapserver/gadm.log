@@ -956,3 +956,106 @@
 [Fri Jan 13 21:45:18 2017].628430 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14843619093348.png) total time: 0.020s
 [Fri Jan 13 21:45:18 2017].666433 mapserv request processing time (msLoadMap not incl.): 15.113s
 [Fri Jan 13 21:45:18 2017].666452 msFreeMap(): freeing map at 0x8769980.
+[Tue Jan 31 15:36:51 2017].324550 CGI Request 1 on process 2893
+[Tue Jan 31 15:36:51 2017].324672 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Tue Jan 31 15:36:51 2017].324695 msFreeMap(): freeing map at 0x8571c88.
+[Tue Jan 31 15:36:51 2017].324677 CGI Request 1 on process 2892
+[Tue Jan 31 15:36:51 2017].345422 msSaveImage(stdout) total time: 0.017s
+[Tue Jan 31 15:36:51 2017].345568 mapserv request processing time (msLoadMap not incl.): 0.021s
+[Tue Jan 31 15:36:51 2017].345581 msFreeMap(): freeing map at 0x960fd28.
+[Tue Jan 31 15:36:51 2017].324603 CGI Request 1 on process 2890
+[Tue Jan 31 15:36:51 2017].575415 mapserv request processing time (msLoadMap not incl.): 0.251s
+[Tue Jan 31 15:36:51 2017].575445 msFreeMap(): freeing map at 0x9298c20.
+[Tue Jan 31 15:36:51 2017].325024 CGI Request 1 on process 2894
+[Tue Jan 31 15:36:54 2017].322915 msPostGISLayerOpen(): Query error. Database connection failed (could not connect to server: No route to host
+	Is the server running on host "192.168.1.8" and accepting
+	TCP/IP connections on port 5432?
+) with connect string 'dbname='ecuador' host='192.168.1.8' port=5432 user='dexter' password=********* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Jan 31 15:36:54 2017].323106 mapserv request processing time (msLoadMap not incl.): 2.998s
+[Tue Jan 31 15:36:54 2017].323153 msFreeMap(): freeing map at 0x8b6b980.
+[Tue Jan 31 15:36:51 2017].324472 CGI Request 1 on process 2891
+[Tue Jan 31 15:36:51 2017].324927 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Tue Jan 31 15:36:51 2017].325262 msDrawMap(): kicking into non-square pixel preserving mode.
+[Tue Jan 31 15:36:51 2017].325276 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 31 15:36:51 2017].342155 msDrawMap(): WMS/WFS set-up and query, 0.017s
+[Tue Jan 31 15:36:54 2017].322949 msPostGISLayerOpen(): Query error. Database connection failed (could not connect to server: No route to host
+	Is the server running on host "192.168.1.8" and accepting
+	TCP/IP connections on port 5432?
+) with connect string 'dbname='ecuador' host='192.168.1.8' port=5432 user='dexter' password=********* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Jan 31 15:36:54 2017].323038 msDrawMap(): Image handling error. Failed to draw layer named 'paises'.
+[Tue Jan 31 15:36:54 2017].323300 mapserv request processing time (msLoadMap not incl.): 2.999s
+[Tue Jan 31 15:36:54 2017].323331 msFreeMap(): freeing map at 0x9765ff0.
+[Tue Jan 31 15:44:02 2017].894040 CGI Request 1 on process 2931
+[Tue Jan 31 15:44:02 2017].894124 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Tue Jan 31 15:44:02 2017].894143 msFreeMap(): freeing map at 0x8c4bc88.
+[Tue Jan 31 15:44:02 2017].894018 CGI Request 1 on process 2929
+[Tue Jan 31 15:44:02 2017].895778 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Tue Jan 31 15:44:02 2017].895795 msFreeMap(): freeing map at 0x8285c20.
+[Tue Jan 31 15:44:02 2017].903213 CGI Request 1 on process 2930
+[Tue Jan 31 15:44:02 2017].924471 msSaveImage(stdout) total time: 0.018s
+[Tue Jan 31 15:44:02 2017].924640 mapserv request processing time (msLoadMap not incl.): 0.021s
+[Tue Jan 31 15:44:02 2017].924655 msFreeMap(): freeing map at 0x992cd28.
+[Tue Jan 31 15:44:02 2017].868829 CGI Request 1 on process 2927
+[Tue Jan 31 15:44:05 2017].866632 msPostGISLayerOpen(): Query error. Database connection failed (could not connect to server: No route to host
+	Is the server running on host "192.168.1.8" and accepting
+	TCP/IP connections on port 5432?
+) with connect string 'dbname='ecuador' host='192.168.1.8' port=5432 user='dexter' password=********* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Jan 31 15:44:05 2017].866700 mapserv request processing time (msLoadMap not incl.): 2.998s
+[Tue Jan 31 15:44:05 2017].866717 msFreeMap(): freeing map at 0x8667980.
+[Tue Jan 31 15:44:02 2017].868741 CGI Request 1 on process 2928
+[Tue Jan 31 15:44:02 2017].868840 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Tue Jan 31 15:44:02 2017].869177 msDrawMap(): kicking into non-square pixel preserving mode.
+[Tue Jan 31 15:44:02 2017].869190 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 31 15:44:02 2017].869328 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 31 15:44:05 2017].866635 msPostGISLayerOpen(): Query error. Database connection failed (could not connect to server: No route to host
+	Is the server running on host "192.168.1.8" and accepting
+	TCP/IP connections on port 5432?
+) with connect string 'dbname='ecuador' host='192.168.1.8' port=5432 user='dexter' password=********* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Jan 31 15:44:05 2017].866664 msDrawMap(): Image handling error. Failed to draw layer named 'paises'.
+[Tue Jan 31 15:44:05 2017].866749 mapserv request processing time (msLoadMap not incl.): 2.998s
+[Tue Jan 31 15:44:05 2017].866758 msFreeMap(): freeing map at 0x88a1ff0.
+[Thu Feb 16 21:56:54 2017].660214 CGI Request 1 on process 6483
+[Thu Feb 16 21:56:54 2017].660332 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Thu Feb 16 21:56:54 2017].660350 msFreeMap(): freeing map at 0x88fcc88.
+[Thu Feb 16 21:56:54 2017].660344 CGI Request 1 on process 6485
+[Thu Feb 16 21:56:54 2017].686870 msSaveImage(stdout) total time: 0.014s
+[Thu Feb 16 21:56:54 2017].687003 mapserv request processing time (msLoadMap not incl.): 0.027s
+[Thu Feb 16 21:56:54 2017].687013 msFreeMap(): freeing map at 0x9b75d28.
+[Thu Feb 16 21:56:54 2017].660189 CGI Request 1 on process 6486
+[Thu Feb 16 21:56:55 2017].262068 mapserv request processing time (msLoadMap not incl.): 0.602s
+[Thu Feb 16 21:56:55 2017].262100 msFreeMap(): freeing map at 0x86c9c20.
+[Thu Feb 16 21:56:54 2017].660977 CGI Request 1 on process 6484
+[Thu Feb 16 21:56:56 2017].713829 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Thu Feb 16 21:56:56 2017].713947 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Thu Feb 16 21:56:57 2017].768305 msDrawMap(): Layer 0 (paises), 1.054s
+[Thu Feb 16 21:56:57 2017].768342 msDrawMap(): Drawing Label Cache, 0.000s
+[Thu Feb 16 21:56:57 2017].768350 msDrawMap() total time: 1.057s
+[Thu Feb 16 21:56:57 2017].784843 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14873002166484.png) total time: 0.016s
+[Thu Feb 16 21:56:57 2017].837370 mapserv request processing time (msLoadMap not incl.): 3.176s
+[Thu Feb 16 21:56:57 2017].837385 msFreeMap(): freeing map at 0x8da7980.
+[Thu Feb 16 21:56:54 2017].660317 CGI Request 1 on process 6487
+[Thu Feb 16 21:56:54 2017].661743 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Thu Feb 16 21:56:54 2017].662086 msDrawMap(): kicking into non-square pixel preserving mode.
+[Thu Feb 16 21:56:54 2017].662101 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Thu Feb 16 21:56:54 2017].696209 msDrawMap(): WMS/WFS set-up and query, 0.034s
+[Thu Feb 16 21:57:00 2017].745236 msDrawMap(): Layer 0 (paises), 6.049s
+[Thu Feb 16 21:57:00 2017].745277 msDrawMap(): Drawing Label Cache, 0.000s
+[Thu Feb 16 21:57:00 2017].745286 msDrawMap() total time: 6.083s
+[Thu Feb 16 21:57:00 2017].752714 msSaveImage(stdout) total time: 0.007s
+[Thu Feb 16 21:57:00 2017].753825 mapserv request processing time (msLoadMap not incl.): 6.094s
+[Thu Feb 16 21:57:00 2017].753836 msFreeMap(): freeing map at 0x82a4ff0.
+[Thu Feb 16 21:57:19 2017].695433 CGI Request 1 on process 6493
+[Thu Feb 16 21:57:19 2017].695532 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Thu Feb 16 21:57:19 2017].695847 msDrawMap(): kicking into non-square pixel preserving mode.
+[Thu Feb 16 21:57:19 2017].695860 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Thu Feb 16 21:57:19 2017].695997 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Thu Feb 16 21:57:26 2017].618169 msDrawMap(): Layer 0 (paises), 6.922s
+[Thu Feb 16 21:57:26 2017].618217 msDrawMap(): Drawing Label Cache, 0.000s
+[Thu Feb 16 21:57:26 2017].618226 msDrawMap() total time: 6.923s
+[Thu Feb 16 21:57:26 2017].625749 msSaveImage(stdout) total time: 0.007s
+[Thu Feb 16 21:57:26 2017].626888 mapserv request processing time (msLoadMap not incl.): 6.931s
+[Thu Feb 16 21:57:26 2017].626911 msFreeMap(): freeing map at 0x8d93ff0.
