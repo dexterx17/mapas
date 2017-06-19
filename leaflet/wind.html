@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/> 
+		<link href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/> 
+		<link href="../bower_components/leaflet/dist/leaflet.css" rel="stylesheet"/> 
+		<link href="../node_modules/wind-js-leaflet/dist/wind-js-leaflet.css" rel="stylesheet"/> 
+
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="../bower_components/leaflet/dist/leaflet.js"></script>
+		<script src="../node_modules/wind-js-leaflet/dist/wind-js-leaflet.js"></script>
+
+		<title>Wind</title>
+		<style>
+			#map{
+				width: 100%;
+				height: 500px;
+			}
+			.popup-info-estacion caption, .popup-info-estacion caption h3{
+				padding-top: 0px;
+				padding-bottom: 0px;
+			}
+			.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+			.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Wind
+				</div>
+				<div class="panel-body">
+					<div class="col-lg-12">
+						<div id="map">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+
+			
+function initDemoMap(){
+
+    var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, ' +
+        'AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+
+    var Esri_DarkGreyCanvas = L.tileLayer(
+        "http://{s}.sm.mapstack.stamen.com/" +
+        "(toner-lite,$fff[difference],$fff[@23],$fff[hsl-saturation@20])/" +
+        "{z}/{x}/{y}.png",
+        {
+            attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, ' +
+            'NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+        }
+    );
+
+    var baseLayers = {
+        "Satellite": Esri_WorldImagery,
+        "Grey Canvas": Esri_DarkGreyCanvas
+    };
+
+    var map = L.map('map', {
+        layers: [ Esri_WorldImagery ]
+    });
+
+    var layerControl = L.control.layers(baseLayers);
+    layerControl.addTo(map);
+    map.setView([50.00, 14.44], 3);
+
+    return {
+        map: map,
+        layerControl: layerControl
+    };
+}
+
+// demo map
+var mapStuff = initDemoMap();
+var map = mapStuff.map;
+var layerControl = mapStuff.layerControl;
+var handleError = function(err){
+    console.log('handleError...');
+    console.log(err);
+};
+
+// wind-js-leaflet
+var windJSLeaflet = new WindJSLeaflet.init({
+	localMode: true,
+	map: map,
+	layerControl: layerControl,
+	useNearest: false,
+    timeISO: null,
+    nearestDaysLimit: 7,
+    displayValues: true,
+    displayOptions: {
+        displayPosition: 'bottomleft',
+        displayEmptyString: 'No wind data'
+    },
+    overlayName: 'wind',
+    pingUrl: 'http://144.6.233.100:7000/alive/',
+    latestUrl: 'http://144.6.233.100:7000/latest/',
+    nearestUrl: 'http://144.6.233.100:7000/nearest/',
+    errorCallback: handleError
+});
+
+		</script>
+	</body>
+</html>
