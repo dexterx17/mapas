@@ -339,10 +339,12 @@
 		        $(this).addClass('active');
 		        $(this).attr('disabled','disabled');
 		        
-		        capa_actual =  L.tileLayer.wms('http://localhost/cgi-bin/mapserv?map=/var/www/html/mapas/mapserver/isotermas.map', {
+		        //capa_actual =  L.tileLayer.wms('http://localhost/cgi-bin/mapserv?map=/var/www/html/mapas/mapserver/isotermas.map', {
+		        //
+		        capa_actual =  L.tileLayer.wms('http://mapas.tungurahua.gob.ec/isotermas?_signature=35%3AtQ4w1U9PYXX2oUR-XmrygmZzxcU&', {
 					format: 'image/png; mode=8bit',
 					transparent: true,
-					layers: 'isotermas_enero',
+					layers: 'tungurahua_isotermas',
 					version: '1.1.1',
 					bbox :'-78.9392847061958, -1.52433143919283, -78.114644269801, -0.991806940763876',
 					crs: L.CRS.EPSG4326
