@@ -1,0 +1,1061 @@
+[Mon Jan  9 21:01:19 2017].408963 CGI Request 1 on process 4938
+[Mon Jan  9 21:01:19 2017].409467 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:01:19 2017].409479 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:01:19 2017].409498 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:01:19 2017].409504 msDrawMap() total time: 0.000s
+[Mon Jan  9 21:01:19 2017].416132 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14840136794938.png) total time: 0.007s
+[Mon Jan  9 21:01:19 2017].416412 processResultSetTag(): General error message. Layer named 'gadm' does not exist.
+[Mon Jan  9 21:01:19 2017].416437 mapserv request processing time (msLoadMap not incl.): 0.007s
+[Mon Jan  9 21:01:19 2017].416444 msFreeMap(): freeing map at 0x8467ae0.
+[Mon Jan  9 21:01:19 2017].418099 CGI Request 1 on process 4939
+[Mon Jan  9 21:01:19 2017].419740 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:01:19 2017].419752 msFreeMap(): freeing map at 0x991ec20.
+[Mon Jan  9 21:01:19 2017].485812 CGI Request 1 on process 4941
+[Mon Jan  9 21:01:19 2017].488052 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:01:19 2017].488074 msFreeMap(): freeing map at 0x9f46c20.
+[Mon Jan  9 21:01:19 2017].500563 CGI Request 1 on process 4942
+[Mon Jan  9 21:01:19 2017].500662 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:01:19 2017].500971 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:01:19 2017].500983 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:01:19 2017].501110 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:02:11 2017].470006 msDrawMap(): Layer 0 (paises), 51.969s
+[Mon Jan  9 21:02:11 2017].470055 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:02:11 2017].470064 msDrawMap() total time: 51.969s
+[Mon Jan  9 21:02:02 2017].398628 CGI Request 1 on process 4954
+[Mon Jan  9 21:02:02 2017].398727 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:02:02 2017].399026 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:02:02 2017].399037 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:02:02 2017].399158 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:02:57 2017].684328 msDrawMap(): Layer 0 (paises), 55.285s
+[Mon Jan  9 21:02:57 2017].684368 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:02:57 2017].684377 msDrawMap() total time: 55.286s
+[Mon Jan  9 21:02:57 2017].692782 msSaveImage(stdout) total time: 0.008s
+[Mon Jan  9 21:02:57 2017].699094 mapserv request processing time (msLoadMap not incl.): 55.300s
+[Mon Jan  9 21:02:57 2017].699128 msFreeMap(): freeing map at 0x83670c8.
+[Mon Jan  9 21:03:41 2017].531186 CGI Request 1 on process 4994
+[Mon Jan  9 21:03:41 2017].532860 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:03:41 2017].532873 msFreeMap(): freeing map at 0x9291c20.
+[Mon Jan  9 21:03:41 2017].531109 CGI Request 1 on process 4993
+[Mon Jan  9 21:03:41 2017].531661 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:03:41 2017].531675 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:03:41 2017].531694 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:03:41 2017].531701 msDrawMap() total time: 0.001s
+[Mon Jan  9 21:03:41 2017].538206 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14840138214993.png) total time: 0.006s
+[Mon Jan  9 21:03:41 2017].538533 processResultSetTag(): General error message. Layer named 'gadm' does not exist.
+[Mon Jan  9 21:03:41 2017].538574 mapserv request processing time (msLoadMap not incl.): 0.007s
+[Mon Jan  9 21:03:41 2017].538582 msFreeMap(): freeing map at 0x9893ae0.
+[Mon Jan  9 21:03:41 2017].595143 CGI Request 1 on process 4996
+[Mon Jan  9 21:03:41 2017].596858 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:03:41 2017].596872 msFreeMap(): freeing map at 0x92e2c20.
+[Mon Jan  9 21:03:41 2017].608313 CGI Request 1 on process 4997
+[Mon Jan  9 21:03:41 2017].608423 msWMSLoadGetMapParams(): WMS server error. Invalid values for BBOX.
+[Mon Jan  9 21:03:41 2017].608461 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:03:41 2017].608476 msFreeMap(): freeing map at 0x90a1fe8.
+[Mon Jan  9 21:07:53 2017].74443 CGI Request 1 on process 5111
+[Mon Jan  9 21:07:53 2017].76159 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:07:53 2017].76173 msFreeMap(): freeing map at 0x9919c20.
+[Mon Jan  9 21:07:53 2017].74367 CGI Request 1 on process 5110
+[Mon Jan  9 21:07:53 2017].74874 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:07:53 2017].74886 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:07:53 2017].74907 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:07:53 2017].74913 msDrawMap() total time: 0.000s
+[Mon Jan  9 21:07:53 2017].81519 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14840140735110.png) total time: 0.007s
+[Mon Jan  9 21:07:53 2017].81807 processResultSetTag(): General error message. Layer named 'gadm' does not exist.
+[Mon Jan  9 21:07:53 2017].81831 mapserv request processing time (msLoadMap not incl.): 0.007s
+[Mon Jan  9 21:07:53 2017].81838 msFreeMap(): freeing map at 0x8fdbae0.
+[Mon Jan  9 21:08:13 2017].346661 CGI Request 1 on process 5130
+[Mon Jan  9 21:08:13 2017].348372 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:08:13 2017].348385 msFreeMap(): freeing map at 0x96b5c20.
+[Mon Jan  9 21:08:13 2017].346454 CGI Request 1 on process 5129
+[Mon Jan  9 21:08:13 2017].346964 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:08:13 2017].346975 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:08:13 2017].346993 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:08:13 2017].347000 msDrawMap() total time: 0.000s
+[Mon Jan  9 21:08:13 2017].353663 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14840140935129.png) total time: 0.007s
+[Mon Jan  9 21:08:13 2017].354001 processResultSetTag(): General error message. Layer named 'gadm' does not exist.
+[Mon Jan  9 21:08:13 2017].354030 mapserv request processing time (msLoadMap not incl.): 0.008s
+[Mon Jan  9 21:08:13 2017].354040 msFreeMap(): freeing map at 0x93f5ae0.
+[Mon Jan  9 21:08:13 2017].446303 CGI Request 1 on process 5133
+[Mon Jan  9 21:08:13 2017].447980 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:08:13 2017].447995 msFreeMap(): freeing map at 0x9e7dc20.
+[Mon Jan  9 21:08:13 2017].422177 CGI Request 1 on process 5132
+[Mon Jan  9 21:08:13 2017].422287 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:08:13 2017].422610 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:08:13 2017].422624 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:08:13 2017].422762 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:08:17 2017].608152 msDrawMap(): Layer 0 (paises), 4.185s
+[Mon Jan  9 21:08:17 2017].608188 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:08:17 2017].608196 msDrawMap() total time: 4.186s
+[Mon Jan  9 21:08:17 2017].615288 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:08:17 2017].616372 mapserv request processing time (msLoadMap not incl.): 4.194s
+[Mon Jan  9 21:08:17 2017].616388 msFreeMap(): freeing map at 0x9232ff0.
+[Mon Jan  9 21:09:26 2017].938373 CGI Request 1 on process 5178
+[Mon Jan  9 21:09:26 2017].939995 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:09:26 2017].940008 msFreeMap(): freeing map at 0x89b7c20.
+[Mon Jan  9 21:09:26 2017].992303 CGI Request 1 on process 5180
+[Mon Jan  9 21:09:26 2017].993983 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:09:26 2017].993997 msFreeMap(): freeing map at 0x8f0fc20.
+[Mon Jan  9 21:09:26 2017].938146 CGI Request 1 on process 5177
+[Mon Jan  9 21:09:26 2017].938240 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:09:26 2017].938548 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:09:26 2017].938560 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:09:26 2017].938692 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:09:38 2017].138069 msDrawMap(): Layer 0 (paises), 11.199s
+[Mon Jan  9 21:09:38 2017].138105 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:09:38 2017].138113 msDrawMap() total time: 11.200s
+[Mon Jan  9 21:09:38 2017].145303 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:09:38 2017].146396 mapserv request processing time (msLoadMap not incl.): 11.208s
+[Mon Jan  9 21:09:38 2017].146420 msFreeMap(): freeing map at 0x9e00ff0.
+[Mon Jan  9 21:09:38 2017].175319 CGI Request 1 on process 5188
+[Mon Jan  9 21:09:38 2017].175414 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:09:38 2017].175758 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:09:38 2017].175770 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:09:38 2017].175908 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:09:45 2017].318219 msDrawMap(): Layer 0 (paises), 7.142s
+[Mon Jan  9 21:09:45 2017].318255 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:09:45 2017].318263 msDrawMap() total time: 7.143s
+[Mon Jan  9 21:09:45 2017].325746 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:09:45 2017].327122 mapserv request processing time (msLoadMap not incl.): 7.152s
+[Mon Jan  9 21:09:45 2017].327135 msFreeMap(): freeing map at 0x8a44ff0.
+[Mon Jan  9 21:19:05 2017].350298 CGI Request 1 on process 5337
+[Mon Jan  9 21:19:05 2017].352336 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:19:05 2017].352348 msFreeMap(): freeing map at 0x9d40c20.
+[Mon Jan  9 21:19:05 2017].424025 CGI Request 1 on process 5339
+[Mon Jan  9 21:19:05 2017].425689 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:19:05 2017].425702 msFreeMap(): freeing map at 0x9f9ac20.
+[Mon Jan  9 21:19:05 2017].350570 CGI Request 1 on process 5336
+[Mon Jan  9 21:19:05 2017].350676 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:19:05 2017].351071 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:19:05 2017].351087 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:19:05 2017].351291 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:19:09 2017].318296 msDrawMap(): Layer 0 (paises), 3.967s
+[Mon Jan  9 21:19:09 2017].318332 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:19:09 2017].318340 msDrawMap() total time: 3.968s
+[Mon Jan  9 21:19:09 2017].327177 msSaveImage(stdout) total time: 0.009s
+[Mon Jan  9 21:19:09 2017].328978 mapserv request processing time (msLoadMap not incl.): 3.978s
+[Mon Jan  9 21:19:09 2017].329006 msFreeMap(): freeing map at 0x9839ff0.
+[Mon Jan  9 21:19:09 2017].348408 CGI Request 1 on process 5345
+[Mon Jan  9 21:19:09 2017].348502 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:19:09 2017].348817 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:19:09 2017].348829 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:19:09 2017].348960 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:19:13 2017].25786 msDrawMap(): Layer 0 (paises), 3.677s
+[Mon Jan  9 21:19:13 2017].25824 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:19:13 2017].25832 msDrawMap() total time: 3.677s
+[Mon Jan  9 21:19:13 2017].33126 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:19:13 2017].34357 mapserv request processing time (msLoadMap not incl.): 3.686s
+[Mon Jan  9 21:19:13 2017].34370 msFreeMap(): freeing map at 0x9cd8ff0.
+[Mon Jan  9 21:19:43 2017].867072 CGI Request 1 on process 5372
+[Mon Jan  9 21:19:43 2017].868795 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:19:43 2017].868835 msFreeMap(): freeing map at 0x979dc20.
+[Mon Jan  9 21:19:43 2017].927047 CGI Request 1 on process 5374
+[Mon Jan  9 21:19:43 2017].928802 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:19:43 2017].928815 msFreeMap(): freeing map at 0x8a2fc20.
+[Mon Jan  9 21:19:43 2017].860915 CGI Request 1 on process 5371
+[Mon Jan  9 21:19:43 2017].861014 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:19:43 2017].861339 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:19:43 2017].861352 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:19:43 2017].861487 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:19:47 2017].489334 msDrawMap(): Layer 0 (paises), 3.628s
+[Mon Jan  9 21:19:47 2017].489372 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:19:47 2017].489381 msDrawMap() total time: 3.628s
+[Mon Jan  9 21:19:47 2017].496896 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:19:47 2017].498221 mapserv request processing time (msLoadMap not incl.): 3.637s
+[Mon Jan  9 21:19:47 2017].498242 msFreeMap(): freeing map at 0x921dff0.
+[Mon Jan  9 21:19:47 2017].519136 CGI Request 1 on process 5378
+[Mon Jan  9 21:19:47 2017].519225 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:19:47 2017].519524 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:19:47 2017].519535 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:19:47 2017].519668 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:19:51 2017].142347 msDrawMap(): Layer 0 (paises), 3.623s
+[Mon Jan  9 21:19:51 2017].142383 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:19:51 2017].142391 msDrawMap() total time: 3.623s
+[Mon Jan  9 21:19:51 2017].149802 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:19:51 2017].151039 mapserv request processing time (msLoadMap not incl.): 3.632s
+[Mon Jan  9 21:19:51 2017].151050 msFreeMap(): freeing map at 0x9cbcff0.
+[Mon Jan  9 21:20:01 2017].137991 CGI Request 1 on process 5394
+[Mon Jan  9 21:20:01 2017].139663 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:20:01 2017].139677 msFreeMap(): freeing map at 0x8aa4c20.
+[Mon Jan  9 21:20:01 2017].201366 CGI Request 1 on process 5396
+[Mon Jan  9 21:20:01 2017].203165 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:20:01 2017].203179 msFreeMap(): freeing map at 0x9cedc20.
+[Mon Jan  9 21:20:01 2017].132558 CGI Request 1 on process 5393
+[Mon Jan  9 21:20:01 2017].132656 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:20:01 2017].132975 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:20:01 2017].132987 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:20:01 2017].133119 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:20:04 2017].735185 msDrawMap(): Layer 0 (paises), 3.602s
+[Mon Jan  9 21:20:04 2017].735222 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:20:04 2017].735230 msDrawMap() total time: 3.603s
+[Mon Jan  9 21:20:04 2017].743053 msSaveImage(stdout) total time: 0.008s
+[Mon Jan  9 21:20:04 2017].744346 mapserv request processing time (msLoadMap not incl.): 3.612s
+[Mon Jan  9 21:20:04 2017].744367 msFreeMap(): freeing map at 0x8cb8ff0.
+[Mon Jan  9 21:20:04 2017].764368 CGI Request 1 on process 5403
+[Mon Jan  9 21:20:04 2017].764453 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:20:04 2017].764743 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:20:04 2017].764753 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:20:04 2017].764873 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:20:08 2017].490750 msDrawMap(): Layer 0 (paises), 3.726s
+[Mon Jan  9 21:20:08 2017].490786 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:20:08 2017].490794 msDrawMap() total time: 3.726s
+[Mon Jan  9 21:20:08 2017].498184 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:20:08 2017].499359 mapserv request processing time (msLoadMap not incl.): 3.735s
+[Mon Jan  9 21:20:08 2017].499371 msFreeMap(): freeing map at 0x9ca6ff0.
+[Mon Jan  9 21:20:09 2017].374979 CGI Request 1 on process 5406
+[Mon Jan  9 21:20:09 2017].392254 msSaveImage(stdout) total time: 0.015s
+[Mon Jan  9 21:20:09 2017].392736 mapserv request processing time (msLoadMap not incl.): 0.018s
+[Mon Jan  9 21:20:09 2017].392816 msFreeMap(): freeing map at 0x91c8d28.
+[Mon Jan  9 21:20:30 2017].507723 CGI Request 1 on process 5414
+[Mon Jan  9 21:20:30 2017].525979 msSaveImage(stdout) total time: 0.015s
+[Mon Jan  9 21:20:30 2017].526459 mapserv request processing time (msLoadMap not incl.): 0.019s
+[Mon Jan  9 21:20:30 2017].526500 msFreeMap(): freeing map at 0x925dd28.
+[Mon Jan  9 21:20:46 2017].792673 CGI Request 1 on process 5426
+[Mon Jan  9 21:20:46 2017].794362 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:20:46 2017].794375 msFreeMap(): freeing map at 0x8bdcc20.
+[Mon Jan  9 21:20:46 2017].851533 CGI Request 1 on process 5428
+[Mon Jan  9 21:20:46 2017].854242 mapserv request processing time (msLoadMap not incl.): 0.003s
+[Mon Jan  9 21:20:46 2017].854265 msFreeMap(): freeing map at 0x80d7c20.
+[Mon Jan  9 21:20:46 2017].786560 CGI Request 1 on process 5425
+[Mon Jan  9 21:20:46 2017].786655 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:20:46 2017].786978 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:20:46 2017].786991 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:20:46 2017].787124 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:20:50 2017].586886 msDrawMap(): Layer 0 (paises), 3.800s
+[Mon Jan  9 21:20:50 2017].586921 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:20:50 2017].586929 msDrawMap() total time: 3.800s
+[Mon Jan  9 21:20:50 2017].595556 msSaveImage(stdout) total time: 0.009s
+[Mon Jan  9 21:20:50 2017].597248 mapserv request processing time (msLoadMap not incl.): 3.811s
+[Mon Jan  9 21:20:50 2017].597270 msFreeMap(): freeing map at 0x8380ff0.
+[Mon Jan  9 21:20:50 2017].617037 CGI Request 1 on process 5433
+[Mon Jan  9 21:20:50 2017].617184 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:20:50 2017].617646 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:20:50 2017].617666 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:20:50 2017].617902 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:20:54 2017].871714 msDrawMap(): Layer 0 (paises), 4.254s
+[Mon Jan  9 21:20:54 2017].871750 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:20:54 2017].871758 msDrawMap() total time: 4.255s
+[Mon Jan  9 21:20:54 2017].878890 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:20:54 2017].880109 mapserv request processing time (msLoadMap not incl.): 4.263s
+[Mon Jan  9 21:20:54 2017].880121 msFreeMap(): freeing map at 0x81f6ff0.
+[Mon Jan  9 21:21:02 2017].694181 CGI Request 1 on process 5443
+[Mon Jan  9 21:21:02 2017].696242 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:21:02 2017].696255 msFreeMap(): freeing map at 0x8900c20.
+[Mon Jan  9 21:21:02 2017].742781 CGI Request 1 on process 5445
+[Mon Jan  9 21:21:02 2017].744524 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:21:02 2017].744539 msFreeMap(): freeing map at 0x83dfc20.
+[Mon Jan  9 21:21:02 2017].694181 CGI Request 1 on process 5442
+[Mon Jan  9 21:21:02 2017].694326 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:21:02 2017].694749 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:21:02 2017].694767 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:21:02 2017].694986 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:21:06 2017].843985 msDrawMap(): Layer 0 (paises), 4.149s
+[Mon Jan  9 21:21:06 2017].844021 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:21:06 2017].844030 msDrawMap() total time: 4.150s
+[Mon Jan  9 21:21:06 2017].851623 msSaveImage(stdout) total time: 0.008s
+[Mon Jan  9 21:21:06 2017].852913 mapserv request processing time (msLoadMap not incl.): 4.159s
+[Mon Jan  9 21:21:06 2017].852934 msFreeMap(): freeing map at 0x92feff0.
+[Mon Jan  9 21:21:06 2017].884909 CGI Request 1 on process 5460
+[Mon Jan  9 21:21:06 2017].885048 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:21:06 2017].885546 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:21:06 2017].885564 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:21:06 2017].885710 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:21:10 2017].224942 msDrawMap(): Layer 0 (paises), 3.339s
+[Mon Jan  9 21:21:10 2017].224978 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:21:10 2017].224986 msDrawMap() total time: 3.340s
+[Mon Jan  9 21:21:10 2017].232392 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:21:10 2017].233606 mapserv request processing time (msLoadMap not incl.): 3.349s
+[Mon Jan  9 21:21:10 2017].233620 msFreeMap(): freeing map at 0x8af5ff0.
+[Mon Jan  9 21:21:17 2017].326982 CGI Request 1 on process 5471
+[Mon Jan  9 21:21:17 2017].328571 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:21:17 2017].328592 msFreeMap(): freeing map at 0x9749c20.
+[Mon Jan  9 21:21:17 2017].383487 CGI Request 1 on process 5477
+[Mon Jan  9 21:21:17 2017].385309 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:21:17 2017].385323 msFreeMap(): freeing map at 0x9603c20.
+[Mon Jan  9 21:21:17 2017].323330 CGI Request 1 on process 5470
+[Mon Jan  9 21:21:17 2017].323431 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:21:17 2017].323773 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:21:17 2017].323786 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:21:17 2017].323921 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:21:21 2017].68151 msDrawMap(): Layer 0 (paises), 3.744s
+[Mon Jan  9 21:21:21 2017].68185 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:21:21 2017].68194 msDrawMap() total time: 3.745s
+[Mon Jan  9 21:21:21 2017].75630 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:21:21 2017].76905 mapserv request processing time (msLoadMap not incl.): 3.754s
+[Mon Jan  9 21:21:21 2017].76926 msFreeMap(): freeing map at 0x8630ff0.
+[Mon Jan  9 21:21:21 2017].96681 CGI Request 1 on process 5489
+[Mon Jan  9 21:21:21 2017].96768 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:21:21 2017].97057 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:21:21 2017].97068 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:21:21 2017].97186 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:21:25 2017].87997 msDrawMap(): Layer 0 (paises), 3.991s
+[Mon Jan  9 21:21:25 2017].88033 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:21:25 2017].88041 msDrawMap() total time: 3.991s
+[Mon Jan  9 21:21:25 2017].95470 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:21:25 2017].96698 mapserv request processing time (msLoadMap not incl.): 4.000s
+[Mon Jan  9 21:21:25 2017].96713 msFreeMap(): freeing map at 0x98c6ff0.
+[Mon Jan  9 21:21:49 2017].79688 CGI Request 1 on process 5506
+[Mon Jan  9 21:21:49 2017].81315 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:21:49 2017].81335 msFreeMap(): freeing map at 0x8c05c20.
+[Mon Jan  9 21:21:49 2017].144273 CGI Request 1 on process 5508
+[Mon Jan  9 21:21:49 2017].146931 mapserv request processing time (msLoadMap not incl.): 0.003s
+[Mon Jan  9 21:21:49 2017].146948 msFreeMap(): freeing map at 0x93e8c20.
+[Mon Jan  9 21:21:49 2017].146263 CGI Request 1 on process 5509
+[Mon Jan  9 21:21:49 2017].164704 msSaveImage(stdout) total time: 0.015s
+[Mon Jan  9 21:21:49 2017].164851 mapserv request processing time (msLoadMap not incl.): 0.019s
+[Mon Jan  9 21:21:49 2017].164861 msFreeMap(): freeing map at 0x81ced28.
+[Mon Jan  9 21:21:49 2017].79881 CGI Request 1 on process 5505
+[Mon Jan  9 21:21:49 2017].79970 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:21:49 2017].80285 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:21:49 2017].80297 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:21:49 2017].80431 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:21:52 2017].857075 msDrawMap(): Layer 0 (paises), 3.777s
+[Mon Jan  9 21:21:52 2017].857111 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:21:52 2017].857120 msDrawMap() total time: 3.777s
+[Mon Jan  9 21:21:52 2017].865826 msSaveImage(stdout) total time: 0.009s
+[Mon Jan  9 21:21:52 2017].867481 mapserv request processing time (msLoadMap not incl.): 3.788s
+[Mon Jan  9 21:21:52 2017].867506 msFreeMap(): freeing map at 0x823dff0.
+[Mon Jan  9 21:21:52 2017].884546 CGI Request 1 on process 5516
+[Mon Jan  9 21:21:52 2017].884634 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:21:52 2017].884930 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:21:52 2017].884941 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:21:52 2017].885064 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:21:56 2017].506543 msDrawMap(): Layer 0 (paises), 3.621s
+[Mon Jan  9 21:21:56 2017].506578 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:21:56 2017].506586 msDrawMap() total time: 3.622s
+[Mon Jan  9 21:21:56 2017].514235 msSaveImage(stdout) total time: 0.008s
+[Mon Jan  9 21:21:56 2017].515424 mapserv request processing time (msLoadMap not incl.): 3.631s
+[Mon Jan  9 21:21:56 2017].515435 msFreeMap(): freeing map at 0x82deff0.
+[Mon Jan  9 21:22:08 2017].284514 CGI Request 1 on process 5529
+[Mon Jan  9 21:22:08 2017].286261 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:22:08 2017].286274 msFreeMap(): freeing map at 0x9ad5c20.
+[Mon Jan  9 21:22:08 2017].339867 CGI Request 1 on process 5532
+[Mon Jan  9 21:22:08 2017].341616 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:22:08 2017].341635 msFreeMap(): freeing map at 0x8f6ac20.
+[Mon Jan  9 21:22:08 2017].346881 CGI Request 1 on process 5533
+[Mon Jan  9 21:22:08 2017].370145 msSaveImage(stdout) total time: 0.019s
+[Mon Jan  9 21:22:08 2017].370309 mapserv request processing time (msLoadMap not incl.): 0.023s
+[Mon Jan  9 21:22:08 2017].370321 msFreeMap(): freeing map at 0x89d0d28.
+[Mon Jan  9 21:22:08 2017].282041 CGI Request 1 on process 5528
+[Mon Jan  9 21:22:08 2017].282140 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:22:08 2017].282462 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:22:08 2017].282475 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:22:08 2017].282609 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:22:12 2017].100966 msDrawMap(): Layer 0 (paises), 3.818s
+[Mon Jan  9 21:22:12 2017].101003 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:22:12 2017].101011 msDrawMap() total time: 3.819s
+[Mon Jan  9 21:22:12 2017].108346 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:22:12 2017].109601 mapserv request processing time (msLoadMap not incl.): 3.828s
+[Mon Jan  9 21:22:12 2017].109622 msFreeMap(): freeing map at 0x89beff0.
+[Mon Jan  9 21:22:12 2017].130951 CGI Request 1 on process 5544
+[Mon Jan  9 21:22:12 2017].131043 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:22:12 2017].131347 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:22:12 2017].131359 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:22:12 2017].131478 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:22:15 2017].756804 msDrawMap(): Layer 0 (paises), 3.625s
+[Mon Jan  9 21:22:15 2017].756841 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:22:15 2017].756849 msDrawMap() total time: 3.626s
+[Mon Jan  9 21:22:15 2017].764491 msSaveImage(stdout) total time: 0.008s
+[Mon Jan  9 21:22:15 2017].765685 mapserv request processing time (msLoadMap not incl.): 3.635s
+[Mon Jan  9 21:22:15 2017].765697 msFreeMap(): freeing map at 0x8b11ff0.
+[Mon Jan  9 21:22:21 2017].919622 CGI Request 1 on process 5557
+[Mon Jan  9 21:22:21 2017].922134 mapserv request processing time (msLoadMap not incl.): 0.003s
+[Mon Jan  9 21:22:21 2017].922151 msFreeMap(): freeing map at 0x8b8ac20.
+[Mon Jan  9 21:22:21 2017].971320 CGI Request 1 on process 5563
+[Mon Jan  9 21:22:21 2017].973067 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:22:21 2017].973081 msFreeMap(): freeing map at 0x95abc20.
+[Mon Jan  9 21:22:21 2017].979947 CGI Request 1 on process 5564
+[Mon Jan  9 21:22:21 2017].997610 msSaveImage(stdout) total time: 0.015s
+[Mon Jan  9 21:22:21 2017].997754 mapserv request processing time (msLoadMap not incl.): 0.018s
+[Mon Jan  9 21:22:21 2017].997764 msFreeMap(): freeing map at 0x9ef8d28.
+[Mon Jan  9 21:22:21 2017].913992 CGI Request 1 on process 5556
+[Mon Jan  9 21:22:21 2017].914094 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:22:21 2017].914417 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:22:21 2017].914429 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:22:21 2017].914563 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:22:25 2017].445639 msDrawMap(): Layer 0 (paises), 3.531s
+[Mon Jan  9 21:22:25 2017].445674 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:22:25 2017].445682 msDrawMap() total time: 3.532s
+[Mon Jan  9 21:22:25 2017].452986 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:22:25 2017].454250 mapserv request processing time (msLoadMap not incl.): 3.540s
+[Mon Jan  9 21:22:25 2017].454270 msFreeMap(): freeing map at 0x916dff0.
+[Mon Jan  9 21:22:25 2017].477068 CGI Request 1 on process 5574
+[Mon Jan  9 21:22:25 2017].477162 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:22:25 2017].477481 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:22:25 2017].477492 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:22:25 2017].477623 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:22:29 2017].141841 msDrawMap(): Layer 0 (paises), 3.664s
+[Mon Jan  9 21:22:29 2017].141873 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:22:29 2017].141881 msDrawMap() total time: 3.665s
+[Mon Jan  9 21:22:29 2017].149482 msSaveImage(stdout) total time: 0.008s
+[Mon Jan  9 21:22:29 2017].150741 mapserv request processing time (msLoadMap not incl.): 3.674s
+[Mon Jan  9 21:22:29 2017].150755 msFreeMap(): freeing map at 0x9e7eff0.
+[Mon Jan  9 21:22:31 2017].175581 CGI Request 1 on process 5592
+[Mon Jan  9 21:22:31 2017].177242 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:22:31 2017].177256 msFreeMap(): freeing map at 0x94d2c20.
+[Mon Jan  9 21:22:31 2017].232648 CGI Request 1 on process 5594
+[Mon Jan  9 21:22:31 2017].234367 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:22:31 2017].234381 msFreeMap(): freeing map at 0x9c40c20.
+[Mon Jan  9 21:22:31 2017].237413 CGI Request 1 on process 5595
+[Mon Jan  9 21:22:31 2017].262114 msSaveImage(stdout) total time: 0.021s
+[Mon Jan  9 21:22:31 2017].262321 mapserv request processing time (msLoadMap not incl.): 0.025s
+[Mon Jan  9 21:22:31 2017].262338 msFreeMap(): freeing map at 0x9aa7d28.
+[Mon Jan  9 21:22:31 2017].175759 CGI Request 1 on process 5591
+[Mon Jan  9 21:22:31 2017].175847 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:22:31 2017].176166 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:22:31 2017].176177 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:22:31 2017].176310 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:22:35 2017].141010 msDrawMap(): Layer 0 (paises), 3.965s
+[Mon Jan  9 21:22:35 2017].141045 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:22:35 2017].141053 msDrawMap() total time: 3.965s
+[Mon Jan  9 21:22:34 2017].207318 CGI Request 1 on process 5601
+[Mon Jan  9 21:22:34 2017].207405 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:22:34 2017].207709 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:22:34 2017].207720 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:22:34 2017].207844 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:22:39 2017].44536 msDrawMap(): Layer 0 (paises), 4.837s
+[Mon Jan  9 21:22:39 2017].44573 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:22:39 2017].44581 msDrawMap() total time: 4.837s
+[Mon Jan  9 21:22:39 2017].51822 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:22:39 2017].53023 mapserv request processing time (msLoadMap not incl.): 4.846s
+[Mon Jan  9 21:22:39 2017].53036 msFreeMap(): freeing map at 0x94ccff0.
+[Mon Jan  9 21:22:53 2017].571548 CGI Request 1 on process 5611
+[Mon Jan  9 21:22:53 2017].573237 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:22:53 2017].573251 msFreeMap(): freeing map at 0x8099c20.
+[Mon Jan  9 21:22:53 2017].628338 CGI Request 1 on process 5613
+[Mon Jan  9 21:22:53 2017].630094 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:22:53 2017].630109 msFreeMap(): freeing map at 0x8223c20.
+[Mon Jan  9 21:22:53 2017].631478 CGI Request 1 on process 5614
+[Mon Jan  9 21:22:53 2017].656846 msSaveImage(stdout) total time: 0.021s
+[Mon Jan  9 21:22:53 2017].656988 mapserv request processing time (msLoadMap not incl.): 0.026s
+[Mon Jan  9 21:22:53 2017].656998 msFreeMap(): freeing map at 0x8181d28.
+[Mon Jan  9 21:22:53 2017].571702 CGI Request 1 on process 5610
+[Mon Jan  9 21:22:53 2017].571789 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:22:53 2017].572107 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:22:53 2017].572119 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:22:53 2017].572251 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:22:59 2017].176322 msDrawMap(): Layer 0 (paises), 5.604s
+[Mon Jan  9 21:22:59 2017].176358 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:22:59 2017].176366 msDrawMap() total time: 5.605s
+[Mon Jan  9 21:22:59 2017].183801 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:22:59 2017].185059 mapserv request processing time (msLoadMap not incl.): 5.613s
+[Mon Jan  9 21:22:59 2017].185080 msFreeMap(): freeing map at 0x85aeff0.
+[Mon Jan  9 21:22:59 2017].207025 CGI Request 1 on process 5624
+[Mon Jan  9 21:22:59 2017].207124 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:22:59 2017].207457 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:22:59 2017].207474 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:22:59 2017].207616 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:23:03 2017].198084 msDrawMap(): Layer 0 (paises), 3.990s
+[Mon Jan  9 21:23:03 2017].198119 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:23:03 2017].198127 msDrawMap() total time: 3.991s
+[Mon Jan  9 21:23:03 2017].205280 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:23:03 2017].206497 mapserv request processing time (msLoadMap not incl.): 3.999s
+[Mon Jan  9 21:23:03 2017].206510 msFreeMap(): freeing map at 0x99d4ff0.
+[Mon Jan  9 21:23:28 2017].10846 CGI Request 1 on process 5641
+[Mon Jan  9 21:23:28 2017].12478 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:23:28 2017].12491 msFreeMap(): freeing map at 0x9ed1c20.
+[Mon Jan  9 21:23:28 2017].65159 CGI Request 1 on process 5644
+[Mon Jan  9 21:23:28 2017].66837 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:23:28 2017].66851 msFreeMap(): freeing map at 0x8acec20.
+[Mon Jan  9 21:23:28 2017].66122 CGI Request 1 on process 5645
+[Mon Jan  9 21:23:28 2017].83570 msSaveImage(stdout) total time: 0.015s
+[Mon Jan  9 21:23:28 2017].83719 mapserv request processing time (msLoadMap not incl.): 0.018s
+[Mon Jan  9 21:23:28 2017].83729 msFreeMap(): freeing map at 0x893ed28.
+[Mon Jan  9 21:23:28 2017].11011 CGI Request 1 on process 5640
+[Mon Jan  9 21:23:28 2017].11097 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:23:28 2017].11411 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:23:28 2017].11423 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:23:28 2017].11554 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:23:33 2017].402354 msDrawMap(): Layer 0 (paises), 5.391s
+[Mon Jan  9 21:23:33 2017].402390 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:23:33 2017].402398 msDrawMap() total time: 5.391s
+[Mon Jan  9 21:23:33 2017].409617 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:23:33 2017].410861 mapserv request processing time (msLoadMap not incl.): 5.400s
+[Mon Jan  9 21:23:33 2017].410882 msFreeMap(): freeing map at 0x840dff0.
+[Mon Jan  9 21:23:33 2017].431732 CGI Request 1 on process 5651
+[Mon Jan  9 21:23:33 2017].431820 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:23:33 2017].432115 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:23:33 2017].432126 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:23:33 2017].432249 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:23:37 2017].424012 msDrawMap(): Layer 0 (paises), 3.992s
+[Mon Jan  9 21:23:37 2017].424047 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:23:37 2017].424055 msDrawMap() total time: 3.992s
+[Mon Jan  9 21:23:37 2017].431534 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:23:37 2017].432802 mapserv request processing time (msLoadMap not incl.): 4.001s
+[Mon Jan  9 21:23:37 2017].432820 msFreeMap(): freeing map at 0x81dcff0.
+[Mon Jan  9 21:27:45 2017].471681 CGI Request 1 on process 5739
+[Mon Jan  9 21:27:45 2017].473329 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:27:45 2017].473342 msFreeMap(): freeing map at 0x9a55c20.
+[Mon Jan  9 21:27:45 2017].538212 CGI Request 1 on process 5741
+[Mon Jan  9 21:27:45 2017].538319 msWMSLoadGetMapParams(): WMS server error. Missing required parameter LAYERS
+[Mon Jan  9 21:27:45 2017].538367 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:27:45 2017].538389 msFreeMap(): freeing map at 0x9834d18.
+[Mon Jan  9 21:27:45 2017].569807 CGI Request 1 on process 5743
+[Mon Jan  9 21:27:45 2017].572467 mapserv request processing time (msLoadMap not incl.): 0.003s
+[Mon Jan  9 21:27:45 2017].572489 msFreeMap(): freeing map at 0x9f6cc20.
+[Mon Jan  9 21:27:45 2017].569873 CGI Request 1 on process 5744
+[Mon Jan  9 21:27:45 2017].589038 msSaveImage(stdout) total time: 0.015s
+[Mon Jan  9 21:27:45 2017].589164 mapserv request processing time (msLoadMap not incl.): 0.019s
+[Mon Jan  9 21:27:45 2017].589174 msFreeMap(): freeing map at 0x86dcd28.
+[Mon Jan  9 21:27:45 2017].563636 CGI Request 1 on process 5745
+[Mon Jan  9 21:27:45 2017].563788 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:27:45 2017].564104 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:27:45 2017].564117 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:27:45 2017].564253 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:27:51 2017].740041 msDrawMap(): Layer 0 (paises), 6.176s
+[Mon Jan  9 21:27:51 2017].740078 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:27:51 2017].740086 msDrawMap() total time: 6.176s
+[Mon Jan  9 21:27:51 2017].747812 msSaveImage(stdout) total time: 0.008s
+[Mon Jan  9 21:27:51 2017].748892 mapserv request processing time (msLoadMap not incl.): 6.185s
+[Mon Jan  9 21:27:51 2017].748903 msFreeMap(): freeing map at 0x867bff0.
+[Mon Jan  9 21:27:45 2017].469739 CGI Request 1 on process 5738
+[Mon Jan  9 21:27:45 2017].469835 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:27:45 2017].470145 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:27:45 2017].470158 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:27:45 2017].470290 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:27:56 2017].407694 msDrawMap(): Layer 0 (paises), 10.937s
+[Mon Jan  9 21:27:56 2017].407732 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:27:56 2017].407740 msDrawMap() total time: 10.938s
+[Mon Jan  9 21:28:23 2017].347255 CGI Request 1 on process 5774
+[Mon Jan  9 21:28:23 2017].348978 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:28:23 2017].348992 msFreeMap(): freeing map at 0x8da3c20.
+[Mon Jan  9 21:28:23 2017].416132 CGI Request 1 on process 5779
+[Mon Jan  9 21:28:23 2017].416200 msWMSLoadGetMapParams(): WMS server error. Missing required parameter LAYERS
+[Mon Jan  9 21:28:23 2017].416236 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:28:23 2017].416250 msFreeMap(): freeing map at 0x9bdfc88.
+[Mon Jan  9 21:28:23 2017].416796 CGI Request 1 on process 5777
+[Mon Jan  9 21:28:23 2017].419512 mapserv request processing time (msLoadMap not incl.): 0.003s
+[Mon Jan  9 21:28:23 2017].419533 msFreeMap(): freeing map at 0x97fdc20.
+[Mon Jan  9 21:28:23 2017].412990 CGI Request 1 on process 5778
+[Mon Jan  9 21:28:23 2017].431094 msSaveImage(stdout) total time: 0.015s
+[Mon Jan  9 21:28:23 2017].431219 mapserv request processing time (msLoadMap not incl.): 0.018s
+[Mon Jan  9 21:28:23 2017].431229 msFreeMap(): freeing map at 0x8f47d28.
+[Mon Jan  9 21:28:23 2017].347537 CGI Request 1 on process 5773
+[Mon Jan  9 21:28:23 2017].347664 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:28:23 2017].348081 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:28:23 2017].348098 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:28:23 2017].348316 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:28:29 2017].24 msDrawMap(): Layer 0 (paises), 5.652s
+[Mon Jan  9 21:28:29 2017].61 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:28:29 2017].69 msDrawMap() total time: 5.652s
+[Mon Jan  9 21:28:23 2017].446257 CGI Request 1 on process 5781
+[Mon Jan  9 21:28:23 2017].446356 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:28:23 2017].446674 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:28:23 2017].446686 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:28:23 2017].446821 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:28:31 2017].596222 msDrawMap(): Layer 0 (paises), 8.149s
+[Mon Jan  9 21:28:31 2017].596285 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:28:31 2017].596295 msDrawMap() total time: 8.150s
+[Mon Jan  9 21:28:31 2017].603514 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:28:31 2017].604686 mapserv request processing time (msLoadMap not incl.): 8.158s
+[Mon Jan  9 21:28:31 2017].604701 msFreeMap(): freeing map at 0x9381ff0.
+[Mon Jan  9 21:28:45 2017].307611 CGI Request 1 on process 5808
+[Mon Jan  9 21:28:45 2017].309247 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:28:45 2017].309259 msFreeMap(): freeing map at 0x8ee6c20.
+[Mon Jan  9 21:28:45 2017].360704 CGI Request 1 on process 5810
+[Mon Jan  9 21:28:45 2017].362464 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:28:45 2017].362485 msFreeMap(): freeing map at 0x88c1c20.
+[Mon Jan  9 21:28:45 2017].367441 CGI Request 1 on process 5812
+[Mon Jan  9 21:28:45 2017].367509 msWMSLoadGetMapParams(): WMS server error. Missing required parameter LAYERS
+[Mon Jan  9 21:28:45 2017].367547 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:28:45 2017].367562 msFreeMap(): freeing map at 0x8a28c88.
+[Mon Jan  9 21:28:45 2017].362643 CGI Request 1 on process 5811
+[Mon Jan  9 21:28:45 2017].380769 msSaveImage(stdout) total time: 0.015s
+[Mon Jan  9 21:28:45 2017].380912 mapserv request processing time (msLoadMap not incl.): 0.018s
+[Mon Jan  9 21:28:45 2017].380923 msFreeMap(): freeing map at 0x9005d28.
+[Mon Jan  9 21:28:47 2017].628619 CGI Request 1 on process 5824
+[Mon Jan  9 21:28:47 2017].628684 msWMSLoadGetMapParams(): WMS server error. Missing required parameter LAYERS
+[Mon Jan  9 21:28:47 2017].628721 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:28:47 2017].628735 msFreeMap(): freeing map at 0x8719c88.
+[Mon Jan  9 21:28:45 2017].384589 CGI Request 1 on process 5813
+[Mon Jan  9 21:28:45 2017].384680 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:28:45 2017].384988 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:28:45 2017].385000 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:28:45 2017].385132 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:29:02 2017].322938 msDrawMap(): Layer 0 (paises), 16.938s
+[Mon Jan  9 21:29:02 2017].322978 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:29:02 2017].322987 msDrawMap() total time: 16.938s
+[Mon Jan  9 21:29:02 2017].330561 msSaveImage(stdout) total time: 0.008s
+[Mon Jan  9 21:29:02 2017].331743 mapserv request processing time (msLoadMap not incl.): 16.947s
+[Mon Jan  9 21:29:02 2017].331761 msFreeMap(): freeing map at 0x9975ff0.
+[Mon Jan  9 21:28:45 2017].306998 CGI Request 1 on process 5807
+[Mon Jan  9 21:28:45 2017].307093 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:28:45 2017].307401 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:28:45 2017].307412 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:28:45 2017].307544 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:29:04 2017].444508 msDrawMap(): Layer 0 (paises), 19.137s
+[Mon Jan  9 21:29:04 2017].444553 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:29:04 2017].444569 msDrawMap() total time: 19.137s
+[Mon Jan  9 21:29:07 2017].217633 CGI Request 1 on process 5852
+[Mon Jan  9 21:29:07 2017].219227 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:29:07 2017].219238 msFreeMap(): freeing map at 0x99a5c20.
+[Mon Jan  9 21:29:07 2017].271039 CGI Request 1 on process 5854
+[Mon Jan  9 21:29:07 2017].272749 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:29:07 2017].272765 msFreeMap(): freeing map at 0x8a56c20.
+[Mon Jan  9 21:29:07 2017].274522 CGI Request 1 on process 5856
+[Mon Jan  9 21:29:07 2017].274623 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:29:07 2017].274644 msFreeMap(): freeing map at 0x8997c88.
+[Mon Jan  9 21:29:07 2017].268981 CGI Request 1 on process 5855
+[Mon Jan  9 21:29:07 2017].286996 msSaveImage(stdout) total time: 0.015s
+[Mon Jan  9 21:29:07 2017].287127 mapserv request processing time (msLoadMap not incl.): 0.018s
+[Mon Jan  9 21:29:07 2017].287136 msFreeMap(): freeing map at 0x851cd28.
+[Mon Jan  9 21:29:07 2017].216224 CGI Request 1 on process 5851
+[Mon Jan  9 21:29:07 2017].216349 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:29:07 2017].216764 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:29:07 2017].216781 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:29:07 2017].216997 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:29:19 2017].275387 msDrawMap(): Layer 0 (paises), 12.058s
+[Mon Jan  9 21:29:19 2017].275423 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:29:19 2017].275430 msDrawMap() total time: 12.059s
+[Mon Jan  9 21:29:07 2017].298099 CGI Request 1 on process 5857
+[Mon Jan  9 21:29:07 2017].298187 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:29:07 2017].298486 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:29:07 2017].298496 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:29:07 2017].298621 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:29:22 2017].156847 msDrawMap(): Layer 0 (paises), 14.858s
+[Mon Jan  9 21:29:22 2017].156884 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:29:22 2017].156892 msDrawMap() total time: 14.859s
+[Mon Jan  9 21:29:22 2017].164030 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:29:22 2017].165174 mapserv request processing time (msLoadMap not incl.): 14.867s
+[Mon Jan  9 21:29:22 2017].165186 msFreeMap(): freeing map at 0x8c46ff0.
+[Mon Jan  9 21:30:32 2017].639321 CGI Request 1 on process 5917
+[Mon Jan  9 21:30:32 2017].639421 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:30:32 2017].639438 msFreeMap(): freeing map at 0x8916c88.
+[Mon Jan  9 21:30:32 2017].639319 CGI Request 1 on process 5918
+[Mon Jan  9 21:30:32 2017].641089 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:30:32 2017].641107 msFreeMap(): freeing map at 0x8b84c20.
+[Mon Jan  9 21:30:32 2017].701471 CGI Request 1 on process 5920
+[Mon Jan  9 21:30:32 2017].704213 mapserv request processing time (msLoadMap not incl.): 0.003s
+[Mon Jan  9 21:30:32 2017].704238 msFreeMap(): freeing map at 0x82f2c20.
+[Mon Jan  9 21:30:32 2017].706921 CGI Request 1 on process 5923
+[Mon Jan  9 21:30:32 2017].707029 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:30:32 2017].707050 msFreeMap(): freeing map at 0x8574c88.
+[Mon Jan  9 21:30:32 2017].700242 CGI Request 1 on process 5922
+[Mon Jan  9 21:30:32 2017].718196 msSaveImage(stdout) total time: 0.015s
+[Mon Jan  9 21:30:32 2017].718346 mapserv request processing time (msLoadMap not incl.): 0.018s
+[Mon Jan  9 21:30:32 2017].718356 msFreeMap(): freeing map at 0x929dd28.
+[Mon Jan  9 21:30:32 2017].707927 CGI Request 1 on process 5921
+[Mon Jan  9 21:30:32 2017].708055 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:30:32 2017].708491 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:30:32 2017].708511 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:30:32 2017].708739 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:30:36 2017].271009 msDrawMap(): Layer 0 (paises), 3.562s
+[Mon Jan  9 21:30:36 2017].271051 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:30:36 2017].271061 msDrawMap() total time: 3.563s
+[Mon Jan  9 21:30:36 2017].278668 msSaveImage(stdout) total time: 0.008s
+[Mon Jan  9 21:30:36 2017].279794 mapserv request processing time (msLoadMap not incl.): 3.572s
+[Mon Jan  9 21:30:36 2017].279806 msFreeMap(): freeing map at 0x9032ff0.
+[Mon Jan  9 21:30:53 2017].360812 CGI Request 1 on process 5935
+[Mon Jan  9 21:30:53 2017].360905 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:30:53 2017].360920 msFreeMap(): freeing map at 0x9a0ec88.
+[Mon Jan  9 21:30:53 2017].393048 CGI Request 1 on process 5936
+[Mon Jan  9 21:30:53 2017].393155 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:30:53 2017].393172 msFreeMap(): freeing map at 0x8bebc88.
+[Mon Jan  9 21:30:53 2017].403800 CGI Request 1 on process 5937
+[Mon Jan  9 21:30:53 2017].405486 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:30:53 2017].405501 msFreeMap(): freeing map at 0x9331c20.
+[Mon Jan  9 21:30:53 2017].417644 CGI Request 1 on process 5940
+[Mon Jan  9 21:30:53 2017].417737 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:30:53 2017].417752 msFreeMap(): freeing map at 0x9e41c88.
+[Mon Jan  9 21:30:53 2017].416348 CGI Request 1 on process 5939
+[Mon Jan  9 21:30:53 2017].434287 msSaveImage(stdout) total time: 0.015s
+[Mon Jan  9 21:30:53 2017].434411 mapserv request processing time (msLoadMap not incl.): 0.018s
+[Mon Jan  9 21:30:53 2017].434421 msFreeMap(): freeing map at 0x8840d28.
+[Mon Jan  9 21:30:53 2017].415812 CGI Request 1 on process 5938
+[Mon Jan  9 21:30:53 2017].415944 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:30:53 2017].416373 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:30:53 2017].416391 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:30:53 2017].416610 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:30:57 2017].620750 msDrawMap(): Layer 0 (paises), 4.204s
+[Mon Jan  9 21:30:57 2017].620787 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:30:57 2017].620795 msDrawMap() total time: 4.205s
+[Mon Jan  9 21:30:57 2017].628077 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:30:57 2017].629184 mapserv request processing time (msLoadMap not incl.): 4.213s
+[Mon Jan  9 21:30:57 2017].629196 msFreeMap(): freeing map at 0x9d44ff0.
+[Mon Jan  9 21:31:48 2017].224471 CGI Request 1 on process 5964
+[Mon Jan  9 21:31:48 2017].224571 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:31:48 2017].224591 msFreeMap(): freeing map at 0x80c1c88.
+[Mon Jan  9 21:31:48 2017].270035 CGI Request 1 on process 5965
+[Mon Jan  9 21:31:48 2017].270165 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:31:48 2017].270186 msFreeMap(): freeing map at 0x98a7c88.
+[Mon Jan  9 21:31:48 2017].287085 CGI Request 1 on process 5966
+[Mon Jan  9 21:31:48 2017].289928 mapserv request processing time (msLoadMap not incl.): 0.003s
+[Mon Jan  9 21:31:48 2017].289950 msFreeMap(): freeing map at 0x9f48c20.
+[Mon Jan  9 21:31:48 2017].312848 CGI Request 1 on process 5969
+[Mon Jan  9 21:31:48 2017].312949 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:31:48 2017].312965 msFreeMap(): freeing map at 0x8d5fc88.
+[Mon Jan  9 21:31:48 2017].294271 CGI Request 1 on process 5968
+[Mon Jan  9 21:31:48 2017].319284 msSaveImage(stdout) total time: 0.021s
+[Mon Jan  9 21:31:48 2017].319456 mapserv request processing time (msLoadMap not incl.): 0.025s
+[Mon Jan  9 21:31:48 2017].319472 msFreeMap(): freeing map at 0x879ad28.
+[Mon Jan  9 21:31:48 2017].293678 CGI Request 1 on process 5967
+[Mon Jan  9 21:31:48 2017].293774 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:31:48 2017].294085 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:31:48 2017].294097 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:31:48 2017].294233 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:31:51 2017].690827 msDrawMap(): Layer 0 (paises), 3.397s
+[Mon Jan  9 21:31:51 2017].690865 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:31:51 2017].690873 msDrawMap() total time: 3.397s
+[Mon Jan  9 21:31:51 2017].698423 msSaveImage(stdout) total time: 0.008s
+[Mon Jan  9 21:31:51 2017].699786 mapserv request processing time (msLoadMap not incl.): 3.406s
+[Mon Jan  9 21:31:51 2017].699799 msFreeMap(): freeing map at 0x8ab5ff0.
+[Mon Jan  9 21:33:03 2017].384267 CGI Request 1 on process 6001
+[Mon Jan  9 21:33:03 2017].384366 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:33:03 2017].384383 msFreeMap(): freeing map at 0x99adc88.
+[Mon Jan  9 21:33:03 2017].440282 CGI Request 1 on process 6002
+[Mon Jan  9 21:33:03 2017].441939 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Mon Jan  9 21:33:03 2017].441953 msFreeMap(): freeing map at 0x9851c20.
+[Mon Jan  9 21:33:03 2017].457705 CGI Request 1 on process 6003
+[Mon Jan  9 21:33:03 2017].457801 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Mon Jan  9 21:33:03 2017].457819 msFreeMap(): freeing map at 0x97e8c88.
+[Mon Jan  9 21:33:03 2017].454625 CGI Request 1 on process 6005
+[Mon Jan  9 21:33:03 2017].475694 msSaveImage(stdout) total time: 0.017s
+[Mon Jan  9 21:33:03 2017].475872 mapserv request processing time (msLoadMap not incl.): 0.021s
+[Mon Jan  9 21:33:03 2017].475888 msFreeMap(): freeing map at 0x862ed28.
+[Mon Jan  9 21:33:03 2017].456203 CGI Request 1 on process 6004
+[Mon Jan  9 21:33:03 2017].456329 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Mon Jan  9 21:33:03 2017].456766 msDrawMap(): kicking into non-square pixel preserving mode.
+[Mon Jan  9 21:33:03 2017].456785 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Mon Jan  9 21:33:03 2017].457019 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Mon Jan  9 21:33:08 2017].279843 msDrawMap(): Layer 0 (paises), 4.823s
+[Mon Jan  9 21:33:08 2017].279877 msDrawMap(): Drawing Label Cache, 0.000s
+[Mon Jan  9 21:33:08 2017].279885 msDrawMap() total time: 4.824s
+[Mon Jan  9 21:33:08 2017].287157 msSaveImage(stdout) total time: 0.007s
+[Mon Jan  9 21:33:08 2017].288280 mapserv request processing time (msLoadMap not incl.): 4.832s
+[Mon Jan  9 21:33:08 2017].288294 msFreeMap(): freeing map at 0x988bff0.
+[Tue Jan 10 23:07:10 2017].6864 CGI Request 1 on process 7231
+[Tue Jan 10 23:07:10 2017].6961 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Tue Jan 10 23:07:10 2017].6977 msFreeMap(): freeing map at 0x8e13c88.
+[Tue Jan 10 23:07:10 2017].15464 CGI Request 1 on process 7230
+[Tue Jan 10 23:07:10 2017].18125 mapserv request processing time (msLoadMap not incl.): 0.003s
+[Tue Jan 10 23:07:10 2017].18143 msFreeMap(): freeing map at 0x89fbc20.
+[Tue Jan 10 23:07:10 2017].16164 CGI Request 1 on process 7229
+[Tue Jan 10 23:07:10 2017].34898 msSaveImage(stdout) total time: 0.015s
+[Tue Jan 10 23:07:10 2017].35043 mapserv request processing time (msLoadMap not incl.): 0.019s
+[Tue Jan 10 23:07:10 2017].35053 msFreeMap(): freeing map at 0x9112d28.
+[Tue Jan 10 23:07:10 2017].7010 CGI Request 1 on process 7228
+[Tue Jan 10 23:07:10 2017].7095 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Tue Jan 10 23:07:10 2017].7416 msDrawMap(): kicking into non-square pixel preserving mode.
+[Tue Jan 10 23:07:10 2017].7428 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:07:10 2017].7559 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:07:15 2017].310417 msDrawMap(): Layer 0 (paises), 5.303s
+[Tue Jan 10 23:07:15 2017].310454 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:07:15 2017].310462 msDrawMap() total time: 5.303s
+[Tue Jan 10 23:07:15 2017].317974 msSaveImage(stdout) total time: 0.007s
+[Tue Jan 10 23:07:15 2017].319544 mapserv request processing time (msLoadMap not incl.): 5.313s
+[Tue Jan 10 23:07:15 2017].319557 msFreeMap(): freeing map at 0x97c3ff0.
+[Tue Jan 10 23:20:57 2017].948841 CGI Request 1 on process 8248
+[Tue Jan 10 23:20:57 2017].950507 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Tue Jan 10 23:20:57 2017].950523 msFreeMap(): freeing map at 0x8877c20.
+[Tue Jan 10 23:20:57 2017].964810 CGI Request 1 on process 8251
+[Tue Jan 10 23:20:57 2017].964941 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Tue Jan 10 23:20:57 2017].964963 msFreeMap(): freeing map at 0x9b1bc88.
+[Tue Jan 10 23:20:57 2017].964841 CGI Request 1 on process 8250
+[Tue Jan 10 23:20:57 2017].982972 msSaveImage(stdout) total time: 0.015s
+[Tue Jan 10 23:20:57 2017].983106 mapserv request processing time (msLoadMap not incl.): 0.018s
+[Tue Jan 10 23:20:57 2017].983116 msFreeMap(): freeing map at 0x8d87d28.
+[Tue Jan 10 23:20:57 2017].921256 CGI Request 1 on process 8247
+[Tue Jan 10 23:20:58 2017].646545 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:20:58 2017].646667 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:21:00 2017].158576 msDrawMap(): Layer 0 (paises), 1.512s
+[Tue Jan 10 23:21:00 2017].158619 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:21:00 2017].158627 msDrawMap() total time: 1.513s
+[Tue Jan 10 23:21:00 2017].175234 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14841084588247.png) total time: 0.017s
+[Tue Jan 10 23:21:00 2017].175540 msReturnPage(): Unable to access file. templates/header.html
+[Tue Jan 10 23:21:00 2017].175569 mapserv request processing time (msLoadMap not incl.): 2.254s
+[Tue Jan 10 23:21:00 2017].175577 msFreeMap(): freeing map at 0x8c27980.
+[Tue Jan 10 23:20:57 2017].949010 CGI Request 1 on process 8249
+[Tue Jan 10 23:20:57 2017].949110 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Tue Jan 10 23:20:57 2017].949417 msDrawMap(): kicking into non-square pixel preserving mode.
+[Tue Jan 10 23:20:57 2017].949430 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:20:57 2017].949561 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:21:02 2017].558019 msDrawMap(): Layer 0 (paises), 4.608s
+[Tue Jan 10 23:21:02 2017].558060 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:21:02 2017].558068 msDrawMap() total time: 4.609s
+[Tue Jan 10 23:21:02 2017].565669 msSaveImage(stdout) total time: 0.008s
+[Tue Jan 10 23:21:02 2017].566835 mapserv request processing time (msLoadMap not incl.): 4.618s
+[Tue Jan 10 23:21:02 2017].566847 msFreeMap(): freeing map at 0x8e13ff0.
+[Tue Jan 10 23:21:52 2017].12652 CGI Request 1 on process 8294
+[Tue Jan 10 23:21:52 2017].15609 mapserv request processing time (msLoadMap not incl.): 0.003s
+[Tue Jan 10 23:21:52 2017].15632 msFreeMap(): freeing map at 0x9b78c20.
+[Tue Jan 10 23:21:52 2017].24559 CGI Request 1 on process 8297
+[Tue Jan 10 23:21:52 2017].24654 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Tue Jan 10 23:21:52 2017].24670 msFreeMap(): freeing map at 0x9a2ec88.
+[Tue Jan 10 23:21:52 2017].20118 CGI Request 1 on process 8296
+[Tue Jan 10 23:21:52 2017].38198 msSaveImage(stdout) total time: 0.015s
+[Tue Jan 10 23:21:52 2017].38331 mapserv request processing time (msLoadMap not incl.): 0.018s
+[Tue Jan 10 23:21:52 2017].38341 msFreeMap(): freeing map at 0x9c02d28.
+[Tue Jan 10 23:21:52 2017].20433 CGI Request 1 on process 8298
+[Tue Jan 10 23:21:52 2017].574804 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:21:52 2017].574920 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:21:53 2017].817850 msDrawMap(): Layer 0 (paises), 1.243s
+[Tue Jan 10 23:21:53 2017].817890 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:21:53 2017].817898 msDrawMap() total time: 1.244s
+[Tue Jan 10 23:21:53 2017].834880 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14841085128298.png) total time: 0.017s
+[Tue Jan 10 23:21:53 2017].835187 msReturnPage(): Unable to access file. templates/header.html
+[Tue Jan 10 23:21:53 2017].835221 mapserv request processing time (msLoadMap not incl.): 1.815s
+[Tue Jan 10 23:21:53 2017].835237 msFreeMap(): freeing map at 0x982d980.
+[Tue Jan 10 23:21:52 2017].17726 CGI Request 1 on process 8295
+[Tue Jan 10 23:21:52 2017].17822 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Tue Jan 10 23:21:52 2017].18132 msDrawMap(): kicking into non-square pixel preserving mode.
+[Tue Jan 10 23:21:52 2017].18145 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:21:52 2017].18280 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:21:57 2017].276827 msDrawMap(): Layer 0 (paises), 5.259s
+[Tue Jan 10 23:21:57 2017].276863 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:21:57 2017].276873 msDrawMap() total time: 5.259s
+[Tue Jan 10 23:21:57 2017].284238 msSaveImage(stdout) total time: 0.007s
+[Tue Jan 10 23:21:57 2017].285403 mapserv request processing time (msLoadMap not incl.): 5.268s
+[Tue Jan 10 23:21:57 2017].285415 msFreeMap(): freeing map at 0x8d1dff0.
+[Tue Jan 10 23:21:53 2017].787762 CGI Request 1 on process 8302
+[Tue Jan 10 23:21:56 2017].835798 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:21:56 2017].835913 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:21:57 2017].549397 msDrawMap(): Layer 0 (paises), 0.713s
+[Tue Jan 10 23:21:57 2017].549435 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:21:57 2017].549442 msDrawMap() total time: 0.714s
+[Tue Jan 10 23:21:57 2017].565687 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14841085168302.png) total time: 0.016s
+[Tue Jan 10 23:21:57 2017].565948 msReturnPage(): Unable to access file. templates/header.html
+[Tue Jan 10 23:21:57 2017].565990 mapserv request processing time (msLoadMap not incl.): 3.778s
+[Tue Jan 10 23:21:57 2017].565998 msFreeMap(): freeing map at 0x8b56980.
+[Tue Jan 10 23:23:08 2017].39396 CGI Request 1 on process 8331
+[Tue Jan 10 23:23:08 2017].342931 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:23:08 2017].343049 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:23:08 2017].692120 msDrawMap(): Layer 0 (paises), 0.349s
+[Tue Jan 10 23:23:08 2017].692158 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:23:08 2017].692165 msDrawMap() total time: 0.350s
+[Tue Jan 10 23:23:08 2017].708185 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14841085888331.png) total time: 0.016s
+[Tue Jan 10 23:23:08 2017].742443 mapserv request processing time (msLoadMap not incl.): 0.703s
+[Tue Jan 10 23:23:08 2017].742456 msFreeMap(): freeing map at 0x9b2f980.
+[Tue Jan 10 23:23:20 2017].722362 CGI Request 1 on process 8336
+[Tue Jan 10 23:23:20 2017].722467 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Tue Jan 10 23:23:20 2017].722488 msFreeMap(): freeing map at 0x9160c88.
+[Tue Jan 10 23:23:20 2017].760487 CGI Request 1 on process 8339
+[Tue Jan 10 23:23:20 2017].762117 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Tue Jan 10 23:23:20 2017].762132 msFreeMap(): freeing map at 0x8096c20.
+[Tue Jan 10 23:23:20 2017].768330 CGI Request 1 on process 8340
+[Tue Jan 10 23:23:20 2017].788901 msSaveImage(stdout) total time: 0.017s
+[Tue Jan 10 23:23:20 2017].789084 mapserv request processing time (msLoadMap not incl.): 0.021s
+[Tue Jan 10 23:23:20 2017].789100 msFreeMap(): freeing map at 0x9801d28.
+[Tue Jan 10 23:23:20 2017].739259 CGI Request 1 on process 8337
+[Tue Jan 10 23:23:21 2017].352882 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:23:21 2017].353006 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:23:22 2017].582214 msDrawMap(): Layer 0 (paises), 1.229s
+[Tue Jan 10 23:23:22 2017].582254 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:23:22 2017].582263 msDrawMap() total time: 1.230s
+[Tue Jan 10 23:23:22 2017].599353 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14841086018337.png) total time: 0.017s
+[Tue Jan 10 23:23:22 2017].634752 mapserv request processing time (msLoadMap not incl.): 1.895s
+[Tue Jan 10 23:23:22 2017].634767 msFreeMap(): freeing map at 0x9950980.
+[Tue Jan 10 23:23:20 2017].745425 CGI Request 1 on process 8338
+[Tue Jan 10 23:23:20 2017].745526 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Tue Jan 10 23:23:20 2017].745848 msDrawMap(): kicking into non-square pixel preserving mode.
+[Tue Jan 10 23:23:20 2017].745862 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:23:20 2017].745998 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:23:25 2017].875030 msDrawMap(): Layer 0 (paises), 5.129s
+[Tue Jan 10 23:23:25 2017].875074 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:23:25 2017].875087 msDrawMap() total time: 5.130s
+[Tue Jan 10 23:23:25 2017].882979 msSaveImage(stdout) total time: 0.008s
+[Tue Jan 10 23:23:25 2017].884180 mapserv request processing time (msLoadMap not incl.): 5.139s
+[Tue Jan 10 23:23:25 2017].884194 msFreeMap(): freeing map at 0x8640ff0.
+[Tue Jan 10 23:23:24 2017].214303 CGI Request 1 on process 8349
+[Tue Jan 10 23:23:26 2017].126716 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:23:26 2017].126843 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:23:26 2017].474953 msDrawMap(): Layer 0 (paises), 0.348s
+[Tue Jan 10 23:23:26 2017].475006 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:23:26 2017].475014 msDrawMap() total time: 0.349s
+[Tue Jan 10 23:23:26 2017].491085 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14841086068349.png) total time: 0.016s
+[Tue Jan 10 23:23:26 2017].525751 mapserv request processing time (msLoadMap not incl.): 2.311s
+[Tue Jan 10 23:23:26 2017].525765 msFreeMap(): freeing map at 0x8e57980.
+[Tue Jan 10 23:24:05 2017].523688 CGI Request 1 on process 8365
+[Tue Jan 10 23:24:05 2017].526977 mapserv request processing time (msLoadMap not incl.): 0.003s
+[Tue Jan 10 23:24:05 2017].527039 msFreeMap(): freeing map at 0x8306c20.
+[Tue Jan 10 23:24:05 2017].530159 CGI Request 1 on process 8366
+[Tue Jan 10 23:24:05 2017].530337 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Tue Jan 10 23:24:05 2017].530362 msFreeMap(): freeing map at 0x8205c88.
+[Tue Jan 10 23:24:05 2017].538893 CGI Request 1 on process 8368
+[Tue Jan 10 23:24:05 2017].560573 msSaveImage(stdout) total time: 0.017s
+[Tue Jan 10 23:24:05 2017].560722 mapserv request processing time (msLoadMap not incl.): 0.022s
+[Tue Jan 10 23:24:05 2017].560733 msFreeMap(): freeing map at 0x92c2d28.
+[Tue Jan 10 23:24:05 2017].537193 CGI Request 1 on process 8367
+[Tue Jan 10 23:24:05 2017].537291 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Tue Jan 10 23:24:05 2017].537643 msDrawMap(): kicking into non-square pixel preserving mode.
+[Tue Jan 10 23:24:05 2017].537656 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:24:05 2017].537792 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:24:09 2017].405607 msDrawMap(): Layer 0 (paises), 3.868s
+[Tue Jan 10 23:24:09 2017].405644 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:24:09 2017].405653 msDrawMap() total time: 3.868s
+[Tue Jan 10 23:24:09 2017].412835 msSaveImage(stdout) total time: 0.007s
+[Tue Jan 10 23:24:09 2017].413998 mapserv request processing time (msLoadMap not incl.): 3.877s
+[Tue Jan 10 23:24:09 2017].414009 msFreeMap(): freeing map at 0x9387ff0.
+[Tue Jan 10 23:24:19 2017].308151 CGI Request 1 on process 8383
+[Tue Jan 10 23:24:19 2017].310898 mapserv request processing time (msLoadMap not incl.): 0.003s
+[Tue Jan 10 23:24:19 2017].310921 msFreeMap(): freeing map at 0x93dbc20.
+[Tue Jan 10 23:24:19 2017].314095 CGI Request 1 on process 8385
+[Tue Jan 10 23:24:19 2017].314417 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Tue Jan 10 23:24:19 2017].314461 msFreeMap(): freeing map at 0x8b37c88.
+[Tue Jan 10 23:24:19 2017].314931 CGI Request 1 on process 8384
+[Tue Jan 10 23:24:19 2017].340743 msSaveImage(stdout) total time: 0.022s
+[Tue Jan 10 23:24:19 2017].341155 mapserv request processing time (msLoadMap not incl.): 0.026s
+[Tue Jan 10 23:24:19 2017].341181 msFreeMap(): freeing map at 0x9893d28.
+[Tue Jan 10 23:24:19 2017].314191 CGI Request 1 on process 8387
+[Tue Jan 10 23:24:19 2017].960031 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:24:19 2017].960155 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:24:21 2017].363720 msDrawMap(): Layer 0 (paises), 1.404s
+[Tue Jan 10 23:24:21 2017].363758 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:24:21 2017].363767 msDrawMap() total time: 1.405s
+[Tue Jan 10 23:24:21 2017].380170 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14841086598387.png) total time: 0.016s
+[Tue Jan 10 23:24:21 2017].416139 mapserv request processing time (msLoadMap not incl.): 2.102s
+[Tue Jan 10 23:24:21 2017].416153 msFreeMap(): freeing map at 0x8723980.
+[Tue Jan 10 23:24:19 2017].314557 CGI Request 1 on process 8386
+[Tue Jan 10 23:24:19 2017].314713 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Tue Jan 10 23:24:19 2017].315187 msDrawMap(): kicking into non-square pixel preserving mode.
+[Tue Jan 10 23:24:19 2017].315201 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 10 23:24:19 2017].315344 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 10 23:24:24 2017].663884 msDrawMap(): Layer 0 (paises), 5.349s
+[Tue Jan 10 23:24:24 2017].663921 msDrawMap(): Drawing Label Cache, 0.000s
+[Tue Jan 10 23:24:24 2017].663929 msDrawMap() total time: 5.349s
+[Tue Jan 10 23:24:24 2017].671488 msSaveImage(stdout) total time: 0.008s
+[Tue Jan 10 23:24:24 2017].673025 mapserv request processing time (msLoadMap not incl.): 5.358s
+[Tue Jan 10 23:24:24 2017].673051 msFreeMap(): freeing map at 0x871dff0.
+[Fri Jan 13 21:45:01 2017].25900 CGI Request 1 on process 3339
+[Fri Jan 13 21:45:01 2017].70684 msSaveImage(stdout) total time: 0.016s
+[Fri Jan 13 21:45:01 2017].70827 mapserv request processing time (msLoadMap not incl.): 0.045s
+[Fri Jan 13 21:45:01 2017].70843 msFreeMap(): freeing map at 0x907fd28.
+[Fri Jan 13 21:45:01 2017].25789 CGI Request 1 on process 3337
+[Fri Jan 13 21:45:01 2017].277207 mapserv request processing time (msLoadMap not incl.): 0.251s
+[Fri Jan 13 21:45:01 2017].277236 msFreeMap(): freeing map at 0x8cd1c20.
+[Fri Jan 13 21:45:01 2017].665869 CGI Request 1 on process 3341
+[Fri Jan 13 21:45:01 2017].665966 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Fri Jan 13 21:45:01 2017].665981 msFreeMap(): freeing map at 0x953ec88.
+[Fri Jan 13 21:45:03 2017].537156 CGI Request 1 on process 3346
+[Fri Jan 13 21:45:03 2017].538957 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Fri Jan 13 21:45:03 2017].538976 msFreeMap(): freeing map at 0x9febc20.
+[Fri Jan 13 21:45:03 2017].549825 CGI Request 1 on process 3347
+[Fri Jan 13 21:45:03 2017].549969 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Fri Jan 13 21:45:03 2017].549991 msFreeMap(): freeing map at 0x9c98c88.
+[Fri Jan 13 21:45:01 2017].26029 CGI Request 1 on process 3336
+[Fri Jan 13 21:45:06 2017].463005 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Fri Jan 13 21:45:06 2017].463130 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Fri Jan 13 21:45:11 2017].868887 msDrawMap(): Layer 0 (paises), 5.406s
+[Fri Jan 13 21:45:11 2017].868922 msDrawMap(): Drawing Label Cache, 0.000s
+[Fri Jan 13 21:45:11 2017].868930 msDrawMap() total time: 5.407s
+[Fri Jan 13 21:45:11 2017].885633 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14843619063336.png) total time: 0.017s
+[Fri Jan 13 21:45:11 2017].952169 mapserv request processing time (msLoadMap not incl.): 10.926s
+[Fri Jan 13 21:45:11 2017].952186 msFreeMap(): freeing map at 0x820c980.
+[Fri Jan 13 21:45:01 2017].25975 CGI Request 1 on process 3338
+[Fri Jan 13 21:45:01 2017].40646 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Fri Jan 13 21:45:01 2017].41007 msDrawMap(): kicking into non-square pixel preserving mode.
+[Fri Jan 13 21:45:01 2017].41022 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Fri Jan 13 21:45:01 2017].66482 msDrawMap(): WMS/WFS set-up and query, 0.025s
+[Fri Jan 13 21:45:17 2017].107221 msDrawMap(): Layer 0 (paises), 16.041s
+[Fri Jan 13 21:45:17 2017].107259 msDrawMap(): Drawing Label Cache, 0.000s
+[Fri Jan 13 21:45:17 2017].107268 msDrawMap() total time: 16.067s
+[Fri Jan 13 21:45:03 2017].553573 CGI Request 1 on process 3348
+[Fri Jan 13 21:45:09 2017].584981 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Fri Jan 13 21:45:09 2017].585197 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Fri Jan 13 21:45:18 2017].608284 msDrawMap(): Layer 0 (paises), 9.023s
+[Fri Jan 13 21:45:18 2017].608321 msDrawMap(): Drawing Label Cache, 0.000s
+[Fri Jan 13 21:45:18 2017].608330 msDrawMap() total time: 9.025s
+[Fri Jan 13 21:45:18 2017].628430 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14843619093348.png) total time: 0.020s
+[Fri Jan 13 21:45:18 2017].666433 mapserv request processing time (msLoadMap not incl.): 15.113s
+[Fri Jan 13 21:45:18 2017].666452 msFreeMap(): freeing map at 0x8769980.
+[Tue Jan 31 15:36:51 2017].324550 CGI Request 1 on process 2893
+[Tue Jan 31 15:36:51 2017].324672 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Tue Jan 31 15:36:51 2017].324695 msFreeMap(): freeing map at 0x8571c88.
+[Tue Jan 31 15:36:51 2017].324677 CGI Request 1 on process 2892
+[Tue Jan 31 15:36:51 2017].345422 msSaveImage(stdout) total time: 0.017s
+[Tue Jan 31 15:36:51 2017].345568 mapserv request processing time (msLoadMap not incl.): 0.021s
+[Tue Jan 31 15:36:51 2017].345581 msFreeMap(): freeing map at 0x960fd28.
+[Tue Jan 31 15:36:51 2017].324603 CGI Request 1 on process 2890
+[Tue Jan 31 15:36:51 2017].575415 mapserv request processing time (msLoadMap not incl.): 0.251s
+[Tue Jan 31 15:36:51 2017].575445 msFreeMap(): freeing map at 0x9298c20.
+[Tue Jan 31 15:36:51 2017].325024 CGI Request 1 on process 2894
+[Tue Jan 31 15:36:54 2017].322915 msPostGISLayerOpen(): Query error. Database connection failed (could not connect to server: No route to host
+	Is the server running on host "192.168.1.8" and accepting
+	TCP/IP connections on port 5432?
+) with connect string 'dbname='ecuador' host='192.168.1.8' port=5432 user='dexter' password=********* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Jan 31 15:36:54 2017].323106 mapserv request processing time (msLoadMap not incl.): 2.998s
+[Tue Jan 31 15:36:54 2017].323153 msFreeMap(): freeing map at 0x8b6b980.
+[Tue Jan 31 15:36:51 2017].324472 CGI Request 1 on process 2891
+[Tue Jan 31 15:36:51 2017].324927 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Tue Jan 31 15:36:51 2017].325262 msDrawMap(): kicking into non-square pixel preserving mode.
+[Tue Jan 31 15:36:51 2017].325276 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 31 15:36:51 2017].342155 msDrawMap(): WMS/WFS set-up and query, 0.017s
+[Tue Jan 31 15:36:54 2017].322949 msPostGISLayerOpen(): Query error. Database connection failed (could not connect to server: No route to host
+	Is the server running on host "192.168.1.8" and accepting
+	TCP/IP connections on port 5432?
+) with connect string 'dbname='ecuador' host='192.168.1.8' port=5432 user='dexter' password=********* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Jan 31 15:36:54 2017].323038 msDrawMap(): Image handling error. Failed to draw layer named 'paises'.
+[Tue Jan 31 15:36:54 2017].323300 mapserv request processing time (msLoadMap not incl.): 2.999s
+[Tue Jan 31 15:36:54 2017].323331 msFreeMap(): freeing map at 0x9765ff0.
+[Tue Jan 31 15:44:02 2017].894040 CGI Request 1 on process 2931
+[Tue Jan 31 15:44:02 2017].894124 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Tue Jan 31 15:44:02 2017].894143 msFreeMap(): freeing map at 0x8c4bc88.
+[Tue Jan 31 15:44:02 2017].894018 CGI Request 1 on process 2929
+[Tue Jan 31 15:44:02 2017].895778 mapserv request processing time (msLoadMap not incl.): 0.002s
+[Tue Jan 31 15:44:02 2017].895795 msFreeMap(): freeing map at 0x8285c20.
+[Tue Jan 31 15:44:02 2017].903213 CGI Request 1 on process 2930
+[Tue Jan 31 15:44:02 2017].924471 msSaveImage(stdout) total time: 0.018s
+[Tue Jan 31 15:44:02 2017].924640 mapserv request processing time (msLoadMap not incl.): 0.021s
+[Tue Jan 31 15:44:02 2017].924655 msFreeMap(): freeing map at 0x992cd28.
+[Tue Jan 31 15:44:02 2017].868829 CGI Request 1 on process 2927
+[Tue Jan 31 15:44:05 2017].866632 msPostGISLayerOpen(): Query error. Database connection failed (could not connect to server: No route to host
+	Is the server running on host "192.168.1.8" and accepting
+	TCP/IP connections on port 5432?
+) with connect string 'dbname='ecuador' host='192.168.1.8' port=5432 user='dexter' password=********* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Jan 31 15:44:05 2017].866700 mapserv request processing time (msLoadMap not incl.): 2.998s
+[Tue Jan 31 15:44:05 2017].866717 msFreeMap(): freeing map at 0x8667980.
+[Tue Jan 31 15:44:02 2017].868741 CGI Request 1 on process 2928
+[Tue Jan 31 15:44:02 2017].868840 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Tue Jan 31 15:44:02 2017].869177 msDrawMap(): kicking into non-square pixel preserving mode.
+[Tue Jan 31 15:44:02 2017].869190 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Tue Jan 31 15:44:02 2017].869328 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Tue Jan 31 15:44:05 2017].866635 msPostGISLayerOpen(): Query error. Database connection failed (could not connect to server: No route to host
+	Is the server running on host "192.168.1.8" and accepting
+	TCP/IP connections on port 5432?
+) with connect string 'dbname='ecuador' host='192.168.1.8' port=5432 user='dexter' password=********* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Jan 31 15:44:05 2017].866664 msDrawMap(): Image handling error. Failed to draw layer named 'paises'.
+[Tue Jan 31 15:44:05 2017].866749 mapserv request processing time (msLoadMap not incl.): 2.998s
+[Tue Jan 31 15:44:05 2017].866758 msFreeMap(): freeing map at 0x88a1ff0.
+[Thu Feb 16 21:56:54 2017].660214 CGI Request 1 on process 6483
+[Thu Feb 16 21:56:54 2017].660332 mapserv request processing time (msLoadMap not incl.): 0.000s
+[Thu Feb 16 21:56:54 2017].660350 msFreeMap(): freeing map at 0x88fcc88.
+[Thu Feb 16 21:56:54 2017].660344 CGI Request 1 on process 6485
+[Thu Feb 16 21:56:54 2017].686870 msSaveImage(stdout) total time: 0.014s
+[Thu Feb 16 21:56:54 2017].687003 mapserv request processing time (msLoadMap not incl.): 0.027s
+[Thu Feb 16 21:56:54 2017].687013 msFreeMap(): freeing map at 0x9b75d28.
+[Thu Feb 16 21:56:54 2017].660189 CGI Request 1 on process 6486
+[Thu Feb 16 21:56:55 2017].262068 mapserv request processing time (msLoadMap not incl.): 0.602s
+[Thu Feb 16 21:56:55 2017].262100 msFreeMap(): freeing map at 0x86c9c20.
+[Thu Feb 16 21:56:54 2017].660977 CGI Request 1 on process 6484
+[Thu Feb 16 21:56:56 2017].713829 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Thu Feb 16 21:56:56 2017].713947 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Thu Feb 16 21:56:57 2017].768305 msDrawMap(): Layer 0 (paises), 1.054s
+[Thu Feb 16 21:56:57 2017].768342 msDrawMap(): Drawing Label Cache, 0.000s
+[Thu Feb 16 21:56:57 2017].768350 msDrawMap() total time: 1.057s
+[Thu Feb 16 21:56:57 2017].784843 msSaveImage(/var/www/html/mapas/mapserver/tmp/gadm14873002166484.png) total time: 0.016s
+[Thu Feb 16 21:56:57 2017].837370 mapserv request processing time (msLoadMap not incl.): 3.176s
+[Thu Feb 16 21:56:57 2017].837385 msFreeMap(): freeing map at 0x8da7980.
+[Thu Feb 16 21:56:54 2017].660317 CGI Request 1 on process 6487
+[Thu Feb 16 21:56:54 2017].661743 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Thu Feb 16 21:56:54 2017].662086 msDrawMap(): kicking into non-square pixel preserving mode.
+[Thu Feb 16 21:56:54 2017].662101 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Thu Feb 16 21:56:54 2017].696209 msDrawMap(): WMS/WFS set-up and query, 0.034s
+[Thu Feb 16 21:57:00 2017].745236 msDrawMap(): Layer 0 (paises), 6.049s
+[Thu Feb 16 21:57:00 2017].745277 msDrawMap(): Drawing Label Cache, 0.000s
+[Thu Feb 16 21:57:00 2017].745286 msDrawMap() total time: 6.083s
+[Thu Feb 16 21:57:00 2017].752714 msSaveImage(stdout) total time: 0.007s
+[Thu Feb 16 21:57:00 2017].753825 mapserv request processing time (msLoadMap not incl.): 6.094s
+[Thu Feb 16 21:57:00 2017].753836 msFreeMap(): freeing map at 0x82a4ff0.
+[Thu Feb 16 21:57:19 2017].695433 CGI Request 1 on process 6493
+[Thu Feb 16 21:57:19 2017].695532 msWMSLoadGetMapParams(): enabling non-square pixels.
+[Thu Feb 16 21:57:19 2017].695847 msDrawMap(): kicking into non-square pixel preserving mode.
+[Thu Feb 16 21:57:19 2017].695860 msDrawMap(): rendering using outputformat named png (AGG/PNG).
+[Thu Feb 16 21:57:19 2017].695997 msDrawMap(): WMS/WFS set-up and query, 0.000s
+[Thu Feb 16 21:57:26 2017].618169 msDrawMap(): Layer 0 (paises), 6.922s
+[Thu Feb 16 21:57:26 2017].618217 msDrawMap(): Drawing Label Cache, 0.000s
+[Thu Feb 16 21:57:26 2017].618226 msDrawMap() total time: 6.923s
+[Thu Feb 16 21:57:26 2017].625749 msSaveImage(stdout) total time: 0.007s
+[Thu Feb 16 21:57:26 2017].626888 mapserv request processing time (msLoadMap not incl.): 6.931s
+[Thu Feb 16 21:57:26 2017].626911 msFreeMap(): freeing map at 0x8d93ff0.

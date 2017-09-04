@@ -21,9 +21,11 @@
     "tests"
   ],
   "dependencies": {
-    "leaflet": "^1.0.1",
     "bootstrap": "^3.3.7",
+    "d3": "~4.5.0",
+    "font-awesome": "fontawesome#^4.6.3",
     "js-marker-clusterer": "https://github.com/googlemaps/js-marker-clusterer.git#gh-pages",
-    "font-awesome": "fontawesome#^4.6.3"
+    "leaflet": "^1.0.1",
+    "Photo-Sphere-Viewer": "^3.2.3"
   }
 }

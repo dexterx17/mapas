@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pruebas turismo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/> 
+	<link href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/> 
+
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	
+	<style>
+		#mapa{
+			width: 100%;
+			height: 500px;
+		}
+		#controles{
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Propuesta mapa lugares canton
+				<div id="controles" class="pull-right btn-group">
+					<span class="zoom"></span>
+					 | 
+					<span class="lat"></span>,
+					<span class="lng"></span>
+				</div>
+			</div>
+			<div class="panel-body">
+				<div class="col-lg-4">
+					<table class="table table-hover table-responsive">
+						<caption>Distancia desde las principales ciudades para llegar a </caption>
+						<thead>
+							<tr>
+								<th>Ciudad</th>
+								<th>Distancia linea recta</th>
+								<th>Distancia en auto</th>
+								<th>Tiempo estimado en auto</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Quito</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Riobamba</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Guayaquil</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Cuenca</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Loja</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-lg-8">
+					<div id="mapa">
+							
+					</div>
+				</div>
+			</div>
+			<div class="panel-footer">
+				<div class="pull-left">
+					<span class="bounds"></span>
+				</div>
+				<hr>
+				<a href="https://developers.google.com/maps/documentation/javascript/marker-clustering" target="_blank">https://developers.google.com/maps/documentation/javascript/marker-clustering</a>
+				<br>
+				<a href="https://developers.google.com/maps/documentation/javascript/events" target="_blank">https://developers.google.com/maps/documentation/javascript/events</a>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		var map;
+		function initMap() {
+		  map = new google.maps.Map(document.getElementById('mapa'), {
+		    center: {lat: -1.644 , lng: -78.397},
+		    zoom: 8
+		  });
+
+		    map.addListener('zoom_changed', function() {
+	    		$('.zoom').html(map.getZoom());
+			});
+
+			map.addListener('mousemove', function(e) {
+	    		$('.lat').html(e.latLng.lat);
+	    		$('.lng').html(e.latLng.lng);
+			});
+
+			map.addListener('bounds_changed', function(e) {
+				var bounds =map.getBounds(); 
+	    		$('.bounds').html(bounds.b.b+' , '+bounds.b.f+'  ::  '+bounds.f.b+' , '+bounds.f.f);
+			});
+
+		  var infoWindow = new google.maps.InfoWindow({map: map});
+
+		  // Try HTML5 geolocation.
+		  if (navigator.geolocation) {
+		    navigator.geolocation.getCurrentPosition(function(position) {
+		      var pos = {
+		        lat: position.coords.latitude,
+		        lng: position.coords.longitude
+		      };
+
+		      infoWindow.setPosition(pos);
+		      infoWindow.setContent('<h5>Ubicación encontrada!</h5>');
+		      map.setCenter(pos);
+		    }, function() {
+		      handleLocationError(true, infoWindow, map.getCenter());
+		    });
+		  } else {
+		    // Browser doesn't support Geolocation
+		    handleLocationError(false, infoWindow, map.getCenter());
+		  }
+
+		  var quitumbe  = new google.maps.Marker({
+		  	position: { lat: -0.295572, lng: -78.5909907},
+		  	map : map
+		  });
+		  var destino = new google.maps.Marker({
+		  	position: { lat: -2.661193, lng: -78.20445134287402},
+		  	map:map
+		  });
+		}
+
+		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+		  infoWindow.setPosition(pos);
+		  infoWindow.setContent(browserHasGeolocation ?
+		                        'Error: The Geolocation service failed.' :
+		                        'Error: Your browser doesn\'t support geolocation.');
+		}
+
+    </script>
+
+	<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ920_mAj7Lcw2Mc6JOqrxbJEKHQS0BRE&callback=initMap">
+    </script>
+
+    <script type="text/javascript" src="../bower_components/js-marker-clusterer/src/markerclusterer.js"></script>
+</body>
+</html>
