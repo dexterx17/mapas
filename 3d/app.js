@@ -1,4 +1,5 @@
- var viewer = new Cesium.Viewer('cesiumContainer');
+ var viewer = new Cesium.Viewer('cesiumContainer',{timeline:false});
+ 
 var scene = viewer.scene;
 var handler;
 
@@ -60,7 +61,7 @@ handler.setInputAction(function(movement) {
 }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
 
 
-$(document).on('click','#flyto',function(){
+//$(document).on('click','#flyto',function(){
   var lat = $('#lat').val();
   var lng = $('#lng').val();
   var altura = $('#altura').val();
@@ -81,15 +82,36 @@ $(document).on('click','#flyto',function(){
         load_stations();
     }
   });
-});
+//});
 
 var mixtas = viewer.entities.add(new Cesium.Entity());
 
-var url_stations = 'http://rrnn.tungurahua.gob.ec/red/Ws_red/stations';
-var url_stations = 'http://127.0.0.1/rrnn/red/Ws_red/stations';
+//var url_stations = 'http://rrnn.tungurahua.gob.ec/red/Ws_red/stations';
+var url_stations = 'http://172.16.3.69/job/red/Ws_red/stations';
 
 var pinBuilder = new Cesium.PinBuilder();
 
+
+function ficha_estacion(dato){
+    var result = '<div class="panel panel-default"><div class="panel-heading">';
+    result += '</div><div class="panel-body">';
+    result += '<table class="table table-hover table-responsive">';
+    result += '<tr><th>Ubicación:</th><td>'+dato.canton+' <small>'+dato.parroquia+'</small></td></tr>';
+    result += '<tr><td class="text-center" colspan="2">'+dato.direccion+'</td></tr>';
+    result += '<tr><th>Microcuenca:</th><td>'+dato.microcuenca+'</td></tr>';
+    result += '<tr><th>Altitud:</th><td>'+dato.altitud+'</td></tr>';
+    result += '<tr><td class="text-justify" colspan="2">'+dato.descripcion+'</td></tr>';
+    result += '</table>';
+    result += '</div><div class="panel-footer">';
+    result += '<button type="button" class="consultar_datos_estacion">Grafica</button>';
+    result += '</div></div>'
+    return result;
+}
+
+$(document).on('click','.consultar_datos_estacion',function(e){
+    e.preventDefault();
+    alert('vamos');
+});
 function load_stations(){
 
     $.get(url_stations,function(data){
@@ -124,21 +146,27 @@ function load_stations(){
                 });*/
 
                 var color;
+                var icono;
                 if(dato.tipo === "meteorologica"){
-                    color = pinBuilder.fromColor(Cesium.Color.RED, 48).toDataURL();
+                    color = pinBuilder.fromColor(Cesium.Color.RED, 24).toDataURL();
+                   // icono = 
+                   $('#meteorologicas').append('<li><i class="fa fa-eye"></i>'+dato.nombre+'<span class="pull-right badge">'+dato.codigo+'</span></li>');
+                   
                 }else{
-                    color = pinBuilder.fromColor(Cesium.Color.ROYALBLUE, 48).toDataURL();
+                   $('#hidrometricas').append('<li><i class="fa fa-eye"></i>'+dato.nombre+'<span class="pull-right badge">'+dato.codigo+'</span></li>');
+                    color = pinBuilder.fromColor(Cesium.Color.ROYALBLUE, 24).toDataURL();
                 }
 
                 var bluePin = viewer.entities.add({
                     name : dato.nombre,
                     position : punto,
+                    description:ficha_estacion(dato),
                     billboard : {
                         image : color,
                         verticalOrigin : Cesium.VerticalOrigin.BOTTOM
                     },
                     label : {
-                        text : dato.nombre,
+                        text : dato.codigo,
                         font : '12pt monospace',
                         style: Cesium.LabelStyle.FILL_AND_OUTLINE,
                         outlineWidth : 2,

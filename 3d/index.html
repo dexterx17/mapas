@@ -2,48 +2,56 @@
 <html lang="en">
     <head>
         <!-- Use correct character set. -->
-        <meta charset="utf-8">
-            <!-- Tell IE to use the latest, best version. -->
-            <meta content="IE=edge" http-equiv="X-UA-Compatible">
-                <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
-                <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" name="viewport">
-                    <title>
-                        Hello World!
-                    </title>
-                    <script src="../node_modules/cesium/Build/Cesium/Cesium.js">
-                    </script>
-                    <style>
-                        @import url(../node_modules/cesium/Build/Cesium/Widgets/widgets.css);
-                        html, body, #cesiumContainer {
-                            width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
-                        }
-                    </style>
-                </meta>
-            </meta>
-        </meta>
+        <meta charset="utf-8" />
+        <!-- Tell IE to use the latest, best version. -->
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" name="viewport" />
+            <title>
+                Red hidrometeorologica de Tungurahua
+            </title>
+            <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/> 
+            <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/> 
+            <script src="../node_modules/cesium/Build/Cesium/Cesium.js">
+            </script>
+            <style>
+                @import url(../node_modules/cesium/Build/Cesium/Widgets/widgets.css);
+                html, body, #cesiumContainer {
+                    width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+                }
+                #ubicacion{ display: none; }
+                .leyenda{
+                    position: absolute;
+                    z-index: 99999;
+                    list-style-type: none;
+                }
+                .cesium-infoBox-description table .text-justify{
+                    text-align: justify !important;
+                }
+            </style>
     </head>
     <body>
         <div id="ubicacion">
             <label for="lat">
                 Lat:
             </label>
-            <input id="lat" name="lat" placeholder="Latitud" type="text" value="-78.8783927"/>
+            <input id="lat" name="lat" placeholder="Latitud" type="text" value="-78.57"/>
             <label for="lng">
                 Lng:
             </label>
-            <input id="lng" name="lng" placeholder="Longitud" type="text" value="-1.4719858"/>
+            <input id="lng" name="lng" placeholder="Longitud" type="text" value="-2"/>
             <label for="altura">
                 Altura:
             </label>
-            <input id="altura" name="altura" placeholder="Altura" type="number" value="10000"/>
+            <input id="altura" name="altura" placeholder="Altura" type="number" value="45000"/>
             <label for="heading">
                 Heading:
             </label>
-            <input id="heading" name="heading" placeholder="Heading" type="number" value="32"/>
+            <input id="heading" name="heading" placeholder="Heading" type="number" value="0"/>
             <label for="pitch">
                 Pitch:
             </label>
-            <input id="pitch" name="pitch" placeholder="Pitch" type="number" value="-25"/>
+            <input id="pitch" name="pitch" placeholder="Pitch" type="number" value="-27"/>
             <label for="roll">
                 Roll:
             </label>
@@ -57,9 +65,48 @@
             <span id="y"></span>||
             <span id="z"></span>
         </div>
+        <div class="leyenda">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <svg width="20" height="20">
+                         <circle cx="10" cy="10" r="10" stroke="red" stroke-width="3" fill="red" ></circle>
+                      </svg> Estaciones Meteorológicas
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <ul id="meteorologicas" class="list-group">
+                    
+                  </ul>
+                </div>
+              </div>
+             <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <svg width="20" height="20">
+                            <circle cx="10" cy="10" r="10" stroke="blue" stroke-width="3" fill="blue"></circle>
+                        </svg> Estaciones Hidrométricas
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                   <ul id="hidrometricas" class="list-group">
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
         <div id="cesiumContainer">
         </div>
         <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
         <script src="clases.js" type="text/javascript"></script>
         <script src="app.js" type="text/javascript"></script>
     </body>
