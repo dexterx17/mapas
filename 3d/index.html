@@ -28,6 +28,9 @@
                 .cesium-infoBox-description table .text-justify{
                     text-align: justify !important;
                 }
+                .list-group-item > .badge{
+                    float: left;
+                }
             </style>
     </head>
     <body>
@@ -70,14 +73,14 @@
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                       <svg width="20" height="20">
                          <circle cx="10" cy="10" r="10" stroke="red" stroke-width="3" fill="red" ></circle>
                       </svg> Estaciones Meteorológicas
                     </a>
                   </h4>
                 </div>
-                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                   <ul id="meteorologicas" class="list-group">
                     
                   </ul>
@@ -97,6 +100,35 @@
                    <ul id="hidrometricas" class="list-group">
                     
                   </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        Capas
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                    <div id="toolbar">
+                        <table>
+                            <tbody data-bind="foreach: layers">
+                                <tr data-bind="css: { up: $parent.upLayer === $data, down: $parent.downLayer === $data }">
+                                    <td><input data-bind="checked: show" type="checkbox"></td>
+                                    <td>
+                                        <span data-bind="text: name, visible: !$parent.isSelectableLayer($data)"></span>
+                                        <select data-bind="visible: $parent.isSelectableLayer($data), options: $parent.baseLayers, optionsText: 'name', value: $parent.selectedLayer"></select>
+                                    </td>
+                                    <td>
+                                        <input min="0" max="1" step="0.01" data-bind="value: alpha, valueUpdate: 'input'" type="range">
+                                    </td>
+                                    <td><button type="button" class="cesium-button" data-bind="click: function() { $parent.raise($data, $index()); }, visible: $parent.canRaise($index())">▲</button></td>
+                                    <td><button type="button" class="cesium-button" data-bind="click: function() { $parent.lower($data, $index()); }, visible: $parent.canLower($index())">▼</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
               </div>
             </div>

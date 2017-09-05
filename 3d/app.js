@@ -1,4 +1,4 @@
- var viewer = new Cesium.Viewer('cesiumContainer',{timeline:false});
+ var viewer = new Cesium.Viewer('cesiumContainer',{timeline:false, baseLayerPicker : false});
  
 var scene = viewer.scene;
 var handler;
@@ -11,6 +11,297 @@ viewer.terrainProvider = new Cesium.CesiumTerrainProvider({
     url : 'https://assets.agi.com/stk-terrain/v1/tilesets/world/tiles',
     requestWaterMask : true,
     requestVertexNormals : true
+});
+
+var imageryLayers = viewer.imageryLayers;
+
+var viewModel = {
+    layers : [],
+    baseLayers : [],
+    upLayer : null,
+    downLayer : null,
+    selectedLayer : null,
+    isSelectableLayer : function(layer) {
+        return baseLayers.indexOf(layer) >= 0;
+    },
+    raise : function(layer, index) {
+        imageryLayers.raise(layer);
+        viewModel.upLayer = layer;
+        viewModel.downLayer = viewModel.layers[Math.max(0, index - 1)];
+        updateLayerList();
+        window.setTimeout(function() { viewModel.upLayer = viewModel.downLayer = null; }, 10);
+    },
+    lower : function(layer, index) {
+        imageryLayers.lower(layer);
+        viewModel.upLayer = viewModel.layers[Math.min(viewModel.layers.length - 1, index + 1)];
+        viewModel.downLayer = layer;
+        updateLayerList();
+        window.setTimeout(function() { viewModel.upLayer = viewModel.downLayer = null; }, 10);
+    },
+    canRaise : function(layerIndex) {
+        return layerIndex > 0;
+    },
+    canLower : function(layerIndex) {
+        return layerIndex >= 0 && layerIndex < imageryLayers.length - 1;
+    }
+};
+Cesium.knockout.track(viewModel);
+
+var baseLayers = viewModel.baseLayers;
+
+function setupLayers() {
+    // Create all the base layers that this example will support.
+    // These base layers aren't really special.  It's possible to have multiple of them
+    // enabled at once, just like the other layers, but it doesn't make much sense because
+    // all of these layers cover the entire globe and are opaque.
+    addBaseLayerOption(
+            'Bing Maps Aerial',
+            undefined); // the current base layer
+    addBaseLayerOption(
+            'Bing Maps Road',
+            new Cesium.BingMapsImageryProvider({
+                url: '//dev.virtualearth.net',
+                mapStyle: Cesium.BingMapsStyle.ROAD
+            }));
+    addBaseLayerOption(
+            'ArcGIS World Street Maps',
+            new Cesium.ArcGisMapServerImageryProvider({
+                url : '//server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer'
+            }));
+    addBaseLayerOption(
+            'Ortofoto Tungurahua',
+            new Cesium.WebMapServiceImageryProvider({
+                url : 'http://mapas.tungurahua.gob.ec/base',
+                layers : 'ortofoto',
+                enablePickFeature:false,
+                getFeatureInfoAsXml:false, //deshabilitar petición info_formt xml
+                getFeatureInfoAsGeoJson:false //deshabilitar petición info_formt geojson
+            }));
+
+    // Create the additional layers
+    addAdditionalLayerOption(
+            'Division Provincial',
+               new Cesium.WebMapServiceImageryProvider({
+                  url : 'http://mapas.tungurahua.gob.ec/base',
+                  layers : 'DivisionProvincial',
+                  parameters : {
+                      transparent:true,
+                      format : 'image/png',
+                  },
+                  getFeatureInfoParameters:{
+                    info_format:"application/geojson"
+                  },
+                  getFeatureInfoAsXml:false,
+                  getFeatureInfoAsGeoJson:true,
+              }));
+
+    addAdditionalLayerOption(
+            'Cantones',
+               new Cesium.WebMapServiceImageryProvider({
+                  url : 'http://mapas.tungurahua.gob.ec/base',
+                  layers : 'tungurahuacantones',
+                  parameters : {
+                      transparent:true,
+                      format : 'image/png',
+                  },
+                  getFeatureInfoParameters:{
+                    info_format:"application/geojson"
+                  },
+                  getFeatureInfoAsXml:false,
+                  getFeatureInfoAsGeoJson:true,
+              }));
+
+    addAdditionalLayerOption(
+            'Parroquias',
+               new Cesium.WebMapServiceImageryProvider({
+                  url : 'http://mapas.tungurahua.gob.ec/base',
+                  layers : 'parroquias',
+                  parameters : {
+                      transparent:true,
+                      format : 'image/png',
+                  },
+                  getFeatureInfoParameters:{
+                    info_format:"application/geojson"
+                  },
+                  getFeatureInfoAsXml:false,
+                  getFeatureInfoAsGeoJson:true,
+              }));
+
+    addAdditionalLayerOption(
+            'Poblados',
+               new Cesium.WebMapServiceImageryProvider({
+                  url : 'http://mapas.tungurahua.gob.ec/base',
+                  layers : 'Poblados',
+                  parameters : {
+                      transparent:true,
+                      format : 'image/png',
+                  },
+                  getFeatureInfoParameters:{
+                    info_format:"application/geojson"
+                  },
+                  getFeatureInfoAsXml:false,
+                  getFeatureInfoAsGeoJson:true,
+              }));
+
+    addAdditionalLayerOption(
+            'Rios Principales',
+               new Cesium.WebMapServiceImageryProvider({
+                  url : 'http://mapas.tungurahua.gob.ec/base',
+                  layers : 'RiosPrincipales',
+                  parameters : {
+                      transparent:true,
+                      format : 'image/png',
+                  },
+                  getFeatureInfoParameters:{
+                    info_format:"application/geojson"
+                  },
+                  getFeatureInfoAsXml:false,
+                  getFeatureInfoAsGeoJson:true,
+              }));
+    
+    addAdditionalLayerOption(
+            'Rios Limites',
+               new Cesium.WebMapServiceImageryProvider({
+                  url : 'http://mapas.tungurahua.gob.ec/base',
+                  layers : 'RiosLimites',
+                  parameters : {
+                      transparent:true,
+                      format : 'image/png',
+                  },
+                  getFeatureInfoParameters:{
+                    info_format:"application/geojson"
+                  },
+                  getFeatureInfoAsXml:false,
+                  getFeatureInfoAsGeoJson:true,
+              }));
+
+    addAdditionalLayerOption(
+            'Rios',
+               new Cesium.WebMapServiceImageryProvider({
+                  url : 'http://mapas.tungurahua.gob.ec/base',
+                  layers : 'Rios',
+                  parameters : {
+                      transparent:true,
+                      format : 'image/png',
+                  },
+                  getFeatureInfoParameters:{
+                    info_format:"application/geojson"
+                  },
+                  getFeatureInfoAsXml:false,
+                  getFeatureInfoAsGeoJson:true,
+              }));
+
+    addAdditionalLayerOption(
+        'Cuerpos de Agua',
+           new Cesium.WebMapServiceImageryProvider({
+              url : 'http://mapas.tungurahua.gob.ec/base',
+              layers : 'CuerposdeAgua',
+              parameters : {
+                  transparent:true,
+                  format : 'image/png',
+              },
+              getFeatureInfoParameters:{
+                info_format:"application/geojson"
+              },
+              getFeatureInfoAsXml:false,
+              getFeatureInfoAsGeoJson:true,
+          }));
+        
+    addAdditionalLayerOption(
+            'Embalses',
+               new Cesium.WebMapServiceImageryProvider({
+                  url : 'http://mapas.tungurahua.gob.ec/base',
+                  layers : 'Embalses',
+                  parameters : {
+                      transparent:true,
+                      format : 'image/png',
+                  },
+                  getFeatureInfoParameters:{
+                    info_format:"application/geojson"
+                  },
+                  getFeatureInfoAsXml:false,
+                  getFeatureInfoAsGeoJson:true,
+              }));
+
+    addAdditionalLayerOption(
+            'Vias',
+               new Cesium.WebMapServiceImageryProvider({
+                  url : 'http://mapas.tungurahua.gob.ec/base',
+                  layers : 'Vias',
+                  parameters : {
+                      transparent:true,
+                      format : 'image/png',
+                  },
+                  getFeatureInfoParameters:{
+                    info_format:"application/geojson"
+                  },
+                  getFeatureInfoAsXml:false,
+                  getFeatureInfoAsGeoJson:true,
+              }));
+
+   
+    /*addAdditionalLayerOption(
+            'Grid',
+            new Cesium.GridImageryProvider(), 1.0, false);
+    addAdditionalLayerOption(
+            'Tile Coordinates',
+            new Cesium.TileCoordinatesImageryProvider(), 1.0, false);*/
+}
+
+function addBaseLayerOption(name, imageryProvider) {
+    var layer;
+    if (typeof imageryProvider === 'undefined') {
+        layer = imageryLayers.get(0);
+        viewModel.selectedLayer = layer;
+    } else {
+        layer = new Cesium.ImageryLayer(imageryProvider);
+    }
+
+    layer.name = name;
+    baseLayers.push(layer);
+}
+
+function addAdditionalLayerOption(name, imageryProvider, alpha, show) {
+    var layer = imageryLayers.addImageryProvider(imageryProvider);
+    layer.alpha = Cesium.defaultValue(alpha, 0.5);
+    layer.show = Cesium.defaultValue(show, true);
+    layer.name = name;
+    Cesium.knockout.track(layer, ['alpha', 'show', 'name']);
+}
+
+function updateLayerList() {
+    var numLayers = imageryLayers.length;
+    viewModel.layers.splice(0, viewModel.layers.length);
+    for (var i = numLayers - 1; i >= 0; --i) {
+        viewModel.layers.push(imageryLayers.get(i));
+    }
+}
+
+setupLayers();
+updateLayerList();
+
+//Bind the viewModel to the DOM elements of the UI that call for it.
+var toolbar = document.getElementById('toolbar');
+Cesium.knockout.applyBindings(viewModel, toolbar);
+
+Cesium.knockout.getObservable(viewModel, 'selectedLayer').subscribe(function(baseLayer) {
+    // Handle changes to the drop-down base layer selector.
+    var activeLayerIndex = 0;
+    var numLayers = viewModel.layers.length;
+    for (var i = 0; i < numLayers; ++i) {
+        if (viewModel.isSelectableLayer(viewModel.layers[i])) {
+            activeLayerIndex = i;
+            break;
+        }
+    }
+    var activeLayer = viewModel.layers[activeLayerIndex];
+    var show = activeLayer.show;
+    var alpha = activeLayer.alpha;
+    imageryLayers.remove(activeLayer, false);
+    imageryLayers.add(baseLayer, numLayers - activeLayerIndex - 1);
+    baseLayer.show = show;
+    baseLayer.alpha = alpha;
+    updateLayerList();
 });
 
 
@@ -61,6 +352,7 @@ handler.setInputAction(function(movement) {
 }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
 
 
+
 //$(document).on('click','#flyto',function(){
   var lat = $('#lat').val();
   var lng = $('#lng').val();
@@ -103,15 +395,27 @@ function ficha_estacion(dato){
     result += '<tr><td class="text-justify" colspan="2">'+dato.descripcion+'</td></tr>';
     result += '</table>';
     result += '</div><div class="panel-footer">';
-    result += '<button type="button" class="consultar_datos_estacion">Grafica</button>';
+    result += '<button type="button" id="consultar_datos_estacion">Grafica</button>';
     result += '</div></div>'
     return result;
 }
 
-$(document).on('click','.consultar_datos_estacion',function(e){
-    e.preventDefault();
-    alert('vamos');
-});
+viewer.infoBox.frame.removeAttribute('sandbox');
+
+var frame = viewer.infoBox.frame;
+frame.addEventListener('load', function () {
+    var jsLink = frame.contentDocument.createElement('script');
+    jsLink.src = Cesium.buildModuleUrl('http://172.16.3.69/mapas/bower_components/jquery/dist/jquery.js');
+    jsLink.type = 'text/javascript';
+    frame.contentDocument.head.appendChild(jsLink);
+
+    var jsLink = frame.contentDocument.createElement('script');
+    jsLink.src = Cesium.buildModuleUrl('http://172.16.3.69/mapas/3d/test.js');
+    jsLink.type = 'text/javascript';
+    frame.contentDocument.head.appendChild(jsLink);
+
+}, false);
+
 function load_stations(){
 
     $.get(url_stations,function(data){
@@ -181,6 +485,7 @@ function load_stations(){
 
         }
     },'json');
+
     
 }
 
