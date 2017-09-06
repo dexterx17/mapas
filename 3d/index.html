@@ -31,52 +31,22 @@
                 .list-group-item > .badge{
                     float: left;
                 }
+                .cesium-infoBox-iframe{
+                    height: 500px !important; 
+                }
+                .estacion-img{
+                    width: 100%;
+                }
             </style>
     </head>
     <body>
-        <div id="ubicacion">
-            <label for="lat">
-                Lat:
-            </label>
-            <input id="lat" name="lat" placeholder="Latitud" type="text" value="-78.57"/>
-            <label for="lng">
-                Lng:
-            </label>
-            <input id="lng" name="lng" placeholder="Longitud" type="text" value="-2"/>
-            <label for="altura">
-                Altura:
-            </label>
-            <input id="altura" name="altura" placeholder="Altura" type="number" value="45000"/>
-            <label for="heading">
-                Heading:
-            </label>
-            <input id="heading" name="heading" placeholder="Heading" type="number" value="0"/>
-            <label for="pitch">
-                Pitch:
-            </label>
-            <input id="pitch" name="pitch" placeholder="Pitch" type="number" value="-27"/>
-            <label for="roll">
-                Roll:
-            </label>
-            <input id="roll" name="roll" placeholder="Roll" type="number" value="0"/>
-            <button id="flyto" type="button" value="FlyTo">
-                FlyTo
-            </button>
-            <hr>
-            <span id="coords"></span>|||
-            <span id="x"></span>||
-            <span id="y"></span>||
-            <span id="z"></span>
-        </div>
         <div class="leyenda">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      <svg width="20" height="20">
-                         <circle cx="10" cy="10" r="10" stroke="red" stroke-width="3" fill="red" ></circle>
-                      </svg> Estaciones Meteorológicas
+                      <img src="http://127.0.0.1/mapas/imgs/meteorologica.png" alt="Estaciones Meteorológicas" width="25" height="35"> Estaciones Meteorológicas
                     </a>
                   </h4>
                 </div>
@@ -90,9 +60,7 @@
                 <div class="panel-heading" role="tab" id="headingTwo">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <svg width="20" height="20">
-                            <circle cx="10" cy="10" r="10" stroke="blue" stroke-width="3" fill="blue"></circle>
-                        </svg> Estaciones Hidrométricas
+                        <img src="http://127.0.0.1/mapas/imgs/hidrometrica.png" alt="Estaciones Hidrométricas" width="25" height="35"> Estaciones Hidrométricas
                     </a>
                   </h4>
                 </div>
@@ -106,27 +74,89 @@
                 <div class="panel-heading" role="tab" id="headingThree">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                        Capas
+                        Capas base Tungurahua
                     </a>
                   </h4>
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
-                    <div id="toolbar">
+                    <div class="panel-body">
+                        <div id="toolbar">
+                            <table>
+                                <tbody data-bind="foreach: layers">
+                                    <tr data-bind="css: { up: $parent.upLayer === $data, down: $parent.downLayer === $data }">
+                                        <td><input data-bind="checked: show" type="checkbox"></td>
+                                        <td>
+                                            <span data-bind="text: name, visible: !$parent.isSelectableLayer($data)"></span>
+                                            <select data-bind="visible: $parent.isSelectableLayer($data), options: $parent.baseLayers, optionsText: 'name', value: $parent.selectedLayer"></select>
+                                        </td>
+                                        <td>
+                                            <input min="0" max="1" step="0.01" data-bind="value: alpha, valueUpdate: 'input'" type="range">
+                                        </td>
+                                        <td><button type="button" class="cesium-button" data-bind="click: function() { $parent.raise($data, $index()); }, visible: $parent.canRaise($index())">▲</button></td>
+                                        <td><button type="button" class="cesium-button" data-bind="click: function() { $parent.lower($data, $index()); }, visible: $parent.canLower($index())">▼</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFour">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        Información de Mapa
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel-body">
                         <table>
-                            <tbody data-bind="foreach: layers">
-                                <tr data-bind="css: { up: $parent.upLayer === $data, down: $parent.downLayer === $data }">
-                                    <td><input data-bind="checked: show" type="checkbox"></td>
-                                    <td>
-                                        <span data-bind="text: name, visible: !$parent.isSelectableLayer($data)"></span>
-                                        <select data-bind="visible: $parent.isSelectableLayer($data), options: $parent.baseLayers, optionsText: 'name', value: $parent.selectedLayer"></select>
-                                    </td>
-                                    <td>
-                                        <input min="0" max="1" step="0.01" data-bind="value: alpha, valueUpdate: 'input'" type="range">
-                                    </td>
-                                    <td><button type="button" class="cesium-button" data-bind="click: function() { $parent.raise($data, $index()); }, visible: $parent.canRaise($index())">▲</button></td>
-                                    <td><button type="button" class="cesium-button" data-bind="click: function() { $parent.lower($data, $index()); }, visible: $parent.canLower($index())">▼</button></td>
+                            <tbody>
+                                <tr>
+                                    <th>Latitud</th>
+                                    <td><input id="lat" name="lat" placeholder="Latitud" type="text" value="-78.57"/></td>
+                                </tr>
+                                    <th>
+                                        Longitud
+                                    </th>
+                                    <td><input id="lng" name="lng" placeholder="Longitud" type="text" value="-2"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Altura</th>
+                                    <td><input id="altura" name="altura" placeholder="Altura" type="number" value="45000"/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><hr></td>
+                                </tr>
+                                <tr>
+                                    <th>Heading</th>
+                                    <td><input id="heading" name="heading" placeholder="Heading" type="number" value="0"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Pitch</th>
+                                    <td><input id="pitch" name="pitch" placeholder="Pitch" type="number" value="-27"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Roll</th>
+                                    <td><input id="roll" name="roll" placeholder="Roll" type="number" value="0"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Duración</th>
+                                    <td><input id="duration" name="duration" placeholder="Duración" type="number" value="4"/></td>
                                 </tr>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2"><button type="button" class="btn btn-block" id="flyto">Ir a coordenadas</button></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="text-center">
+                                        <span id="coords"></span>
+                                        <span id="alturas"></span>
+                                    </td>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
@@ -135,6 +165,28 @@
 
           </div>
         <div id="cesiumContainer">
+        </div>
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
         </div>
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>

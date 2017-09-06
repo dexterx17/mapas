@@ -55,7 +55,7 @@ function setupLayers() {
     // enabled at once, just like the other layers, but it doesn't make much sense because
     // all of these layers cover the entire globe and are opaque.
     addBaseLayerOption(
-            'Bing Maps Aerial',
+            'Foto Aerea de Bing Maps',
             undefined); // the current base layer
     addBaseLayerOption(
             'Bing Maps Road',
@@ -93,7 +93,7 @@ function setupLayers() {
                   },
                   getFeatureInfoAsXml:false,
                   getFeatureInfoAsGeoJson:true,
-              }));
+              }),0.5,false);
 
     addAdditionalLayerOption(
             'Cantones',
@@ -109,7 +109,7 @@ function setupLayers() {
                   },
                   getFeatureInfoAsXml:false,
                   getFeatureInfoAsGeoJson:true,
-              }));
+              }),0.5,false);
 
     addAdditionalLayerOption(
             'Parroquias',
@@ -125,7 +125,7 @@ function setupLayers() {
                   },
                   getFeatureInfoAsXml:false,
                   getFeatureInfoAsGeoJson:true,
-              }));
+              }),0.5,false);
 
     addAdditionalLayerOption(
             'Poblados',
@@ -141,7 +141,7 @@ function setupLayers() {
                   },
                   getFeatureInfoAsXml:false,
                   getFeatureInfoAsGeoJson:true,
-              }));
+              }),0.5,false);
 
     addAdditionalLayerOption(
             'Rios Principales',
@@ -157,7 +157,7 @@ function setupLayers() {
                   },
                   getFeatureInfoAsXml:false,
                   getFeatureInfoAsGeoJson:true,
-              }));
+              }),0.5,false);
     
     addAdditionalLayerOption(
             'Rios Limites',
@@ -173,7 +173,7 @@ function setupLayers() {
                   },
                   getFeatureInfoAsXml:false,
                   getFeatureInfoAsGeoJson:true,
-              }));
+              }),0.5,false);
 
     addAdditionalLayerOption(
             'Rios',
@@ -189,7 +189,7 @@ function setupLayers() {
                   },
                   getFeatureInfoAsXml:false,
                   getFeatureInfoAsGeoJson:true,
-              }));
+              }),0.5,false);
 
     addAdditionalLayerOption(
         'Cuerpos de Agua',
@@ -205,7 +205,7 @@ function setupLayers() {
               },
               getFeatureInfoAsXml:false,
               getFeatureInfoAsGeoJson:true,
-          }));
+          }),0.5,false);
         
     addAdditionalLayerOption(
             'Embalses',
@@ -221,7 +221,7 @@ function setupLayers() {
                   },
                   getFeatureInfoAsXml:false,
                   getFeatureInfoAsGeoJson:true,
-              }));
+              }),0.5,false);
 
     addAdditionalLayerOption(
             'Vias',
@@ -237,7 +237,7 @@ function setupLayers() {
                   },
                   getFeatureInfoAsXml:false,
                   getFeatureInfoAsGeoJson:true,
-              }));
+              }),0.5,false);
 
    
     /*addAdditionalLayerOption(
@@ -304,23 +304,60 @@ Cesium.knockout.getObservable(viewModel, 'selectedLayer').subscribe(function(bas
     updateLayerList();
 });
 
+// CAUTION: Only disable iframe sandbox if the descriptions come from a trusted source.
+viewer.infoBox.frame.setAttribute('sandbox', 'allow-same-origin allow-popups allow-forms allow-scripts allow-top-navigation');
+
+var url_info ="";
+viewer.infoBox.frame.addEventListener('load', function() {
+    //
+    // Now that the description is loaded, register a click listener inside
+    // the document of the iframe.
+    //
+    viewer.infoBox.frame.contentDocument.body.addEventListener('click', function(e) {
+        //
+        // The document body will be rewritten when the selectedEntity changes,
+        // but this body listener will survive.  Now it must determine if it was
+        // one of the clickable buttons.
+        //
+        console.log('click');
+        console.log(e.target);        
+
+        if (e.target && e.target.className === 'btn consultar_datos_estacion') {
+            var estacion_id = e.target.getAttribute("estacion");
+            url_info = "http://127.0.0.1/rrnn/red/estaciones/asistente/"+estacion_id+"/consulta";
+            $('#myModal').modal('show');
+
+        }
+    }, false);
+}, false);
+
+$('#myModal').on('show.bs.modal', function (event) {
+    var modal = $(this);
+    $.get(url_info,function(data){
+        if(data!=''){
+            modal.find('.modal-content').html(data);
+        }else{
+            $('#detalles_estacion').html('<div class="alert alert-danger">Establece el código de la estación</div>');
+        }
+    },'html');
+
+});
+
+var frame = viewer.infoBox.frame;
+
+frame.addEventListener('load', function () {
+    var cssLink = frame.contentDocument.createElement('link');
+    cssLink.href = Cesium.buildModuleUrl('http://127.0.0.1/mapas/3d/infobox.css');
+    cssLink.rel = 'stylesheet';
+    cssLink.type = 'text/css';
+    frame.contentDocument.head.appendChild(cssLink);
+}, false);
 
 //Enable depth testing so things behind the terrain disappear.
 viewer.scene.globe.depthTestAgainstTerrain = true;
 
 //Set the random number seed for consistent results.
 Cesium.Math.setRandomNumberSeed(3);
-
-var entity = viewer.entities.add({
-    label : {
-        show : false,
-        showBackground : true,
-        font : '14px monospace',
-        horizontalOrigin : Cesium.HorizontalOrigin.LEFT,
-        verticalOrigin : Cesium.VerticalOrigin.TOP,
-        pixelOffset : new Cesium.Cartesian2(15, 0)
-    }
-});
 
 var west = -79.55337524414064;
 var south = -1.6724309149453698;
@@ -337,29 +374,63 @@ handler.setInputAction(function(movement) {
         var cartographic = Cesium.Cartographic.fromCartesian(cartesian);
         var longitudeString = Cesium.Math.toDegrees(cartographic.longitude).toFixed(7);
         var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(7);
-        entity.position = cartesian;
-        entity.label.show = true;
-        $('#x').html(cartesian.x);
-        $('#y').html(cartesian.y);
-        $('#z').html(cartesian.z);
         $('#coords').html(longitudeString+" , "+latitudeString);
-        entity.label.text =
-            'Lon: ' + ('   ' + longitudeString) + '\u00B0' +
-            '\nLat: ' + ('   ' + latitudeString) + '\u00B0';
-    } else {
-        entity.label.show = false;
     }
 }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
 
+var handler = new Cesium.ScreenSpaceEventHandler(viewer.canvas, false);
+handler.setInputAction(
+  function(movement) {
+    
+      var ray = viewer.camera.getPickRay(movement.endPosition);
+      var position = viewer.scene.globe.pick(ray, viewer.scene);
+      if (Cesium.defined(position)) {
+          var positionCartographic = Cesium.Ellipsoid.WGS84.cartesianToCartographic(position);
+          $('#alturas').html( ' :: '+positionCartographic.height.toFixed(2)+' msnm');
+      }
+  },
+  Cesium.ScreenSpaceEventType.MOUSE_MOVE
+);
 
+var origin_location = {
+  lat :   -78.57,
+  lng : -1.9,
+  altura : 45000,
+  heading : 0,
+  pitch : -35,
+  roll : 0,
+  duration: 4
+};
 
-//$(document).on('click','#flyto',function(){
+var lat = $('#lat').val(origin_location.lat);
+var lng = $('#lng').val(origin_location.lng);
+var altura = $('#altura').val(origin_location.altura);
+var heading = $('#heading').val(origin_location.heading);
+var pitch = $('#pitch').val(origin_location.pitch);
+var roll = $('#roll').val(origin_location.roll);
+var duration = $('#duration').val(origin_location.duration);
+
+viewer.camera.flyTo({
+  destination : Cesium.Cartesian3.fromDegrees(origin_location.lat, origin_location.lng, origin_location.altura),
+  orientation : {
+      heading : Cesium.Math.toRadians(origin_location.heading),
+      pitch : Cesium.Math.toRadians(origin_location.pitch),
+      roll : origin_location.roll
+  },
+  duration: origin_location.duration,
+  complete:function(){
+      load_stations();
+  }
+});
+
+$(document).on('click','#flyto',function(){
   var lat = $('#lat').val();
   var lng = $('#lng').val();
   var altura = $('#altura').val();
   var heading = $('#heading').val();
   var pitch = $('#pitch').val();
   var roll = $('#roll').val();
+  var duration = $('#duration').val();
 
   viewer.camera.flyTo({
     destination : Cesium.Cartesian3.fromDegrees(lat, lng, altura),
@@ -374,47 +445,34 @@ handler.setInputAction(function(movement) {
         load_stations();
     }
   });
-//});
+});
 
 var mixtas = viewer.entities.add(new Cesium.Entity());
 
-//var url_stations = 'http://rrnn.tungurahua.gob.ec/red/Ws_red/stations';
-var url_stations = 'http://172.16.3.69/job/red/Ws_red/stations';
+var url_stations = 'http://rrnn.tungurahua.gob.ec/red/Ws_red/stations';
+var url_stations = 'http://127.0.0.1/rrnn/red/Ws_red/stations';
 
 var pinBuilder = new Cesium.PinBuilder();
 
 
 function ficha_estacion(dato){
-    var result = '<div class="panel panel-default"><div class="panel-heading">';
-    result += '</div><div class="panel-body">';
-    result += '<table class="table table-hover table-responsive">';
+    var result = '<div class="panel panel-default"><div class="panel-heading text-center">';
+    result += '<img class="estacion-img" src="http://127.0.0.1/mapas/imgs/estacion.jpeg" height="250" /></div>';
+    result += '<div class="panel-body">';
+    result += '<table class="table table-hover table-responsive"><tbody>';
     result += '<tr><th>Ubicación:</th><td>'+dato.canton+' <small>'+dato.parroquia+'</small></td></tr>';
     result += '<tr><td class="text-center" colspan="2">'+dato.direccion+'</td></tr>';
     result += '<tr><th>Microcuenca:</th><td>'+dato.microcuenca+'</td></tr>';
-    result += '<tr><th>Altitud:</th><td>'+dato.altitud+'</td></tr>';
-    result += '<tr><td class="text-justify" colspan="2">'+dato.descripcion+'</td></tr>';
-    result += '</table>';
+    result += '<tr><th>Altitud:</th><td>'+dato.altitud+' msnm.</td></tr>';
+    result += '<tr><td class="text-justify" colspan="2">'+dato.descripcion+'</td></tr></tbody><tfoot>';
+    result += '<tr><td colspan="2"><a href="http://rrnn.tungurahua.gob.ec/red/estaciones/estacion/'+dato._id +'" class="btn btn-block" estacion="'+dato._id+'" target="_blank">Ver información completa</a></td></tr>';
+    result += '</tfoot></table>';
     result += '</div><div class="panel-footer">';
-    result += '<button type="button" id="consultar_datos_estacion">Grafica</button>';
+    result += 'Estación '+dato.tipo;
     result += '</div></div>'
     return result;
 }
 
-viewer.infoBox.frame.removeAttribute('sandbox');
-
-var frame = viewer.infoBox.frame;
-frame.addEventListener('load', function () {
-    var jsLink = frame.contentDocument.createElement('script');
-    jsLink.src = Cesium.buildModuleUrl('http://172.16.3.69/mapas/bower_components/jquery/dist/jquery.js');
-    jsLink.type = 'text/javascript';
-    frame.contentDocument.head.appendChild(jsLink);
-
-    var jsLink = frame.contentDocument.createElement('script');
-    jsLink.src = Cesium.buildModuleUrl('http://172.16.3.69/mapas/3d/test.js');
-    jsLink.type = 'text/javascript';
-    frame.contentDocument.head.appendChild(jsLink);
-
-}, false);
 
 function load_stations(){
 
@@ -453,11 +511,12 @@ function load_stations(){
                 var icono;
                 if(dato.tipo === "meteorologica"){
                     color = pinBuilder.fromColor(Cesium.Color.RED, 24).toDataURL();
-                   // icono = 
+                    icono =  'http://127.0.0.1/mapas/imgs/meteorologica.png';
                    $('#meteorologicas').append('<li><i class="fa fa-eye"></i>'+dato.nombre+'<span class="pull-right badge">'+dato.codigo+'</span></li>');
                    
                 }else{
                    $('#hidrometricas').append('<li><i class="fa fa-eye"></i>'+dato.nombre+'<span class="pull-right badge">'+dato.codigo+'</span></li>');
+                    icono =  'http://127.0.0.1/mapas/imgs/hidrometrica.png';
                     color = pinBuilder.fromColor(Cesium.Color.ROYALBLUE, 24).toDataURL();
                 }
 
@@ -466,7 +525,9 @@ function load_stations(){
                     position : punto,
                     description:ficha_estacion(dato),
                     billboard : {
-                        image : color,
+                        image : icono,
+                        width : 64,
+                        height : 64,
                         verticalOrigin : Cesium.VerticalOrigin.BOTTOM
                     },
                     label : {
