@@ -37,6 +37,10 @@
                 .estacion-img{
                     width: 100%;
                 }
+                .list-group-item{
+                	padding-top: 4px !important;
+                	padding-bottom: 4px !important;
+                }
             </style>
     </head>
     <body>
@@ -48,10 +52,11 @@
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                       <img src="http://127.0.0.1/mapas/imgs/meteorologica.png" alt="Estaciones Meteorológicas" width="25" height="35"> Estaciones Meteorológicas
                     </a>
+                    <input id="input-meteorologicas" type="checkbox" value="true" class="pull-right" checked>
                   </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                  <ul id="meteorologicas" class="list-group">
+                  <ul id="meteorologicas" class="list-group list-estaciones">
                     
                   </ul>
                 </div>
@@ -62,10 +67,11 @@
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         <img src="http://127.0.0.1/mapas/imgs/hidrometrica.png" alt="Estaciones Hidrométricas" width="25" height="35"> Estaciones Hidrométricas
                     </a>
+                    <input id="input-hidrometricas" type="checkbox" value="true" class="pull-right"  checked>
                   </h4>
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                   <ul id="hidrometricas" class="list-group">
+                   <ul id="hidrometricas" class="list-group list-estaciones">
                     
                   </ul>
                 </div>

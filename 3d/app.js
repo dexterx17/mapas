@@ -1,52 +1,65 @@
- var viewer = new Cesium.Viewer('cesiumContainer',{timeline:false, baseLayerPicker : false});
- 
+var viewer = new Cesium.Viewer('cesiumContainer', {
+    timeline: false,
+    baseLayerPicker: false
+});
+var estaciones = [];
 var scene = viewer.scene;
 var handler;
 
+var origin_location = {
+    lat: -78.57,
+    lng: -1.9,
+    altura: 45000,
+    heading: 0,
+    pitch: -35,
+    roll: 0,
+    duration: 4
+};
+
 //Enable lighting based on sun/moon positions
 viewer.scene.globe.enableLighting = true;
-
 //Use STK World Terrain
 viewer.terrainProvider = new Cesium.CesiumTerrainProvider({
-    url : 'https://assets.agi.com/stk-terrain/v1/tilesets/world/tiles',
-    requestWaterMask : true,
-    requestVertexNormals : true
+    url: 'https://assets.agi.com/stk-terrain/v1/tilesets/world/tiles',
+    requestWaterMask: true,
+    requestVertexNormals: true
 });
-
 var imageryLayers = viewer.imageryLayers;
-
 var viewModel = {
-    layers : [],
-    baseLayers : [],
-    upLayer : null,
-    downLayer : null,
-    selectedLayer : null,
-    isSelectableLayer : function(layer) {
+    layers: [],
+    baseLayers: [],
+    upLayer: null,
+    downLayer: null,
+    selectedLayer: null,
+    isSelectableLayer: function(layer) {
         return baseLayers.indexOf(layer) >= 0;
     },
-    raise : function(layer, index) {
+    raise: function(layer, index) {
         imageryLayers.raise(layer);
         viewModel.upLayer = layer;
         viewModel.downLayer = viewModel.layers[Math.max(0, index - 1)];
         updateLayerList();
-        window.setTimeout(function() { viewModel.upLayer = viewModel.downLayer = null; }, 10);
+        window.setTimeout(function() {
+            viewModel.upLayer = viewModel.downLayer = null;
+        }, 10);
     },
-    lower : function(layer, index) {
+    lower: function(layer, index) {
         imageryLayers.lower(layer);
         viewModel.upLayer = viewModel.layers[Math.min(viewModel.layers.length - 1, index + 1)];
         viewModel.downLayer = layer;
         updateLayerList();
-        window.setTimeout(function() { viewModel.upLayer = viewModel.downLayer = null; }, 10);
+        window.setTimeout(function() {
+            viewModel.upLayer = viewModel.downLayer = null;
+        }, 10);
     },
-    canRaise : function(layerIndex) {
+    canRaise: function(layerIndex) {
         return layerIndex > 0;
     },
-    canLower : function(layerIndex) {
+    canLower: function(layerIndex) {
         return layerIndex >= 0 && layerIndex < imageryLayers.length - 1;
     }
 };
 Cesium.knockout.track(viewModel);
-
 var baseLayers = viewModel.baseLayers;
 
 function setupLayers() {
@@ -54,192 +67,152 @@ function setupLayers() {
     // These base layers aren't really special.  It's possible to have multiple of them
     // enabled at once, just like the other layers, but it doesn't make much sense because
     // all of these layers cover the entire globe and are opaque.
-    addBaseLayerOption(
-            'Foto Aerea de Bing Maps',
-            undefined); // the current base layer
-    addBaseLayerOption(
-            'Bing Maps Road',
-            new Cesium.BingMapsImageryProvider({
-                url: '//dev.virtualearth.net',
-                mapStyle: Cesium.BingMapsStyle.ROAD
-            }));
-    addBaseLayerOption(
-            'ArcGIS World Street Maps',
-            new Cesium.ArcGisMapServerImageryProvider({
-                url : '//server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer'
-            }));
-    addBaseLayerOption(
-            'Ortofoto Tungurahua',
-            new Cesium.WebMapServiceImageryProvider({
-                url : 'http://mapas.tungurahua.gob.ec/base',
-                layers : 'ortofoto',
-                enablePickFeature:false,
-                getFeatureInfoAsXml:false, //deshabilitar petición info_formt xml
-                getFeatureInfoAsGeoJson:false //deshabilitar petición info_formt geojson
-            }));
-
+    addBaseLayerOption('Foto Aerea de Bing Maps', undefined); // the current base layer
+    addBaseLayerOption('Bing Maps Road', new Cesium.BingMapsImageryProvider({
+        url: '//dev.virtualearth.net',
+        mapStyle: Cesium.BingMapsStyle.ROAD
+    }));
+    addBaseLayerOption('ArcGIS World Street Maps', new Cesium.ArcGisMapServerImageryProvider({
+        url: '//server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer'
+    }));
+    addBaseLayerOption('Ortofoto Tungurahua', new Cesium.WebMapServiceImageryProvider({
+        url: 'http://mapas.tungurahua.gob.ec/base',
+        layers: 'ortofoto',
+        enablePickFeature: false,
+        getFeatureInfoAsXml: false, //deshabilitar petición info_formt xml
+        getFeatureInfoAsGeoJson: false //deshabilitar petición info_formt geojson
+    }));
     // Create the additional layers
-    addAdditionalLayerOption(
-            'Division Provincial',
-               new Cesium.WebMapServiceImageryProvider({
-                  url : 'http://mapas.tungurahua.gob.ec/base',
-                  layers : 'DivisionProvincial',
-                  parameters : {
-                      transparent:true,
-                      format : 'image/png',
-                  },
-                  getFeatureInfoParameters:{
-                    info_format:"application/geojson"
-                  },
-                  getFeatureInfoAsXml:false,
-                  getFeatureInfoAsGeoJson:true,
-              }),0.5,false);
-
-    addAdditionalLayerOption(
-            'Cantones',
-               new Cesium.WebMapServiceImageryProvider({
-                  url : 'http://mapas.tungurahua.gob.ec/base',
-                  layers : 'tungurahuacantones',
-                  parameters : {
-                      transparent:true,
-                      format : 'image/png',
-                  },
-                  getFeatureInfoParameters:{
-                    info_format:"application/geojson"
-                  },
-                  getFeatureInfoAsXml:false,
-                  getFeatureInfoAsGeoJson:true,
-              }),0.5,false);
-
-    addAdditionalLayerOption(
-            'Parroquias',
-               new Cesium.WebMapServiceImageryProvider({
-                  url : 'http://mapas.tungurahua.gob.ec/base',
-                  layers : 'parroquias',
-                  parameters : {
-                      transparent:true,
-                      format : 'image/png',
-                  },
-                  getFeatureInfoParameters:{
-                    info_format:"application/geojson"
-                  },
-                  getFeatureInfoAsXml:false,
-                  getFeatureInfoAsGeoJson:true,
-              }),0.5,false);
-
-    addAdditionalLayerOption(
-            'Poblados',
-               new Cesium.WebMapServiceImageryProvider({
-                  url : 'http://mapas.tungurahua.gob.ec/base',
-                  layers : 'Poblados',
-                  parameters : {
-                      transparent:true,
-                      format : 'image/png',
-                  },
-                  getFeatureInfoParameters:{
-                    info_format:"application/geojson"
-                  },
-                  getFeatureInfoAsXml:false,
-                  getFeatureInfoAsGeoJson:true,
-              }),0.5,false);
-
-    addAdditionalLayerOption(
-            'Rios Principales',
-               new Cesium.WebMapServiceImageryProvider({
-                  url : 'http://mapas.tungurahua.gob.ec/base',
-                  layers : 'RiosPrincipales',
-                  parameters : {
-                      transparent:true,
-                      format : 'image/png',
-                  },
-                  getFeatureInfoParameters:{
-                    info_format:"application/geojson"
-                  },
-                  getFeatureInfoAsXml:false,
-                  getFeatureInfoAsGeoJson:true,
-              }),0.5,false);
-    
-    addAdditionalLayerOption(
-            'Rios Limites',
-               new Cesium.WebMapServiceImageryProvider({
-                  url : 'http://mapas.tungurahua.gob.ec/base',
-                  layers : 'RiosLimites',
-                  parameters : {
-                      transparent:true,
-                      format : 'image/png',
-                  },
-                  getFeatureInfoParameters:{
-                    info_format:"application/geojson"
-                  },
-                  getFeatureInfoAsXml:false,
-                  getFeatureInfoAsGeoJson:true,
-              }),0.5,false);
-
-    addAdditionalLayerOption(
-            'Rios',
-               new Cesium.WebMapServiceImageryProvider({
-                  url : 'http://mapas.tungurahua.gob.ec/base',
-                  layers : 'Rios',
-                  parameters : {
-                      transparent:true,
-                      format : 'image/png',
-                  },
-                  getFeatureInfoParameters:{
-                    info_format:"application/geojson"
-                  },
-                  getFeatureInfoAsXml:false,
-                  getFeatureInfoAsGeoJson:true,
-              }),0.5,false);
-
-    addAdditionalLayerOption(
-        'Cuerpos de Agua',
-           new Cesium.WebMapServiceImageryProvider({
-              url : 'http://mapas.tungurahua.gob.ec/base',
-              layers : 'CuerposdeAgua',
-              parameters : {
-                  transparent:true,
-                  format : 'image/png',
-              },
-              getFeatureInfoParameters:{
-                info_format:"application/geojson"
-              },
-              getFeatureInfoAsXml:false,
-              getFeatureInfoAsGeoJson:true,
-          }),0.5,false);
-        
-    addAdditionalLayerOption(
-            'Embalses',
-               new Cesium.WebMapServiceImageryProvider({
-                  url : 'http://mapas.tungurahua.gob.ec/base',
-                  layers : 'Embalses',
-                  parameters : {
-                      transparent:true,
-                      format : 'image/png',
-                  },
-                  getFeatureInfoParameters:{
-                    info_format:"application/geojson"
-                  },
-                  getFeatureInfoAsXml:false,
-                  getFeatureInfoAsGeoJson:true,
-              }),0.5,false);
-
-    addAdditionalLayerOption(
-            'Vias',
-               new Cesium.WebMapServiceImageryProvider({
-                  url : 'http://mapas.tungurahua.gob.ec/base',
-                  layers : 'Vias',
-                  parameters : {
-                      transparent:true,
-                      format : 'image/png',
-                  },
-                  getFeatureInfoParameters:{
-                    info_format:"application/geojson"
-                  },
-                  getFeatureInfoAsXml:false,
-                  getFeatureInfoAsGeoJson:true,
-              }),0.5,false);
-
-   
+    addAdditionalLayerOption('Division Provincial', new Cesium.WebMapServiceImageryProvider({
+        url: 'http://mapas.tungurahua.gob.ec/base',
+        layers: 'DivisionProvincial',
+        parameters: {
+            transparent: true,
+            format: 'image/png',
+        },
+        getFeatureInfoParameters: {
+            info_format: "application/geojson"
+        },
+        getFeatureInfoAsXml: false,
+        getFeatureInfoAsGeoJson: true,
+    }), 0.5, false);
+    addAdditionalLayerOption('Cantones', new Cesium.WebMapServiceImageryProvider({
+        url: 'http://mapas.tungurahua.gob.ec/base',
+        layers: 'tungurahuacantones',
+        parameters: {
+            transparent: true,
+            format: 'image/png',
+        },
+        getFeatureInfoParameters: {
+            info_format: "application/geojson"
+        },
+        getFeatureInfoAsXml: false,
+        getFeatureInfoAsGeoJson: true,
+    }), 0.5, false);
+    addAdditionalLayerOption('Parroquias', new Cesium.WebMapServiceImageryProvider({
+        url: 'http://mapas.tungurahua.gob.ec/base',
+        layers: 'parroquias',
+        parameters: {
+            transparent: true,
+            format: 'image/png',
+        },
+        getFeatureInfoParameters: {
+            info_format: "application/geojson"
+        },
+        getFeatureInfoAsXml: false,
+        getFeatureInfoAsGeoJson: true,
+    }), 0.5, false);
+    addAdditionalLayerOption('Poblados', new Cesium.WebMapServiceImageryProvider({
+        url: 'http://mapas.tungurahua.gob.ec/base',
+        layers: 'Poblados',
+        parameters: {
+            transparent: true,
+            format: 'image/png',
+        },
+        getFeatureInfoParameters: {
+            info_format: "application/geojson"
+        },
+        getFeatureInfoAsXml: false,
+        getFeatureInfoAsGeoJson: true,
+    }), 0.5, false);
+    addAdditionalLayerOption('Rios Principales', new Cesium.WebMapServiceImageryProvider({
+        url: 'http://mapas.tungurahua.gob.ec/base',
+        layers: 'RiosPrincipales',
+        parameters: {
+            transparent: true,
+            format: 'image/png',
+        },
+        getFeatureInfoParameters: {
+            info_format: "application/geojson"
+        },
+        getFeatureInfoAsXml: false,
+        getFeatureInfoAsGeoJson: true,
+    }), 0.5, false);
+    addAdditionalLayerOption('Rios Limites', new Cesium.WebMapServiceImageryProvider({
+        url: 'http://mapas.tungurahua.gob.ec/base',
+        layers: 'RiosLimites',
+        parameters: {
+            transparent: true,
+            format: 'image/png',
+        },
+        getFeatureInfoParameters: {
+            info_format: "application/geojson"
+        },
+        getFeatureInfoAsXml: false,
+        getFeatureInfoAsGeoJson: true,
+    }), 0.5, false);
+    addAdditionalLayerOption('Rios', new Cesium.WebMapServiceImageryProvider({
+        url: 'http://mapas.tungurahua.gob.ec/base',
+        layers: 'Rios',
+        parameters: {
+            transparent: true,
+            format: 'image/png',
+        },
+        getFeatureInfoParameters: {
+            info_format: "application/geojson"
+        },
+        getFeatureInfoAsXml: false,
+        getFeatureInfoAsGeoJson: true,
+    }), 0.5, false);
+    addAdditionalLayerOption('Cuerpos de Agua', new Cesium.WebMapServiceImageryProvider({
+        url: 'http://mapas.tungurahua.gob.ec/base',
+        layers: 'CuerposdeAgua',
+        parameters: {
+            transparent: true,
+            format: 'image/png',
+        },
+        getFeatureInfoParameters: {
+            info_format: "application/geojson"
+        },
+        getFeatureInfoAsXml: false,
+        getFeatureInfoAsGeoJson: true,
+    }), 0.5, false);
+    addAdditionalLayerOption('Embalses', new Cesium.WebMapServiceImageryProvider({
+        url: 'http://mapas.tungurahua.gob.ec/base',
+        layers: 'Embalses',
+        parameters: {
+            transparent: true,
+            format: 'image/png',
+        },
+        getFeatureInfoParameters: {
+            info_format: "application/geojson"
+        },
+        getFeatureInfoAsXml: false,
+        getFeatureInfoAsGeoJson: true,
+    }), 0.5, false);
+    addAdditionalLayerOption('Vias', new Cesium.WebMapServiceImageryProvider({
+        url: 'http://mapas.tungurahua.gob.ec/base',
+        layers: 'Vias',
+        parameters: {
+            transparent: true,
+            format: 'image/png',
+        },
+        getFeatureInfoParameters: {
+            info_format: "application/geojson"
+        },
+        getFeatureInfoAsXml: false,
+        getFeatureInfoAsGeoJson: true,
+    }), 0.5, false);
     /*addAdditionalLayerOption(
             'Grid',
             new Cesium.GridImageryProvider(), 1.0, false);
@@ -256,7 +229,6 @@ function addBaseLayerOption(name, imageryProvider) {
     } else {
         layer = new Cesium.ImageryLayer(imageryProvider);
     }
-
     layer.name = name;
     baseLayers.push(layer);
 }
@@ -276,14 +248,11 @@ function updateLayerList() {
         viewModel.layers.push(imageryLayers.get(i));
     }
 }
-
 setupLayers();
 updateLayerList();
-
 //Bind the viewModel to the DOM elements of the UI that call for it.
 var toolbar = document.getElementById('toolbar');
 Cesium.knockout.applyBindings(viewModel, toolbar);
-
 Cesium.knockout.getObservable(viewModel, 'selectedLayer').subscribe(function(baseLayer) {
     // Handle changes to the drop-down base layer selector.
     var activeLayerIndex = 0;
@@ -303,11 +272,9 @@ Cesium.knockout.getObservable(viewModel, 'selectedLayer').subscribe(function(bas
     baseLayer.alpha = alpha;
     updateLayerList();
 });
-
 // CAUTION: Only disable iframe sandbox if the descriptions come from a trusted source.
 viewer.infoBox.frame.setAttribute('sandbox', 'allow-same-origin allow-popups allow-forms allow-scripts allow-top-navigation');
-
-var url_info ="";
+var url_info = "";
 viewer.infoBox.frame.addEventListener('load', function() {
     //
     // Now that the description is loaded, register a click listener inside
@@ -320,52 +287,41 @@ viewer.infoBox.frame.addEventListener('load', function() {
         // one of the clickable buttons.
         //
         console.log('click');
-        console.log(e.target);        
-
+        console.log(e.target);
         if (e.target && e.target.className === 'btn consultar_datos_estacion') {
             var estacion_id = e.target.getAttribute("estacion");
-            url_info = "http://127.0.0.1/rrnn/red/estaciones/asistente/"+estacion_id+"/consulta";
+            url_info = "http://127.0.0.1/rrnn/red/estaciones/asistente/" + estacion_id + "/consulta";
             $('#myModal').modal('show');
-
         }
     }, false);
 }, false);
-
-$('#myModal').on('show.bs.modal', function (event) {
+$('#myModal').on('show.bs.modal', function(event) {
     var modal = $(this);
-    $.get(url_info,function(data){
-        if(data!=''){
+    $.get(url_info, function(data) {
+        if (data != '') {
             modal.find('.modal-content').html(data);
-        }else{
+        } else {
             $('#detalles_estacion').html('<div class="alert alert-danger">Establece el código de la estación</div>');
         }
-    },'html');
-
+    }, 'html');
 });
-
 var frame = viewer.infoBox.frame;
-
-frame.addEventListener('load', function () {
+frame.addEventListener('load', function() {
     var cssLink = frame.contentDocument.createElement('link');
     cssLink.href = Cesium.buildModuleUrl('http://127.0.0.1/mapas/3d/infobox.css');
     cssLink.rel = 'stylesheet';
     cssLink.type = 'text/css';
     frame.contentDocument.head.appendChild(cssLink);
 }, false);
-
 //Enable depth testing so things behind the terrain disappear.
 viewer.scene.globe.depthTestAgainstTerrain = true;
-
 //Set the random number seed for consistent results.
 Cesium.Math.setRandomNumberSeed(3);
-
 var west = -79.55337524414064;
 var south = -1.6724309149453698;
 var east = -77.67745971679689;
 var north = -0.8486628140085705;
-
 var rectangle = Cesium.Rectangle.fromDegrees(west, south, east, north);
-
 // Mouse over the globe to see the cartographic position
 handler = new Cesium.ScreenSpaceEventHandler(scene.canvas);
 handler.setInputAction(function(movement) {
@@ -374,33 +330,18 @@ handler.setInputAction(function(movement) {
         var cartographic = Cesium.Cartographic.fromCartesian(cartesian);
         var longitudeString = Cesium.Math.toDegrees(cartographic.longitude).toFixed(7);
         var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(7);
-        $('#coords').html(longitudeString+" , "+latitudeString);
+        $('#coords').html(longitudeString + " , " + latitudeString);
     }
 }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
-
 var handler = new Cesium.ScreenSpaceEventHandler(viewer.canvas, false);
-handler.setInputAction(
-  function(movement) {
-    
-      var ray = viewer.camera.getPickRay(movement.endPosition);
-      var position = viewer.scene.globe.pick(ray, viewer.scene);
-      if (Cesium.defined(position)) {
-          var positionCartographic = Cesium.Ellipsoid.WGS84.cartesianToCartographic(position);
-          $('#alturas').html( ' :: '+positionCartographic.height.toFixed(2)+' msnm');
-      }
-  },
-  Cesium.ScreenSpaceEventType.MOUSE_MOVE
-);
-
-var origin_location = {
-  lat :   -78.57,
-  lng : -1.9,
-  altura : 45000,
-  heading : 0,
-  pitch : -35,
-  roll : 0,
-  duration: 4
-};
+handler.setInputAction(function(movement) {
+    var ray = viewer.camera.getPickRay(movement.endPosition);
+    var position = viewer.scene.globe.pick(ray, viewer.scene);
+    if (Cesium.defined(position)) {
+        var positionCartographic = Cesium.Ellipsoid.WGS84.cartesianToCartographic(position);
+        $('#alturas').html(' :: ' + positionCartographic.height.toFixed(2) + ' msnm');
+    }
+}, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
 
 var lat = $('#lat').val(origin_location.lat);
 var lng = $('#lng').val(origin_location.lng);
@@ -411,88 +352,102 @@ var roll = $('#roll').val(origin_location.roll);
 var duration = $('#duration').val(origin_location.duration);
 
 viewer.camera.flyTo({
-  destination : Cesium.Cartesian3.fromDegrees(origin_location.lat, origin_location.lng, origin_location.altura),
-  orientation : {
-      heading : Cesium.Math.toRadians(origin_location.heading),
-      pitch : Cesium.Math.toRadians(origin_location.pitch),
-      roll : origin_location.roll
-  },
-  duration: origin_location.duration,
-  complete:function(){
-      load_stations();
-  }
-});
-
-$(document).on('click','#flyto',function(){
-  var lat = $('#lat').val();
-  var lng = $('#lng').val();
-  var altura = $('#altura').val();
-  var heading = $('#heading').val();
-  var pitch = $('#pitch').val();
-  var roll = $('#roll').val();
-  var duration = $('#duration').val();
-
-  viewer.camera.flyTo({
-    destination : Cesium.Cartesian3.fromDegrees(lat, lng, altura),
-    orientation : {
-        heading : Cesium.Math.toRadians(heading),
-        pitch : Cesium.Math.toRadians(pitch),
-        roll : roll
-    }
-    ,
-   // maximumHeight:10000,
-    complete:function(){
+    destination: Cesium.Cartesian3.fromDegrees(origin_location.lat, origin_location.lng, origin_location.altura),
+    orientation: {
+        heading: Cesium.Math.toRadians(origin_location.heading),
+        pitch: Cesium.Math.toRadians(origin_location.pitch),
+        roll: origin_location.roll
+    },
+    duration: origin_location.duration,
+    complete: function() {
         load_stations();
     }
-  });
+});
+$(document).on('click', '#flyto', function() {
+    var lat = $('#lat').val();
+    var lng = $('#lng').val();
+    var altura = $('#altura').val();
+    var heading = $('#heading').val();
+    var pitch = $('#pitch').val();
+    var roll = $('#roll').val();
+    var duration = $('#duration').val();
+    viewer.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(lat, lng, altura),
+        orientation: {
+            heading: Cesium.Math.toRadians(heading),
+            pitch: Cesium.Math.toRadians(pitch),
+            roll: roll
+        },
+        // maximumHeight:10000,
+        complete: function() {
+            load_stations();
+        }
+    });
+});
+
+function show_stations(tipo,show){
+    var entididades_cargadas = viewer.entities;
+    entididades_cargadas.suspendEvents();
+    for (var l = 0; l < entididades_cargadas.values.length; l++) {
+        var entidad = entididades_cargadas.values[l];
+        if(entidad.tipo==tipo){
+            entidad.show = show;
+        }
+    }
+    entididades_cargadas.resumeEvents();
+}
+$(document).on('change', '#input-meteorologicas', function() {
+    if ($(this).is(':checked')) {
+        show_stations('meteorologica',true);
+    } else {
+        show_stations('meteorologica',false);
+    }
+});
+$(document).on('change', '#input-hidrometricas', function() {
+    if ($(this).is(':checked')) {
+        show_stations('hidrometrica',true);
+    } else {
+        show_stations('hidrometrica',false);
+    }
 });
 
 var mixtas = viewer.entities.add(new Cesium.Entity());
-
 var url_stations = 'http://rrnn.tungurahua.gob.ec/red/Ws_red/stations';
 var url_stations = 'http://127.0.0.1/rrnn/red/Ws_red/stations';
-
 var pinBuilder = new Cesium.PinBuilder();
 
-
-function ficha_estacion(dato){
+function ficha_estacion(dato) {
     var result = '<div class="panel panel-default"><div class="panel-heading text-center">';
     result += '<img class="estacion-img" src="http://127.0.0.1/mapas/imgs/estacion.jpeg" height="250" /></div>';
     result += '<div class="panel-body">';
     result += '<table class="table table-hover table-responsive"><tbody>';
-    result += '<tr><th>Ubicación:</th><td>'+dato.canton+' <small>'+dato.parroquia+'</small></td></tr>';
-    result += '<tr><td class="text-center" colspan="2">'+dato.direccion+'</td></tr>';
-    result += '<tr><th>Microcuenca:</th><td>'+dato.microcuenca+'</td></tr>';
-    result += '<tr><th>Altitud:</th><td>'+dato.altitud+' msnm.</td></tr>';
-    result += '<tr><td class="text-justify" colspan="2">'+dato.descripcion+'</td></tr></tbody><tfoot>';
-    result += '<tr><td colspan="2"><a href="http://rrnn.tungurahua.gob.ec/red/estaciones/estacion/'+dato._id +'" class="btn btn-block" estacion="'+dato._id+'" target="_blank">Ver información completa</a></td></tr>';
+    result += '<tr><th>Ubicación:</th><td>' + dato.canton + ' <small>' + dato.parroquia + '</small></td></tr>';
+    result += '<tr><td class="text-center" colspan="2">' + dato.direccion + '</td></tr>';
+    result += '<tr><th>Microcuenca:</th><td>' + dato.microcuenca + '</td></tr>';
+    result += '<tr><th>Altitud:</th><td>' + dato.altitud + ' msnm.</td></tr>';
+    result += '<tr><td class="text-justify" colspan="2">' + dato.descripcion + '</td></tr></tbody><tfoot>';
+    result += '<tr><td colspan="2"><a href="http://rrnn.tungurahua.gob.ec/red/estaciones/estacion/' + dato._id + '" class="btn btn-block" estacion="' + dato._id + '" target="_blank">Ver información completa</a></td></tr>';
     result += '</tfoot></table>';
     result += '</div><div class="panel-footer">';
-    result += 'Estación '+dato.tipo;
+    result += 'Estación ' + dato.tipo;
     result += '</div></div>'
     return result;
 }
 
-
-function load_stations(){
-
-    $.get(url_stations,function(data){
+function load_stations() {
+    $.get(url_stations, function(data) {
         console.log(data.length);
         for (var i = 0; i < data.length; i++) {
             var dato = data[i];
-            if( typeof dato.lat !=="undefined" && typeof dato.lng !=="undefined" && typeof dato.altitud  !=="undefined"){
-            console.log('--------------------------------------------------------');
-            console.log(dato);
-            console.log(dato.lat + ' , ' + dato.lng+ ' : ' + dato.altitud);
+            if (typeof dato.lat !== "undefined" && typeof dato.lng !== "undefined" && typeof dato.altitud !== "undefined") {
+                console.log('--------------------------------------------------------');
+                console.log(dato);
+                console.log(dato.lat + ' , ' + dato.lng + ' : ' + dato.altitud);
                 var altura;
-
-                if(typeof dato.altitud === "undefined")
-                    altura = 4500;
-                else
-                    altura = dato.altitud;
-
+                if (typeof dato.altitud === "undefined") altura = 4500;
+                else altura = dato.altitud;
                 var punto = new Cesium.Cartesian3.fromDegrees(dato.lng, dato.lat, altura);
-                var punto_alto = new Cesium.Cartesian3.fromDegrees(dato.lng, dato.lat , 5500);
+                var punto_alto = new Cesium.Cartesian3.fromDegrees(dato.lng, dato.lat, 5500);
                 //var time = Cesium.JulianDate.addSeconds(start, i, new Cesium.JulianDate());
                 //ruta_mixtas.addSample(time, punto_alto);
                 /*viewer.entities.add({
@@ -506,50 +461,105 @@ function load_stations(){
                         material: Cesium.Color.RED.withAlpha(0.50)
                     }
                 });*/
-
-                var color;
-                var icono;
-                if(dato.tipo === "meteorologica"){
+                
+                var color = pinBuilder.fromColor(Cesium.Color.ROYALBLUE, 24).toDataURL();
+                var icono = 'http://127.0.0.1/mapas/imgs/hidrometrica.png';
+                if (dato.tipo === "meteorologica") {
                     color = pinBuilder.fromColor(Cesium.Color.RED, 24).toDataURL();
-                    icono =  'http://127.0.0.1/mapas/imgs/meteorologica.png';
-                   $('#meteorologicas').append('<li><i class="fa fa-eye"></i>'+dato.nombre+'<span class="pull-right badge">'+dato.codigo+'</span></li>');
-                   
-                }else{
-                   $('#hidrometricas').append('<li><i class="fa fa-eye"></i>'+dato.nombre+'<span class="pull-right badge">'+dato.codigo+'</span></li>');
-                    icono =  'http://127.0.0.1/mapas/imgs/hidrometrica.png';
-                    color = pinBuilder.fromColor(Cesium.Color.ROYALBLUE, 24).toDataURL();
+                    icono = 'http://127.0.0.1/mapas/imgs/meteorologica.png';
                 }
 
                 var bluePin = viewer.entities.add({
-                    name : dato.nombre,
-                    position : punto,
-                    description:ficha_estacion(dato),
-                    billboard : {
-                        image : icono,
-                        width : 64,
-                        height : 64,
-                        verticalOrigin : Cesium.VerticalOrigin.BOTTOM
+                    name: dato.nombre,
+                    position: punto,
+                    description: ficha_estacion(dato),
+                    billboard: {
+                        image: icono,
+                        width: 64,
+                        height: 64,
+                        verticalOrigin: Cesium.VerticalOrigin.BOTTOM
                     },
-                    label : {
-                        text : dato.codigo,
-                        font : '12pt monospace',
+                    label: {
+                        text: dato.codigo,
+                        font: '12pt monospace',
                         style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-                        outlineWidth : 2,
-                        verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
-                        pixelOffset : new Cesium.Cartesian2(0, -9)
+                        outlineWidth: 2,
+                        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+                        pixelOffset: new Cesium.Cartesian2(0, -9)
                     }
                 });
-
-
-
+                 bluePin.addProperty('tipo');
+                 bluePin.addProperty('lat');
+                 bluePin.addProperty('lng');
+                 bluePin.addProperty('altitud');
+                 bluePin.tipo=dato.tipo;
+                 bluePin.lat=dato.lat;
+                 bluePin.altitud=dato.altitud;
+                 bluePin.lng=dato.lng;
+                if (dato.tipo === "meteorologica") {
+                    $('#meteorologicas').append('<li class="list-group-item" entidad="' + bluePin._id + '" estacion="' + dato._id + '"><i class="fa fa-eye"></i>' + dato.nombre + '<span class="pull-right badge btn ">' + dato.codigo + '</span></li>');
+                } else {
+                    $('#hidrometricas').append('<li class="list-group-item" entidad="' + bluePin._id + '" estacion="' + dato._id + '"><i class="fa fa-eye"></i>' + dato.nombre + '<span class="pull-right badge btn">' + dato.codigo + '</span></li>');
+                }
+                estaciones.push(bluePin);
             }
-
         }
-    },'json');
+        $('.list-estaciones li .badge').on('click',function() {
+            var ent = viewer.entities.getById($(this).parent().attr('entidad'));
+            
+            console.log(ent);
+            console.log(ent.position);
+            console.log(ent.altura);
 
-    
+            var altura = 5000;
+            if( typeof(ent.altura) !== "undefined"){
+                ent.altura+2500;
+            }
+            viewer.camera.flyTo({
+                destination: Cesium.Cartesian3.fromDegrees(ent.lng, ent.lat, altura),
+                maximumHeight:15000,
+                orientation: {
+                    heading: Cesium.Math.toRadians(0),
+                    pitch: Cesium.Math.toRadians(-90),
+                    roll: 0
+                },
+                complete:function(){
+                    viewer.camera.lookUp(0.2);
+                }
+            });
+            
+        });
+        $('.list-estaciones li').hover(function() {
+            var ent = viewer.entities.getById($(this).attr('entidad'));
+            //console.log('hover in '+$(this).attr('entidad'))
+            
+            var icon = 'http://127.0.0.1/mapas/imgs/hidrometrica_hover.png';
+            if (ent.tipo === "meteorologica") {
+                icon = 'http://127.0.0.1/mapas/imgs/meteorologica_hover.png';
+            }
+            ent.billboard = {
+                    image: icon,
+                    width: 64,
+                    height: 64,
+                    verticalOrigin: Cesium.VerticalOrigin.BOTTOM
+                };
+
+        }, function() {
+            var ent = viewer.entities.getById($(this).attr('entidad'));
+            //console.log('hover out '+$(this).attr('entidad'))
+            var icon = 'http://127.0.0.1/mapas/imgs/hidrometrica.png';
+            if (ent.tipo === "meteorologica") {
+                icon = 'http://127.0.0.1/mapas/imgs/meteorologica.png';
+            }
+            ent.billboard = {
+                    image: icon,
+                    width: 64,
+                    height: 64,
+                    verticalOrigin: Cesium.VerticalOrigin.BOTTOM
+                };
+        });
+    }, 'json');
 }
-
 /*
 var meteorologicas = viewer.entities.add(new Cesium.Entity());
 var ruta_meteorologicas = new Cesium.SampledPositionProperty();
