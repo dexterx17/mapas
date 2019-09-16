@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pruebas turismo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/> 
+	<link href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/> 
+
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	
+	<style>
+		#mapa{
+			width: 100%;
+			height: 500px;
+		}
+		#controles{
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Propuesta mapa lugares canton
+						<div id="controles" class="pull-right btn-group">
+							<span class="zoom"></span>
+							 | 
+							<span class="lat"></span>,
+							<span class="lng"></span>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div id="mapa">
+								
+						</div>
+					</div>
+					<div class="panel-footer">
+						<div class="pull-left">
+							<span class="bounds"></span>
+						</div>
+						<hr>
+						<a href="https://developers.google.com/maps/documentation/javascript/marker-clustering" target="_blank">https://developers.google.com/maps/documentation/javascript/marker-clustering</a>
+						<br>
+						<a href="https://developers.google.com/maps/documentation/javascript/events" target="_blank">https://developers.google.com/maps/documentation/javascript/events</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="form-group">
+					<label for="lat">Latitud</label>
+					<input type="text" name="lat" id="lat" value="-0.9360667067515613" >
+				</div>
+				<div class="form-group">
+					<label for="lng">Longitud</label>
+					<input type="text" name="lng" id="lng" value="-78.612806140359">
+				</div>
+				<div class="form-group">
+					<label for="zoom">Zoom</label>
+					<input type="text" name="zoom" id="zoom" value="13">
+				</div>
+				<div class="form-group">
+					<label for="radio">Radio</label>
+					<input type="text" name="radio" id="radio" value="500">
+				</div>
+				<div class="form-group">
+					<label for="radio">Categoria</label>
+					<select id="id_categoria" required="required" multiple="true" class="form-control" name="categoria">
+						<option value="aquarium">Acuarios</option>
+						<option value="airport">Aeropuertos</option>
+						<option value="lodging">Alojamiento</option>
+						<option value="bar">Bares</option>
+						<option value="library">Bibliotecas</option>
+						<option value="bowling_alley">Boleras</option>
+						<option value="cafe">Cafeterías</option>
+						<option value="casino">Casinos</option>
+						<option value="cemetery">Cementerios</option>
+						<option value="shopping_mall">Centros comerciales</option>
+						<option value="movie_theater">Cines</option>
+						<option value="night_club">Clubs nocturnos</option>
+						<option value="meal_takeaway">Comida para llevar</option>
+						<option value="embassy">Embajadas</option>
+						<option value="meal_delivery">Entrega de comida</option>
+						<option value="parking">Estacionamientos</option>
+						<option value="bus_station">Estaciones de autobuses</option>
+						<option value="subway_station">Estaciónes de metro</option>
+						<option value="train_station">Estaciones de tren</option>
+						<option value="stadium">Estadios</option>
+						<option value="art_gallery" selected="selected">Galerías de arte</option>
+						<option value="gas_station">Gasolineras</option>
+						<option value="gym">Gimnasios</option>
+						<option value="church" selected="selected">Iglesias</option>
+						<option value="book_store">Librerías</option>
+						<option value="mosque">Mezquitas</option>
+						<option value="museum" selected="selected">Museos</option>
+						<option value="courthouse">Palacios de justicia</option>
+						<option value="city_hall">Palacios Municipal</option>
+						<option value="bakery">Panaderías</option>
+						<option value="park" selected="selected">Parques</option>
+						<option value="amusement_park">Parques de atracciones</option>
+						<option value="restaurant">Restaurantes</option>
+						<option value="rv_park">Rv_park</option>
+						<option value="synagogue" selected="selected">Sinagogas</option>
+						<option value="spa">Spas</option>
+						<option value="hindu_temple">Templos hindú</option>
+						<option value="campground">Terrenos de camping</option>
+						<option value="liquor_store">Tiendas de licores</option>
+						<option value="zoo" selected="selected">Zoologicos</option>
+
+					</select>
+				</div>
+				<div id="tabs">
+                      <!-- Nav tabs -->
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#lugares-container" aria-controls="lugares-container" role="tab" data-toggle="tab" aria-expanded="true">Lugares <span id="n_lugares" class="badge">0</span></a></li>
+                        <li role="presentation" class=""><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab" aria-expanded="false">Detalles</a></li>
+                       </ul>
+
+                      <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane contenedor-lugares active" id="lugares-container" base-url="http://169.57.152.110/fb/load" token="uuM5YjeinOk4Qlpxmjy29ssZKXkYTWz9vTjhcUxo">
+                        	
+                        	<div class="panel panel-default">
+								<div class="panel-body" id="lugares">
+									
+								</div>
+								<div class="panel-footer" style="display: none;">
+									<div class="template-lugar " id="">
+			                            <div class="media-left">
+			                                <a href="#" class="">
+			                                    <img alt="name" class="media-object" src="" width="50" height="50">
+			                                </a>
+			                            </div>
+			                            <div class="media-body">
+			                                <h4 class="media-heading">
+			                                    <a href="" title="name">name</a>
+			                                </h4>
+			                                    <span class="vicinity">dir</span>
+			                            </div>
+			                        </div>
+			                        <div class="panel panel-default template-lugar-info">
+			                            <div class="panel-heading">
+			                                <h3>
+			                                    Titi Park
+			                                    <button type="button" base-url="http://169.57.152.110/fb/visited" place="" class="visitado pull-right btn btn-info">Visitado</button>
+			                                </h3>
+			                            </div>
+			                            <div class="panel-body">
+			                            <img class="img-responsive" src="#">
+			                                <ul class="list-group">
+			                                    <li class="list-group-item direction"><i class="glyphicon glyphicon-home"></i> Sin dirección</li>
+			                                    <li class="list-group-item international-phone"><i class="glyphicon glyphicon-earphone"></i> Sin teléfono</li>
+			                                    <li class="list-group-item phone"><i class="glyphicon glyphicon-earphone"></i> Sin teléfono </li>
+			                                    <li class="list-group-item website"><i class="glyphicon glyphicon-globe"></i> <a href="#">website</a></li>
+			                                    <li class="list-group-item">Categorias: 
+			                                        <ul class="categorias">
+			                                        </ul>
+			                                    </li>
+			                                </ul><hr>
+			                            </div>
+			                        </div>
+								</div>
+							</div>
+
+                        </div>
+                    </div>
+                </div>
+
+				<hr>
+				<ul id="coordenadas-seleccionadas">
+					
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+
+		var map;
+		var infoWindow;
+		var markers = [];
+	    var latitud = ($('#lat').html()) ?  parseFloat($('#lat').html()) : -0.9360667067515613;
+	    var longitud = ($('#lng').html()) ? parseFloat($('#lng').html()) : -78.612806140359;
+	    var zoom = ($('#zoom').html()) ? parseFloat($('#zoom').html()) : 16;
+	    var radio = ($('#radio').html()) ? parseFloat($('#radio').html()) : 500;
+	    var categoria = $('#id_categoria').val();
+
+	    var base_url = $('body').attr('base-url');
+
+	    $('#btn_lugares').on('click',function(e){
+		    $('#tabs a[href="#lugares"]').tab('show');
+		});
+
+		function normalIcon() {
+		  return {
+		    url: base_url+'/img/marker-red.png'
+		  };
+		}
+		function visitedIcon() {
+		  return {
+		    url: base_url+'/img/marker-green.png'
+		  };
+		}
+		function highlightedIcon() {
+		  return {
+		    url: base_url+'/img/marker-orange.png'
+		  };
+		}
+
+		function buscar_lugares(categoria,radio){
+		    console.log('buscar_lugares');
+		    console.log('categoria: ');
+		    console.log(categoria);
+		    console.log('radio: '+radio);
+		    $('#lugares').prepend('<div class="loading"><i class="fa fa-spinner"></i>Loading...</div>');
+		    var service = new google.maps.places.PlacesService(map);
+		        service.nearbySearch({
+		          location: {lat: latitud , lng:  longitud},
+		          radius: 5000,
+		  //        type: categoria
+		    }, function callback_lugares(places, status) {
+		        console.log('places');
+		        console.log(places);
+		        console.log('status');
+		        console.log(status);
+		            var items = [];
+		            if (status === google.maps.places.PlacesServiceStatus.OK) {
+		                for (var i = 0; i < places.length; i++) {
+		                    if(!($('#lugares .media#'+places[i].place_id).length) && !($('#explorados .media#'+places[i].place_id).length)){
+		                        items.push({
+		                            place_id:places[i].place_id,
+		                            lat: places[i].geometry.location.lat(),
+		                            lng: places[i].geometry.location.lng(),
+		                        });
+		                        createMarker(places[i],i*200);
+		                    }
+		                }
+
+		                $('#lugares .loading').fadeOut('slow').remove();
+		            }else{
+		                updatePeticionesResponses(1);
+		                $('#lugares .loading').fadeOut('slow').remove();
+		            }
+		    });
+		}
+
+		function createMarker(place,timeout) {
+		    window.setTimeout(function() {
+		        renderPlace(place,(markers.length)+1);
+		        var placeLoc = place.geometry.location;
+		        var marker = new google.maps.Marker({
+		            map: map,
+		            position: place.geometry.location,
+		            place_id: place.place_id,
+		          //  icon: normalIcon(),
+		            visited:false,
+		            animation: google.maps.Animation.DROP
+		        });
+		        markers.push(marker);
+		        google.maps.event.addListener(marker, 'click', function() {
+		          infoWindow.setContent(place.name);
+		          infoWindow.open(map, this);
+		          detail_info(place.place_id);
+		        });
+		    },timeout);
+		}
+
+		function renderPlace(place,marker_index) {
+		    console.log('renderPLace');
+		    console.log(place);
+		    var n_lugares = parseInt($('#n_lugares').html())+1;
+		    var list = $('#lugares');
+		    var template = $('.template-lugar');
+		    var item = template.clone().removeClass('template-lugar').addClass('media');
+		    item.attr('id', place.place_id);
+		    item.attr('marker-index', marker_index );
+		    item.find('.media-left a').attr('href',place.place_id);
+		    item.find('.media-body a').attr('href',place.place_id);
+		    item.find('.media-heading a').html(place.name);
+		    item.find('img').attr('src',(typeof place.photos !== "undefined")?place.photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50}):place.icon);
+		    item.find('img').attr('alt',place.name);
+		    item.find('.vicinity').html(place.vicinity);
+		    list.append(item);
+		    $('#n_lugares').html(n_lugares);
+		}
+
+		function initMap() {
+			console.log('initMap');
+		    console.log('lat:'+latitud);
+		    console.log('lng:'+longitud);
+		    console.log('zoom:'+zoom);
+		    console.log('radio:'+radio);
+		    console.log('--------------------------------------------------------------------');
+			map = new google.maps.Map(document.getElementById('mapa'), {
+			    center: {lat:latitud , lng: longitud},
+			    zoom: zoom
+			});
+
+		    map.addListener('zoom_changed', function() {
+	    		$('.zoom').html(map.getZoom());
+			});
+
+			map.addListener('mousemove', function(e) {
+	    		$('.lat').html(e.latLng.lat);
+	    		$('.lng').html(e.latLng.lng);
+			});
+
+			map.addListener('bounds_changed', function(e) {
+				var bounds =map.getBounds(); 
+	    		$('.bounds').html(bounds.ga.j+' , '+bounds.ma.l+'  ::  '+bounds.ma.j+' , '+bounds.ga.l);
+			});
+
+			map.addListener('click', function(e) {
+				var c = e.latLng.lat()+' , '+e.latLng.lng();
+				$('#coordenadas-seleccionadas').append('<li>'+c+'</li>');
+			});
+
+		  infoWindow = new google.maps.InfoWindow({map: map});
+
+
+		     /*circle = new google.maps.Circle({
+		            strokeColor: '#FF0000',
+		            strokeOpacity: 0.8,
+		            strokeWeight: 2,
+		            fillColor: '#00FF00',
+		            fillOpacity: 0.0,
+		            map: map,
+		            draggable:true,
+		            center: {lat: latitud , lng:  longitud},
+		            radius: radio
+		    });*/
+
+		     buscar_lugares(categoria, radio);
+		}
+
+		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+		  infoWindow.setPosition(pos);
+		  infoWindow.setContent(browserHasGeolocation ?
+		                        'Error: The Geolocation service failed.' :
+		                        'Error: Your browser doesn\'t support geolocation.');
+		}
+
+    </script>
+
+	<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ920_mAj7Lcw2Mc6JOqrxbJEKHQS0BRE&libraries=places&callback=initMap">
+    </script>
+
+    <script type="text/javascript" src="../bower_components/js-marker-clusterer/src/markerclusterer.js"></script>
+</body>
+</html>
