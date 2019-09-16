@@ -29,6 +29,7 @@
 	<div class="panel-heading">
 		Querys Mapserver
 		<select name="mapfile" id="mapfile">
+			<option value="one.map">ONE</option>
 			<option value="gadm.map">GADM</option>
 			<option value="isotermas.map">ISOTERMAS</option>
 		</select>
@@ -80,7 +81,7 @@
 	function update(){
 		var mapfile = $('#mapfile').val();
 		//alert(mapfile);
-		var url ="http://localhost/cgi-bin/mapserv?map=/var/www/html/mapas/mapserver/"+mapfile;
+		var url ="https://www.beavr.ec/cgi-bin/mapserv?map=/var/www/mapserver/gt/mapfiles/"+mapfile;
 		var getCapabilites = url+'&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities';
 
 		$.get(getCapabilites,function(data){
@@ -90,24 +91,24 @@
 		$('#getC').attr('href',getCapabilites);
 		$('#getC').html(getCapabilites);
 
-		var getMap = url+'&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=paises&STYLES=&SRS=EPSG:4326&BBOX=-92,-6,-75,3&WIDTH=400&HEIGHT=300&FORMAT=image/png';
+		var getMap = url+'&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=provincias&STYLES=&SRS=EPSG:4326&BBOX=-92,-6,-75,3&WIDTH=400&HEIGHT=300&FORMAT=image/png';
 		$('#getMap').attr('src',getMap);
 		$('#getM').attr('href',getMap);
 		$('#getM').html(getMap);
 
-		var getLegendGraphic = url+'&SERVICE=WMS&VERSION=1.1.1&layer=paises&REQUEST=getlegendgraphic&FORMAT=image/png';
+		var getLegendGraphic = url+'&SERVICE=WMS&VERSION=1.1.1&layer=provincias&REQUEST=getlegendgraphic&FORMAT=image/png';
 		$('#getLegendGraphic').attr('src',getLegendGraphic);
 		$('#getLG').attr('href',getLegendGraphic);
 		$('#getLG').html(getLegendGraphic);	
 
-		var describeLayer = url+'&SERVICE=WMS&VERSION=1.1.1&layers=paises&REQUEST=describeLayer';
+		var describeLayer = url+'&SERVICE=WMS&VERSION=1.1.1&layers=provincias&REQUEST=describeLayer';
 		$.get(describeLayer,function(data){
 			$('#describeLayer').val(data);
 		},'html');
 		$('#dL').attr('href',describeLayer);
 		$('#dL').html(describeLayer);
 
-		var getFeatureInfo = url+'&SERVICE=WMS&VERSION=1.1.1&layers=paises&REQUEST=getFeatureInfo&EXCEPTIONS=application/vnd.ogc.se_xml&FORMAT=image/png&INFO_FORMAT=text/html&FEATURE_COUNT=100&SRS=EPSG:4326&BBOX=-78.988359106211,-1.3640064104176,-78.071640893789,-1.1359935895824&WIDTH=1375&HEIGHT=342&X=820&Y=233&LAYERS=paises&QUERY_LAYERS=paises';
+		var getFeatureInfo = url+'&SERVICE=WMS&VERSION=1.1.1&layers=provincias&REQUEST=getFeatureInfo&EXCEPTIONS=application/vnd.ogc.se_xml&FORMAT=image/png&INFO_FORMAT=text/html&FEATURE_COUNT=100&SRS=EPSG:4326&BBOX=-78.988359106211,-1.3640064104176,-78.071640893789,-1.1359935895824&WIDTH=1375&HEIGHT=342&X=820&Y=233&LAYERS=provincias&QUERY_LAYERS=provincias';
 		$('#getFeatureInfo').attr('src',getFeatureInfo);
 		$('#getFI').attr('href',getFeatureInfo);
 		$('#getFI').html(getFeatureInfo);
