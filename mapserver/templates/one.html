@@ -1,0 +1,33 @@
+<!-- MapServer Template -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Conoco el mundo</title>
+</head>
+<body>
+
+ [resultset layer=provincias]
+    <table border="1">
+      <caption>Provincias</caption>
+      <thead>
+       
+      </thead>
+   [feature]
+      <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>type</td>
+        <td>engtype</td>
+      </tr>
+      <tr>
+        <td>[gid_1]</td>
+        <td>[name_1]</td>
+        <td>[type_1]</td>
+        <td>[engtype_1]</td>
+      </tr>
+   [/feature]
+   </table>
+  [/resultset]
+
+</body>
+</html>

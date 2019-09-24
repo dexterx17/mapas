@@ -1,0 +1,37 @@
+[Tue Sep 24 12:55:37 2019].23700 mapserv(): Web application error. Traditional BROWSE mode requires a TEMPLATE in the WEB section, but none was provided.
+[Tue Sep 24 13:17:57 2019].924628 Database connection failed (FATAL:  la autentificación password falló para el usuario «test»
+) with connect string 'dbname='gturismo' host='127.0.0.1' port=5432 user='test' password=******* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port? in msPostGISLayerOpen()[Tue Sep 24 13:17:57 2019].924654 msPostGISLayerOpen(): Query error. Database connection failed. Check server logs for more details.Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Sep 24 13:17:57 2019].924674 msDrawMap(): Image handling error. Failed to draw layer named 'provincias'.
+[Tue Sep 24 13:17:59 2019].767726 Database connection failed (FATAL:  la autentificación password falló para el usuario «test»
+) with connect string 'dbname='gturismo' host='127.0.0.1' port=5432 user='test' password=******* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port? in msPostGISLayerOpen()[Tue Sep 24 13:17:59 2019].767779 msPostGISLayerOpen(): Query error. Database connection failed. Check server logs for more details.Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Sep 24 13:17:59 2019].767805 msDrawMap(): Image handling error. Failed to draw layer named 'provincias'.
+[Tue Sep 24 14:00:52 2019].660343 Database connection failed (FATAL:  la autentificación password falló para el usuario «test»
+) with connect string 'dbname='gturismo' host='127.0.0.1' port=5432 user='test' password=******* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port? in msPostGISLayerOpen()[Tue Sep 24 14:00:52 2019].660381 msPostGISLayerOpen(): Query error. Database connection failed. Check server logs for more details.Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Sep 24 14:00:52 2019].660409 msDrawMap(): Image handling error. Failed to draw layer named 'provincias'.
+[Tue Sep 24 14:03:26 2019].414474 Database connection failed (invalid port number: "gturismo"
+) with connect string 'dbname='gturismo' host='127.0.0.1' port=gturismo user='test' password=******* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port? in msPostGISLayerOpen()[Tue Sep 24 14:03:26 2019].414507 msPostGISLayerOpen(): Query error. Database connection failed. Check server logs for more details.Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Sep 24 14:03:26 2019].414519 msDrawMap(): Image handling error. Failed to draw layer named 'provincias'.
+[Tue Sep 24 14:03:30 2019].275505 Database connection failed (invalid port number: "gturismo"
+) with connect string 'dbname='gturismo' host='127.0.0.1' port=gturismo user='test' password=******* sslmode=disable'
+Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port? in msPostGISLayerOpen()[Tue Sep 24 14:03:30 2019].275530 msPostGISLayerOpen(): Query error. Database connection failed. Check server logs for more details.Is the database running? Is it allowing connections? Does the specified user exist? Is the password valid? Is the database on the standard port?
+[Tue Sep 24 14:03:30 2019].275538 msDrawMap(): Image handling error. Failed to draw layer named 'provincias'.
+[Tue Sep 24 14:04:19 2019].512926 msReturnPage(): Unable to access file. ../templates/one.html
+[Tue Sep 24 14:05:07 2019].720440 msReturnPage(): Unable to access file. ../templates/one.html
+[Tue Sep 24 14:05:19 2019].853781 msReturnPage(): Unable to access file. ../templates/one.html
+[Tue Sep 24 14:05:19 2019].914521 msReturnPage(): Unable to access file. ../templates/one.html
+[Tue Sep 24 14:05:21 2019].473880 msReturnPage(): Unable to access file. ../templates/one.html
+[Tue Sep 24 14:06:07 2019].51763 msReturnPage(): Unable to access file. ../templates/one.html
+[Tue Sep 24 14:06:19 2019].85870 loadLayer(): Unknown identifier. Parsing error near (
+		CONNECTIONTYPE postgis
+  		CONNECTION ):(line 69)
+[Tue Sep 24 14:06:27 2019].190955 msReturnPage(): Unable to access file. ../templates/one.html
+[Tue Sep 24 15:25:44 2019].821632 msPostGISLayerGetItems(): Error (ERROR:  no existe la relación «cantnes»
+LINE 1: select * from cantnes where false limit 0
+                      ^
+) executing SQL: select * from cantnes where false limit 0
+[Tue Sep 24 15:25:44 2019].821720 msPostGISLayerGetItems(): Query error. Error executing SQL. Check server logs
+[Tue Sep 24 15:34:33 2019].83724 msDrawMap(): Image handling error. Failed to draw layer named 'cantones'.

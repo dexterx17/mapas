@@ -29,24 +29,32 @@
 	<div class="panel-heading">
 		Querys Mapserver
 		<select name="mapfile" id="mapfile">
+			<option value="gt.map">GT</option>
 			<option value="one.map">ONE</option>
+			<option value="db.map">DB</option>
 			<option value="gadm.map">GADM</option>
 			<option value="isotermas.map">ISOTERMAS</option>
 		</select>
 	</div>
 	<div class="panel-body">
 		<div class="row">
-			<div class="col-lg-6">
-				<h3>GetCapabilities
-					<small><a id="getC" target="_blank"></a></small>
-				</h3>
-				<textarea rows="8" cols="80" id="getCapabilities" readonly="readonly"></textarea>
-			</div>
-			<div class="col-lg-6">
+			<div class="col-lg-12">
 				<h3>GetMap
 					<small><a id="getM" target="_blank"></a></small>
 				</h3>
 				<img height="150" id="getMap"></iframe>
+			</div>
+			<div class="col-lg-6">
+				<h3>GetCapabilities WMS
+					<small><a id="getCwms" target="_blank"></a></small>
+				</h3>
+				<textarea rows="8" cols="80" id="getCapabilitieswms" readonly="readonly"></textarea>
+			</div>
+			<div class="col-lg-6">
+				<h3>GetCapabilities WFS
+					<small><a id="getCwfs" target="_blank"></a></small>
+				</h3>
+				<textarea rows="8" cols="80" id="getCapabilitieswfs" readonly="readonly"></textarea>
 			</div>
 		</div>
 		<div class="row">
@@ -66,12 +74,20 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-6">
-				<h3>GetFeatureInfo
+				<h3>GetFeatureInfo WMS
 					<small>
 						<a id="getFI" target="_blank"></a>
 					</small>
 				</h3>
-				<iframe id="getFeatureInfo"></iframe>
+				<iframe id="getFeatureInfoWms"></iframe>
+			</div>
+			<div class="col-lg-6">
+				<h3>GetFeatureInfo WFS
+					<small>
+						<a id="getFI" target="_blank"></a>
+					</small>
+				</h3>
+				<iframe id="getFeatureInfoWfs"></iframe>
 			</div>
 		</div>
 	</div>
@@ -81,15 +97,24 @@
 	function update(){
 		var mapfile = $('#mapfile').val();
 		//alert(mapfile);
-		var url ="https://www.beavr.ec/cgi-bin/mapserv?map=/var/www/mapserver/gt/mapfiles/"+mapfile;
-		var getCapabilites = url+'&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities';
+		//var url ="https://www.beavr.ec/cgi-bin/mapserv?map=/var/www/mapserver/gt/mapfiles/"+mapfile;
+		var url ="http://127.0.0.1/cgi-bin/mapserv?map=/var/www/html/mapas/mapserver/"+mapfile;
+		var getCapabilites_wms = url+'&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities';
+		var getCapabilites_wfs = url+'&SERVICE=WFS&VERSION=1.1.1&REQUEST=GetCapabilities';
 
-		$.get(getCapabilites,function(data){
-			$('#getCapabilities').val(data);
+		$.get(getCapabilites_wms,function(data){
+			$('#getCapabilitieswms').val(data);
 		},'html');
 
-		$('#getC').attr('href',getCapabilites);
-		$('#getC').html(getCapabilites);
+		$.get(getCapabilites_wfs,function(data){
+			$('#getCapabilitieswfs').val(data);
+		},'html');
+
+		$('#getCwms').attr('href',getCapabilites_wms);
+		$('#getCwms').html(getCapabilites_wms);
+		
+		$('#getCwfs').attr('href',getCapabilites_wfs);
+		$('#getCwfs').html(getCapabilites_wfs);
 
 		var getMap = url+'&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=provincias&STYLES=&SRS=EPSG:4326&BBOX=-92,-6,-75,3&WIDTH=400&HEIGHT=300&FORMAT=image/png';
 		$('#getMap').attr('src',getMap);
@@ -109,7 +134,7 @@
 		$('#dL').html(describeLayer);
 
 		var getFeatureInfo = url+'&SERVICE=WMS&VERSION=1.1.1&layers=provincias&REQUEST=getFeatureInfo&EXCEPTIONS=application/vnd.ogc.se_xml&FORMAT=image/png&INFO_FORMAT=text/html&FEATURE_COUNT=100&SRS=EPSG:4326&BBOX=-78.988359106211,-1.3640064104176,-78.071640893789,-1.1359935895824&WIDTH=1375&HEIGHT=342&X=820&Y=233&LAYERS=provincias&QUERY_LAYERS=provincias';
-		$('#getFeatureInfo').attr('src',getFeatureInfo);
+		$('#getFeatureInfoWms').attr('src',getFeatureInfo);
 		$('#getFI').attr('href',getFeatureInfo);
 		$('#getFI').html(getFeatureInfo);
 	}

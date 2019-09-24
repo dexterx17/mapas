@@ -1,0 +1,141 @@
+MAP
+	CONFIG "MS_ERRORFILE" "db_error.txt"
+	DEBUG 0
+	
+	PROJECTION
+	   "init=epsg:4326"
+	END
+
+	NAME "Ecuador"
+	EXTENT -92.008545 -5.015803 -75.187149 1.681835
+	SIZE 800 400
+	IMAGECOLOR 255 255 255
+
+	OUTPUTFORMAT
+	  NAME "geojson"
+	  DRIVER "OGR/GEOJSON"
+	  MIMETYPE "application/json; subtype=geojson"
+	  FORMATOPTION "STORAGE=stream"
+	  FORMATOPTION "FORM=SIMPLE"
+	END
+
+
+	WEB
+		IMAGEPATH "../tmp/"
+		IMAGEURL "http://127.0.0.1/mapas/mapserver/tmp/"
+		METADATA
+		    wms_title          "BEAVR wms"
+		    wms_onlineresource  "http://127.0.0.1/cgi-bin/mapserv?map=/var/www/html/mapas/mapserver/gt.map&"
+		    wms_srs             "EPSG:4326"
+		    wms_enable_request	"*"
+		    ows_enable_request	"*"
+	        wms_feature_info_mime_type "application/geojson,application/json,text/html"
+	        wms_getlegendgraphic_formatlist "image/png, text/html"
+	        wms_include_items "all"
+
+	        wms_abstract 'WMS con la División Provincial, Cantonal y Parroquial del Ecuador'
+		    wms_contactperson "Jaime Santana"
+		    wms_contactorganization "Escuela Superior Politécnica del Ejercito ESPE"
+		    wms_contactposition "Desarrollador"
+		    wms_contactfacsimiletelephone "593-983706086"
+		    wms_contactelectronicmailaddress "sistemas@santana.ec"
+		    wms_country "Ecuador"
+#		    wms_city "Latacunga"
+#		    wms_address "Sucre y Montalvo Esquina, Cuarto Piso Edificio Promociones y Servicios"
+		    wms_addresstype "Edificio"
+		    wms_stateorprovince "Cotopaxi"
+#		    wms_postcode "180101"
+
+			wfs_title          "BEAVR wfs" 
+		    wfs_onlineresource "http://127.0.0.1/cgi-bin/mapserv?map=/var/www/html/mapas/mapserver/gt.map&" 
+		    wfs_srs            "EPSG:4326" 
+		    wfs_abstract       "WFS con la División Provincial, Cantonal y Parroquial del Ecuador" 
+		    wfs_enable_request "*" 
+			wfs_getfeature_formatlist "geojson"
+	    END
+	END
+
+
+	LAYER
+		NAME "provincias"
+		PROJECTION
+			"init=epsg:4326"
+		END
+		METADATA
+			"wms_title" "provincias"
+			"wms_srs" "EPSG:4326"
+			"wms_name" "provincias"
+			"wms_server_version" "1.1.1"
+			"wms_getfeature_formatlist" "text/html,application/json"
+		END
+		TEMPLATE "templates/one.html"
+		CONNECTIONTYPE postgis
+  		CONNECTION "dbname='gturismo' host='127.0.0.1' port=5432 user='gturismo' password='12345' sslmode=disable"
+		DATA 'geom FROM provincias'
+		EXTENT -92.008545 -5.015803 -75.187149 1.681835
+		STATUS ON
+		TYPE POLYGON
+		CLASS
+			NAME "Provincia"
+			STYLE
+					OUTLINECOLOR 0 0 0
+			END # STYLE
+		END # CLASS
+	END # LAYER
+
+
+	LAYER
+		NAME "cantones"
+		PROJECTION
+			"init=epsg:4326"
+		END
+		METADATA
+			"wms_title" "cantones"
+			"wms_srs" "EPSG:4326"
+			"wms_name" "cantones"
+			"wms_server_version" "1.1.1"
+			"wms_getfeature_formatlist" "text/html,application/json"
+		END
+		TEMPLATE "templates/one.html"
+		CONNECTIONTYPE postgis
+  		CONNECTION "dbname='gturismo' host='127.0.0.1' port=5432 user='gturismo' password='12345' sslmode=disable"
+		DATA 'geom FROM cantones'
+		EXTENT -92.008545 -5.015803 -75.187149 1.681835
+		STATUS ON
+		TYPE POLYGON
+		CLASS
+			NAME "Canton"
+			STYLE
+					OUTLINECOLOR 255 0 0
+			END # STYLE
+		END # CLASS
+	END # LAYER
+
+	LAYER
+		NAME "parroquias"
+		PROJECTION
+			"init=epsg:4326"
+		END
+		METADATA
+			"wms_title" "parroquias"
+			"wms_srs" "EPSG:4326"
+			"wms_name" "parroquias"
+			"wms_server_version" "1.1.1"
+			"wms_getfeature_formatlist" "text/html,application/json"
+		END
+		TEMPLATE "templates/one.html"
+		CONNECTIONTYPE postgis
+  		CONNECTION "dbname='gturismo' host='127.0.0.1' port=5432 user='gturismo' password='12345' sslmode=disable"
+		DATA 'geom FROM parroquias'
+		EXTENT -92.008545 -5.015803 -75.187149 1.681835
+		STATUS ON
+		TYPE POLYGON
+		CLASS
+			NAME "Parroquia"
+			STYLE
+					OUTLINECOLOR 0 255 0
+			END # STYLE
+		END # CLASS
+	END # LAYER
+
+END
